@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杜鹃图片检测</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #007844;
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .note {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        #manual-input-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+        }
+        #manual-file-list {
+            width: 100%;
+            height: 200px;
+            margin-top: 10px;
+            font-family: monospace;
+        }
+        button {
+            background-color: #007844;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #00633a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>杜鹃图片检测工具</h1>
+        <p>此工具将尝试检测"plant-database/0314锦绣杜鹃/"文件夹中的所有图片文件。检测完成后，您可以将找到的文件名复制到plant-catalog.json中。</p>
+        
+        <div class="note">
+            <p><strong>注意：</strong> 如果检测不到某些图片，可能是由于文件命名特殊。在这种情况下，您可以在下方手动输入文件名。</p>
+        </div>
+        
+        <div id="detection-status">
+            <p>检测将在页面加载完成后自动开始。请等待检测结果...</p>
+        </div>
+        
+        <div id="manual-input-section">
+            <h2>手动输入文件列表</h2>
+            <p>如果自动检测无法找到所有图片，您可以在这里手动输入文件名列表（每行一个文件名）：</p>
+            <textarea id="manual-file-list" placeholder="例如：
+1.jpg
+2.jpg
+0314_flower.jpg
+..."></textarea>
+            <button id="update-json-btn">生成JSON并复制</button>
+            <p>点击上方按钮后，将生成JSON格式的文件列表并复制到剪贴板。</p>
+        </div>
+    </div>
+    
+    <script src="detect-images.js"></script>
+    <script>
+        // 手动输入处理
+        document.getElementById('update-json-btn').addEventListener('click', function() {
+            const textareaContent = document.getElementById('manual-file-list').value;
+            const fileNames = textareaContent.split('\n')
+                .map(line => line.trim())
+                .filter(line => line.length > 0);
+                
+            const jsonResult = JSON.stringify(fileNames, null, 2);
+            navigator.clipboard.writeText(jsonResult).then(() => {
+                alert('已复制到剪贴板! 请将以下内容粘贴到plant-catalog.json中杜鹃的images数组中：\n\n' + jsonResult);
+            });
+        });
+    </script>
+</body>
+</html> 

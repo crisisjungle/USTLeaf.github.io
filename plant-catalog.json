@@ -1,0 +1,91 @@
+{
+  "plants": {
+    "圆柏": {
+      "folderPath": "plant-database/0333圆柏/",
+      "images": [
+        "t1.jpg", "t2.jpg", "t3.jpg", "t4.jpg",
+        "b1.jpg", "b2.jpg", 
+        "b3.jpg", "b4.jpg",
+        "l1.jpg", "l2.jpg"
+      ]
+    },
+    "杜鹃": {
+      "folderPath": "plant-database/0314锦绣杜鹃/",
+      "images": [
+        "f1.jpg", "f2.jpg", "f3.jpg", 
+        "l1.jpg", "l2.jpg", 
+        "f4.jpg", "f5.jpg"
+      ]
+    },
+    "细叶榕": {
+      "folderPath": "plant-database/0424细叶榕/",
+      "images": [
+        "b1.jpg", "b2.jpg", "b3.jpg", 
+        "l1.jpg", "l2.jpg", "l3.jpg", 
+        "t1.jpg", "t2.jpg", "t3.jpg"
+      ]
+    },
+    "紫荆": {
+      "folderPath": "images/plants/紫荆/",
+      "images": [
+        "t1.jpg", "t2.jpg", "t3.jpg", "t4.jpg",
+        "f1.jpg", "f2.jpg", "l1.jpg"
+      ]
+    },
+    "樟树": {
+      "folderPath": "images/plants/樟树/",
+      "images": [
+        "t1.jpg", "t2.jpg", "t3.jpg", "t4.jpg",
+        "l1.jpg", "b1.jpg"
+      ]
+    },
+    "王棕": {
+      "folderPath": "plant-database/0101王棕/",
+      "images": [
+        "b1.jpeg", "b2.jpeg", "l1.jpeg", "l2.jpeg", "r1.jpeg", "t1.jpeg", "t2.jpeg"
+      ]
+    },
+    "细叶榕_新": {
+      "folderPath": "plant-database/0102细叶榕/",
+      "images": [
+        "b1.jpeg", "b2.jpeg", "l1.jpeg", "l2.jpeg", "t1.jpeg", "t2.jpeg", "t3.jpeg"
+      ]
+    },
+    "凤凰木": {
+      "folderPath": "plant-database/0103凤凰木/",
+      "images": [
+        "b1.jpeg", "l1.jpeg", "l2.jpeg", "l3.jpeg", "r1.jpeg", "t1.jpeg", "t2.jpeg"
+      ]
+    },
+    "樟树_新": {
+      "folderPath": "plant-database/0104樟树/",
+      "images": [
+        "b1.jpeg", "b2.jpeg", "b3.jpeg", "l1.jpeg", "l2.jpeg", "t1.jpeg"
+      ]
+    },
+    "异叶南洋杉": {
+      "folderPath": "plant-database/0105异叶南洋杉/",
+      "images": [
+        "b1.jpeg", "l1.jpeg", "l2.jpeg", "l3.jpeg", "t1.jpeg"
+      ]
+    },
+    "朱蕉": {
+      "folderPath": "plant-database/0106朱蕉/",
+      "images": [
+        "l1.jpeg", "l2.jpeg", "l3.jpeg", "t1.jpeg"
+      ]
+    },
+    "假连翘": {
+      "folderPath": "plant-database/0107假连翘/",
+      "images": [
+        "l1.jpeg", "l2.jpeg", "t1.jpeg"
+      ]
+    },
+    "红花檵木": {
+      "folderPath": "plant-database/0108红花檵木/",
+      "images": [
+        "l1.jpeg", "l2.jpeg", "t1.jpeg", "t2.jpeg"
+      ]
+    }
+  }
+} 

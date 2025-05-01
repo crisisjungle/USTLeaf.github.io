@@ -1,0 +1,1865 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: transparent;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    justify-content: center;
+    transition: padding 0.3s ease, background-color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* 固定背景页面的样式 */
+body.is-home header.scrolled,
+body.is-about header.scrolled,
+body.is-plant-info header.scrolled {
+    background-color: rgba(0, 120, 68, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+header.scrolled {
+    padding: 10px 40px;
+}
+
+/* JS 控制的阴影 (用于渐变页面) */
+header.has-shadow {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.logo {
+    position: absolute;
+    left: 40px;
+}
+
+/* 新增的logo图片样式 */
+header .logo .logo-image {
+    height: 50px;
+    transition: opacity 0.3s ease;
+}
+
+/* 旧的SVG和标题样式，注释掉但保留以便需要时参考 */
+/*
+header .logo svg {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    margin: 0;
+    color: white;
+}
+*/
+
+header .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+header .logo a:hover .logo-image {
+    opacity: 0.8;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    gap: 60px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.active {
+    color: #88B04B;
+    font-weight: bold;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    height: 2px;
+    background-color: #88B04B;
+}
+
+nav ul li a:hover {
+    color: #88B04B;
+}
+
+nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    height: 2px;
+    background-color: #88B04B;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    height: 2px;
+    background-color: #88B04B;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav ul li ul {
+    display: block;
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    background-color: #007844;
+    padding: 5px 0;
+    border-radius: 5px;
+    z-index: 1;
+    min-width: auto;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+}
+
+nav ul li:hover ul {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+nav ul li ul li {
+    margin: 0;
+}
+
+nav ul li ul li a {
+    padding: 8px 12px;
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+nav ul li ul li a:hover {
+    background-color: var(--secondary-theme-color);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* 为主页和植物足迹页的hero图片添加黑色蒙版 */
+body.is-home .hero .hero-image::after,
+body.is-trail .hero .hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* 20% 透明度黑色 */
+    z-index: 1; /* 确保在图片之上，内容之下 */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 10;
+    background-color: transparent;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* 主页(现在是campus.jpg, 偏暗) Hero特定颜色调整 */
+body:has(> section.hero#hero) .hero-content h1 {
+    font-size: 4.5rem;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 
+                 -2px -2px 12px rgba(0, 0, 0, 0.9), 
+                 0 0 25px rgba(0, 0, 0, 0.7); 
+    color: white;
+    margin-bottom: 15px;
+}
+
+body:has(> section.hero#hero) .hero-content p {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.95), 
+                 -2px -2px 15px rgba(0, 0, 0, 0.95);
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+body:has(> section.hero#hero) .hero-button {
+    padding: 16px 38px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 50px;
+    margin: 0 15px;
+    background-color: #007844; /* 改为主题深绿色 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* 基础阴影 */
+    border: 2px solid #FFFFFF; /* 2px 白色实线边框 */
+    transition: all 0.3s ease-out; /* 调整过渡时间 */
+    letter-spacing: 1px;
+    color: #FFFFFF; /* 白色文字 */
+    text-decoration: none; 
+}
+
+body:has(> section.hero#hero) .hero-button:hover {
+    transform: translateY(-4px); /* 保持稍微上移 */
+    background-color: #005f37; /* 悬停时使用更深的绿色 */
+    /* 悬停阴影：保留发光轮廓 + 提升阴影 */
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5), /* 重新添加 4px 白色扩展轮廓 */
+                0 6px 16px rgba(0, 0, 0, 0.3); /* 保留提升阴影 */
+    border-color: #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* 植物足迹页(现在是campus-trail.jpg, 偏亮) Hero特定颜色调整 */
+body:has(> section.hero#section-hero) .hero-content h1,
+body:has(> section.hero#section-hero) .hero-content p {
+    color: #FFFFFF; /* 保持白色，但加深阴影 */
+    text-shadow: 2px 2px 8px rgba(0, 60, 30, 0.95); /* 加深加重阴影 */
+}
+
+/* 专门为植物足迹页的 H1 增加字体大小 */
+body:has(> section.hero#section-hero) .hero-content h1 {
+    font-size: 3.0rem; /* 调整字体大小 */
+}
+
+body:has(> section.hero#section-hero) .hero-button {
+     /* 保持绿色按钮 */
+     /* background-color: #007844; */ 
+     /* color: white; */ 
+     border: 1px solid rgba(255, 255, 255, 0.5); /* 添加边框 */
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 调整阴影 */
+}
+
+body:has(> section.hero#section-hero) .hero-button:hover {
+     border-color: white;
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+     background-color: #88B04B; /* 确保悬停有背景色 */
+}
+
+.hero-content h1 {
+    /* margin-bottom: 35px; */
+}
+
+.hero-content p {
+    /* margin-bottom: 30px; */
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    margin-top: 80px;
+}
+
+.hero-button {
+    /* display: inline-block; */ /* Keep positioning properties if needed */
+    /* padding: 12px 25px; */ /* Remove old styles */
+    /* background-color: #007844; */
+    /* color: white; */
+    /* text-decoration: none; */
+    /* border-radius: 25px; */
+    /* font-weight: bold; */
+    /* transition: all 0.3s ease; */
+    /* margin: 0 10px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+/* .hero-button:hover { */
+    /* background-color: #88B04B; */
+    /* transform: translateY(-2px); */
+    /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); */
+/* } */
+
+/* 新增次要按钮样式 */
+/*
+.hero-button.secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.hero-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+}
+*/
+
+.stories {
+    padding: 40px 20px;
+    background-color: white;
+}
+
+.story {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story.reverse {
+    flex-direction: row-reverse;
+}
+
+.story-image {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.story-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.story-content {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.story-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.story-content .read-more {
+    display: none;
+}
+
+footer {
+    background-color: #2c3e50; /* 较深的蓝灰色 */
+    color: #ecf0f1; /* 浅灰色 */
+    padding: 20px 0 20px 0; /* 顶部内边距保持 20px */
+    text-align: center;
+    margin-top: 0; /* 移除自动调整顶部边距 */
+    position: static; /* 移除相对定位 */
+    z-index: auto; /* 恢复自动 z-index */
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 30px;
+}
+
+.footer-top .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* 添加页脚logo图片样式 */
+.footer-top .logo .logo-image {
+    height: 60px;
+}
+
+/* 旧的页脚SVG和标题样式，注释掉但保留以便需要时参考 */
+/*
+.footer-top .logo svg {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.footer-top .logo h1 {
+    color: white;
+    margin: 0;
+}
+*/
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px 30px;
+    border-radius: 8px;
+    min-width: 180px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #88B04B;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background-color: #88B04B;
+}
+
+.section-divider {
+    width: 80%;
+    height: 1px;
+    background-color: #444;
+    margin: 15px auto;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer-section ul li a:hover {
+    color: #88B04B;
+    padding-left: 0;
+}
+
+.footer-divider {
+    width: 80%;
+    height: 1px;
+    background-color: #444;
+    margin: 30px auto;
+}
+
+.footer-divider.short {
+    width: 50%;
+    height: 1px;
+    background-color: #444;
+    margin: 30px auto;
+}
+
+.social-media {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-flex;
+}
+
+.social-media span {
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+    filter: brightness(1.2);
+}
+
+.social-media img:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #aaa;
+    padding-top: 20px;
+}
+
+.cards#cards {
+    background-color: #007844; /* 主题绿色背景 */
+    padding: 40px 20px; /* 上下40px，左右20px 内边距 */
+}
+
+.cards-section {
+    margin-bottom: 40px; /* 保留一些底边距，但只在最后一个元素应用可能更好，或者父元素加padding-bottom */
+}
+
+/* 确保最后一个 card section 没有额外的 margin */
+.cards-section:last-child {
+    margin-bottom: 0;
+}
+
+.cards-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white; /* 保持标题为白色 */
+}
+
+.cards-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.cards-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cards-carousel::-webkit-scrollbar-thumb {
+    background-color: #007844;
+    border-radius: 4px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.card-container:hover {
+    transform: translateY(-10px);
+}
+
+.card-container:hover .card {
+    border-color: #88B04B;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4), 0 0 0 3px #88B04B;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 0 3px white;
+    height: 220px;
+    border: none;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-container:hover .card-image img {
+    transform: scale(1.08);
+}
+
+.card-title {
+    font-family: 'Microsoft YaHei', 'SimHei', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 12px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.card-container:hover .card-title {
+    color: #88B04B;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card-content .card-button {
+    background-color: #007844;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.card-content .card-button:hover {
+    background-color: #88B04B;
+}
+
+.gallery {
+    padding: 40px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.gallery-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    height: 600px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-slider:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-thumbnails-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #007844 #f0f0f0;
+    padding: 15px 0;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.gallery-thumbnails-bottom::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.gallery-thumbnails-bottom::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.gallery-thumbnails-bottom::-webkit-scrollbar-thumb {
+    background-color: #007844;
+    border-radius: 3px;
+}
+
+/* 保持原有的右侧缩略图样式，但隐藏 */
+.gallery-thumbnails {
+    display: none;
+}
+
+.gallery-thumbnails-bottom .thumbnail {
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: 120px;
+    flex-shrink: 0;
+    transform: translateY(0);
+}
+
+.gallery-thumbnails-bottom .thumbnail.active {
+    border-color: #007844;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.gallery-thumbnails-bottom .thumbnail:hover {
+    opacity: 1;
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-thumbnails-bottom .thumbnail img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-thumbnails-bottom .thumbnail:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-slide {
+    display: none;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+.gallery-slide.active {
+    display: block;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 删除不需要的控制按钮样式 */
+.gallery-controls {
+    display: none;
+}
+
+.gallery-prev, .gallery-next {
+    display: none;
+}
+
+.back-to-top-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+}
+
+#back-to-top {
+    background-color: #007844;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top:hover {
+    background-color: #88B04B;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 植物足迹页面特定样式 */
+.trail-intro {
+    padding: 20px 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    margin-top: 0;
+}
+
+.trail-intro h1 {
+    font-size: 3rem;
+    color: #007844;
+    margin: 0 0 20px 0;
+}
+
+.trail-intro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 800px;
+    margin: 0;
+}
+
+.trail-hero {
+    margin-top: 0;
+    padding-top: 0;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.trail-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 修改后的header样式 */
+header.trail-header {
+    background-color: #007844 !important;
+    padding: 20px;
+    width: 100%;
+    z-index: 1000;
+    position: relative;
+}
+
+header.trail-header .logo h1 {
+    color: white;
+}
+
+header.trail-header nav ul li a {
+    color: white;
+}
+
+header.trail-header nav ul li a:hover {
+    color: #88B04B;
+}
+
+/* 确保每个section占据整个视口高度 */
+section {
+    min-height: 100vh;
+}
+
+/* 可选：添加平滑滚动效果 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 新增的整页图片样式 */
+.full-page-image {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.full-page-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* 页面描述模块 */
+.page-description {
+    max-width: 350px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    border-left: 4px solid #007844;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.page-description.visible {
+    opacity: 1;
+}
+
+.page-description h2 {
+    margin-top: 0;
+    color: #007844;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.page-description h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #88B04B;
+}
+
+.page-description.position-right-top h2::after {
+    left: auto;
+    right: 0;
+}
+
+.page-description p {
+    margin-bottom: 0;
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+/* 描述模块位置：右上角 */
+.page-description.position-right-top {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    left: auto;
+    text-align: right;
+    width: 30%;
+    z-index: 10;
+    border-left: none;
+    border-right: 4px solid #007844;
+    transform: translateX(30px);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.page-description.position-right-top.visible {
+    transform: translateX(0);
+}
+
+/* 描述模块位置：左上角 */
+.page-description.position-left-top {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    right: auto;
+    text-align: left;
+    width: 30%;
+    z-index: 10;
+    transform: translateX(-30px);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.page-description.position-left-top.visible {
+    transform: translateX(0);
+}
+
+/* 新增的标记样式 */
+.trail-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.marker {
+    width: 45px;
+    height: 45px;
+    background-color: #FF7F00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    z-index: 5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: breathe 2s ease-in-out infinite;
+}
+
+.marker:hover {
+    transform: scale(1.2);
+    background-color: #FF5500;
+    animation-play-state: paused; /* 悬停时暂停动画 */
+    z-index: 15; /* 提高悬停时的层级 */
+}
+
+.marker span {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* 呼吸动画 - 使用box-shadow实现带模糊的实心圆形呼吸效果 */
+@keyframes breathe {
+    0% {
+        /* transform: scale(1); */ /* 移除缩放 */
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); /* 初始透明 (无扩展, 无模糊) */
+    }
+    50% {
+        /* transform: scale(1.05); */ /* 移除缩放 */
+        box-shadow: 0 0 4px 6px rgba(255, 255, 255, 0.45); /* 半透明白色实心圆带模糊 (模糊4px, 扩展6px) */
+    }
+    100% {
+        /* transform: scale(1); */ /* 移除缩放 */
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); /* 回到透明 (无扩展, 无模糊) */
+    }
+}
+
+.marker-card {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.marker:hover .marker-card {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 20px);
+}
+
+.marker-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.marker-card p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 6px 8px;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.marker-card-arrow {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(0, 0, 0, 0.6);
+}
+
+/* Plant Info Card - Main container */
+.plant-info-card {
+    position: fixed;
+    top: 50%; 
+    width: 350px; 
+    max-height: 90vh; 
+    background-color: #ffffff;
+    border-radius: 8px; 
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0s 0.4s;
+    z-index: 1050; 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden; 
+    /* --- Default: Hidden off-screen to the right --- */
+    right: 20px; 
+    transform: translate(120%, -50%); 
+    visibility: hidden;
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.15); 
+    border-radius: 8px; /* 修改为四个角都有圆角 */
+}
+
+/* Override class for sliding from left */
+.plant-info-card.slide-from-left {
+    left: 20px; 
+    right: auto; /* Override the default right */
+    transform: translate(-120%, -50%); 
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.15); 
+    border-radius: 8px; /* 修改为四个角都有圆角 */
+}
+
+/* Show state: bring into view */
+.plant-info-card.show {
+    transform: translate(0, -50%); /* Slide in */
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+/* Remove old header styling */
+.plant-card-header {
+    background-color: transparent;
+    padding: 0;
+    display: block;
+    position: static;
+    order: 1;
+}
+
+/* Style and Position Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1060;
+}
+
+.close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+}
+
+/* Image styles */
+.plant-card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    order: 0;
+}
+
+.plant-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Content Area */
+.plant-card-content {
+    padding: 15px 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+    order: 2;
+}
+
+/* Plant Name - Now inside content area */
+.plant-card-content .plant-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Plant Scientific Name */
+.plant-card-content .plant-scientific-name {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #666;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Details Section */
+.plant-card-details {
+    margin-bottom: 15px;
+}
+
+/* Individual Detail Item */
+.plant-detail {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #555;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Description */
+.plant-card-description {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.plant-card-description p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    margin-top: 0;
+}
+
+/* Action Button Area */
+.plant-card-action {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.learn-more-btn {
+    color: #007844;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    color: #004d2b;
+}
+
+/* Overlay */
+.card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s 0.4s;
+    z-index: 1040;
+}
+
+.card-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Base responsive adjustments */
+    .plant-info-card {
+        width: 90%;
+        max-height: 85vh;
+        left: 50%; /* Center horizontally */
+        right: auto; /* Override right */
+        top: 50%;
+        transform: translate(150%, -50%); /* Default hidden far right */
+        border-radius: 8px; /* All corners rounded */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Centered shadow */
+    }
+    /* Override for left slide */
+    .plant-info-card.slide-from-left {
+        transform: translate(-150%, -50%); /* Hidden far left */
+    }
+    /* Show state for responsive */
+    .plant-info-card.show {
+        transform: translate(-50%, -50%); /* Slide to center */
+    }
+    
+    /* Card internal adjustments */
+    .plant-card-image {
+        height: 200px; 
+    }
+    .plant-card-content {
+        padding: 15px;
+    }
+    .close-btn {
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+/* 植物信息页面样式 */
+.plant-info-hero {
+    height: 40vh;
+    background-color: rgba(0, 120, 68, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.plant-info-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/leaf-pattern.png');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.plant-info-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.plant-info-hero h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.plant-info-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.plant-info-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.plant-info-images {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.image-gallery img {
+    width: 23%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.plant-info-content {
+    padding: 20px 30px;
+}
+
+.plant-info-content h2 {
+    color: #007844;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 120, 68, 0.2);
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h3 {
+    color: #007844;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.resources-section {
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.resources-section h2 {
+    color: #007844;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.resources-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources-section li {
+    margin-bottom: 10px;
+}
+
+.resources-section a {
+    color: #007844;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+}
+
+.resources-section a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s;
+}
+
+.resources-section a:hover {
+    color: #00a65a;
+}
+
+.resources-section a:hover::before {
+    transform: translateX(5px);
+}
+
+@media (min-width: 768px) {
+    .plant-info-images {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    
+    .main-image {
+        width: 60%;
+        margin: 0;
+        padding-right: 20px;
+    }
+    
+    .image-gallery {
+        width: 40%;
+        flex-direction: column;
+    }
+    
+    .image-gallery img {
+        width: 100%;
+        height: 120px;
+    }
+}
+
+@media (max-width: 767px) {
+    .plant-info-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .main-image {
+        max-width: 100%;
+    }
+    
+    .image-gallery img {
+        width: 48%;
+    }
+    
+    .plant-info-content {
+        padding: 15px;
+    }
+}
+
+/* 导航栏样式 */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    background-color: transparent;
+    transition: padding 0.3s ease, background-color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+header.scrolled {
+    padding: 10px 40px;
+}
+
+/* 转场动画效果 */
+.transition-active {
+    overflow: hidden;
+}
+
+/* 主题色遮罩层 - 仅在 zoom-in 时应用 */
+.transition-active.transition-zoom-in::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #007844; /* 主题绿色 */
+    z-index: 9999; /* 在内容之上，但在图片放大效果之下? 还是在最顶层? 先放顶层 */
+    opacity: 0;
+    animation: themeOverlayFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes themeOverlayFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 0.2; } /* 调整最终不透明度为 20% */
+}
+
+/* 离开页面的选择性动画 */
+.fade-out-effect { /* 应用于 header 和 hero-content */
+    animation: fadeOutEffect 0.4s ease-out forwards; /* 快速淡出 */
+}
+
+@keyframes fadeOutEffect {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+.zoom-in-effect { /* 应用于 hero-image 容器 */
+    /* 动画只作用于容器内的 img */
+}
+.zoom-in-effect img {
+    animation: heroImageZoomEffect 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes heroImageZoomEffect { /* 离开：图片放大并模糊 */
+    0% { transform: scale(1); filter: blur(0); }
+    100% { transform: scale(10); filter: blur(15px); } /* 大幅增加缩放，增强模糊 */
+}
+
+/* 移除旧的 zoomOutIncoming 和相关类 */
+/* @keyframes zoomOutIncoming ... */
+/* body.transition-incoming-zoom-out ... */
+
+
+/* 移除不再需要的旧转场相关代码 */
+/* .transition-active::before (黑场) */
+/* @keyframes zoomInEffect (旧的整体放大) */
+/* @keyframes zoomOutEffect (旧的整体缩小) */
+/* .transition-zoom-in, .transition-zoom-out (作为标记类) */
+
+/* Existing .gallery-grid styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust minmax as needed */
+    gap: 20px;
+}
+
+/* Styles for dynamically generated gallery items */
+.gallery-item-dynamic {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.gallery-item-dynamic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item-dynamic .gallery-image {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+    position: relative; /* Add relative positioning for absolute child */
+}
+
+.gallery-item-dynamic .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.gallery-info-simple {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.gallery-info-simple .plant-name {
+    font-weight: bold;
+    color: #333;
+    display: block; /* Ensure it takes full width */
+    margin-bottom: 5px;
+}
+
+.gallery-info-simple .scientific-name {
+    display: block; /* Ensure it takes full width */
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #666;
+}
+
+.gallery-info-simple .category-label {
+    /* Remove old styles or styles making it display block/inline-block here */
+    /* display: inline-block; */ 
+    /* Styles are now applied to the label inside .gallery-image */
+}
+
+/* Style for Category Label inside image */
+.gallery-image .category-label {
+    position: absolute;
+    bottom: 8px; /* Adjust position */
+    right: 8px;  /* Adjust position */
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1; /* Ensure it's above the image */
+    line-height: 1.2; /* Adjust line height */
+}
+
+/* Category label colors (apply to the label inside image) */
+.gallery-image .category-label.tree { background-color: #27ae60; }
+.gallery-image .category-label.leaf { background-color: #88B04B; }
+.gallery-image .category-label.flower { background-color: #e74c3c; }
+.gallery-image .category-label.fruit { background-color: #f39c12; }
+.gallery-image .category-label.bark { background-color: #795548; }
+.gallery-image .category-label.root { background-color: #a1887f; }
+.gallery-image .category-label.unknown { background-color: #95a5a6; }
+
+/* Class to hide items during filtering */
+.gallery-item-dynamic.hidden {
+    display: none;
+}
+
+/* Style adjustments for filter buttons if needed */
+.filter-buttons {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-button {
+    padding: 8px 18px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #555;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.filter-button.active {
+    background-color: #007844;
+    color: white;
+    border-color: #007844;
+}
+
+/* Center the Load More button */
+.load-more-container {
+    text-align: center; /* Center the button inside the container */
+    padding: 20px 0; /* Add some padding */
+}
+
+#load-more-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    background-color: #007844;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#load-more-btn:hover {
+    background-color: #005f37;
+}
+
+/* --- Quick Jump Navigation --- */
+.quick-jump-nav {
+    position: fixed;
+    right: 25px; /* 稍微调整位置 */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* 增加按钮之间的间距 */
+    z-index: 1001; 
+}
+
+.quick-jump-nav button {
+    /* 移除文字相关样式 */
+    /* writing-mode: vertical-rl; */
+    /* text-orientation: mixed; */
+    /* padding: 8px 4px; */
+    /* font-size: 14px; */
+    /* font-weight: bold; */
+    /* min-height: 60px; */
+    /* width: 35px; */
+    /* display: flex; */ /* 使用 block 或 inline-block */
+    /* align-items: center; */
+    /* justify-content: center; */
+    
+    /* 设置圆形按钮样式 */
+    width: 12px; /* 圆点直径 */
+    height: 12px; /* 圆点直径 */
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明白色背景 */
+    border: 1px solid rgba(0, 120, 68, 0.3); /* 淡绿色边框 */
+    border-radius: 50%; /* 使其成为圆形 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: block; /* 让按钮独占一行 */
+}
+
+.quick-jump-nav button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* 悬停时更不透明 */
+    transform: scale(1.3); /* 悬停时放大 */
+    border-color: #007844; /* 悬停时边框变深 */
+}
+
+.quick-jump-nav button.active {
+    background-color: #007844; /* 激活时变为实心绿色 */
+    border-color: #005f37; /* 激活时边框变深 */
+    transform: scale(1.4); /* 激活时更大 */
+    box-shadow: 0 2px 5px rgba(0, 120, 68, 0.4); /* 激活时阴影 */
+} 
