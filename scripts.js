@@ -1,5 +1,77 @@
 // 你可以在这里添加交互功能
 document.addEventListener('DOMContentLoaded', function() {
+    // --- 图片懒加载逻辑 ---
+    const lazyImages = document.querySelectorAll('img.lazy');
+    const placeholderSrc = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='; // 透明占位符
+
+    if ("IntersectionObserver" in window) {
+      let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            let lazyImage = entry.target;
+            // 检查 data-src 是否存在且不为空
+            if (lazyImage.dataset.src) {
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.removeAttribute('data-src'); // 加载后移除 data-src
+              lazyImage.classList.remove('lazy');    // 移除 lazy 类
+              lazyImage.classList.add('lazy-loaded'); // 添加加载完成标志（可选）
+              observer.unobserve(lazyImage);         // 停止观察已加载的图片
+            } else {
+              // 如果没有 data-src，也停止观察，避免错误
+               console.warn('Lazy image has no data-src:', lazyImage);
+               observer.unobserve(lazyImage);
+               lazyImage.classList.remove('lazy'); 
+            }
+          }
+        });
+      });
+
+      lazyImages.forEach(function(lazyImage) {
+        // 确保图片有 src 属性（即使是占位符），否则 IntersectionObserver 可能不触发
+        if (!lazyImage.src) {
+          lazyImage.src = placeholderSrc;
+        }
+        lazyImageObserver.observe(lazyImage);
+      });
+    } else {
+      // --- 旧浏览器回退 (Fallback) ---
+      let active = false;
+      const lazyLoadFallback = function() {
+        if (active === false) {
+          active = true;
+          setTimeout(function() {
+            let remainingLazyImages = document.querySelectorAll('img.lazy'); // 需要重新查询
+            remainingLazyImages.forEach(function(lazyImage) {
+              if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                 if (lazyImage.dataset.src) {
+                   lazyImage.src = lazyImage.dataset.src;
+                   lazyImage.removeAttribute('data-src');
+                   lazyImage.classList.remove('lazy');
+                   lazyImage.classList.add('lazy-loaded');
+                 } else {
+                   console.warn('Lazy image has no data-src (fallback):', lazyImage);
+                   lazyImage.classList.remove('lazy'); 
+                 }
+              }
+            });
+            active = false;
+            // 如果没有更多懒加载图片，移除事件监听器
+            if (document.querySelectorAll('img.lazy').length === 0) {
+              document.removeEventListener("scroll", lazyLoadFallback);
+              window.removeEventListener("resize", lazyLoadFallback);
+              window.removeEventListener("orientationchange", lazyLoadFallback);
+            }
+          }, 200); // 节流
+        }
+      };
+
+      document.addEventListener("scroll", lazyLoadFallback);
+      window.addEventListener("resize", lazyLoadFallback);
+      window.addEventListener("orientationchange", lazyLoadFallback);
+      lazyLoadFallback(); // 初始检查
+    }
+    // --- 懒加载逻辑结束 ---
+
     // -- 全局变量和检查 --
     const body = document.body; // Get body element
     /* // 移除进入动画检查

@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 定义检查模式
         const namingPatterns = ['t', 'l', 'f', 'g', 'b'];
         const indices = Array.from({length: 20}, (_, i) => i + 1); // 1 to 20
-        const extensions = ['.jpg', '.JPG'];
+        const extensions = ['.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.PNG']; // 增加支持的格式
         
         // 检查新格式命名 (t1.jpg, l2.JPG, etc.)
         for (const pattern of namingPatterns) {
@@ -222,8 +222,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 try {
                     if (await checkImageExistsPromise(fullPath)) {
                         foundImages.add(fullPath);
+                    } else {
+                        console.warn(`JSON中的图片未找到: ${fullPath}`);
                     }
-                } catch (e) { /*忽略检查错误*/ }
+                } catch (e) { 
+                     console.warn(`检查JSON图片时出错: ${fullPath}`, e);
+                }
             }
         }
         
@@ -244,156 +248,154 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // 等待所有缩略图加载（或失败）
+        // 等待所有缩略图DOM元素添加完成
         Promise.allSettled(addPromises).then(results => {
-            const successfullyLoadedThumbs = results
+            const successfullyAddedThumbs = results
                 .filter(result => result.status === 'fulfilled' && result.value)
-                .map(result => result.value);
+                .map(result => result.value); // 获取实际的缩略图元素
             
-            console.log(`最终成功添加了 ${successfullyLoadedThumbs.length} 个缩略图`);
+            console.log(`成功添加 ${successfullyAddedThumbs.length} 个缩略图到DOM`);
+
+            // 触发全局懒加载脚本重新扫描新添加的图片
+            if (window.lazyLoadInit) {
+                window.lazyLoadInit(); 
+            } else if ('IntersectionObserver' in window) {
+                 // 如果没有全局初始化函数，尝试手动观察新图片
+                 const newLazyImages = thumbnailContainer.querySelectorAll('img.lazy');
+                 if (window.lazyImageObserver) { // 假设 lazyImageObserver 在全局脚本中定义
+                     newLazyImages.forEach(img => window.lazyImageObserver.observe(img));
+                 } else {
+                    console.warn("Lazy load observer not found globally.");
+                 }
+            }
+
+            // 设置第一个缩略图为活动状态并更新主图
+            if (successfullyAddedThumbs.length > 0) {
+                successfullyAddedThumbs[0].classList.add('active');
+                const firstImagePath = successfullyAddedThumbs[0].querySelector('img')?.dataset.src;
+                if (firstImagePath && mainImage) {
+                    // 立即加载主图，而不是懒加载
+                    mainImage.src = firstImagePath;
+                    // 可选: 设置alt属性
+                    mainImage.alt = `主图 - ${firstImagePath.split('/').pop()}`;
+                    // 移除可能存在的 lazy 类（如果之前设置过）
+                    mainImage.classList.remove('lazy'); 
+                    mainImage.removeAttribute('data-src');
+                } else {
+                     console.error('无法设置主图: 缺少 firstImagePath 或 mainImage 元素');
+                }
+            } else {
+                // 如果没有有效缩略图，可以设置一个默认的主图或提示
+                if(mainImage) {
+                   mainImage.src = 'images/placeholder-large.png'; // 假设有这个占位符
+                   mainImage.alt = '没有可用的植物图片';
+                }
+                console.warn('没有有效缩略图被添加');
+            }
             
-            // 在这里设置类别，确保是在缩略图添加到DOM之后
+            // 为新添加的缩略图设置点击事件
+            setupThumbnailClickEvents();
+            
+            // 更新图片分类
             setImageCategoriesByFilename();
             
-            // 确保主图已加载
-            ensureMainImageLoaded();
-            
-            // 稍微延迟后设置点击事件，确保DOM渲染完成
-            setTimeout(() => {
-                console.log('延迟后调用 setupThumbnailClickEvents');
-                setupThumbnailClickEvents(); 
-            }, 100); // 延迟100毫秒
+            // 确保主图加载完成后再更新分类标签
+            if (mainImage && mainImage.src && mainImage.src !== 'images/placeholder-large.png') {
+                mainImage.onload = () => {
+                     setFirstImageCategory(mainImage.src.split('/').pop());
+                     console.log("主图加载完成，分类已设置");
+                };
+                 mainImage.onerror = () => {
+                    console.error("主图加载失败", mainImage.src);
+                 };
+            } else if (successfullyAddedThumbs.length > 0) {
+                // 如果主图未设置，尝试用第一个缩略图的名称设置分类
+                const firstThumbImg = successfullyAddedThumbs[0].querySelector('img');
+                if(firstThumbImg && firstThumbImg.dataset.src) {
+                    setFirstImageCategory(firstThumbImg.dataset.src.split('/').pop());
+                }
+            }
+
+            // ... 其他需要在图片加载后执行的逻辑 ...
+            console.log("图片处理流程完成");
         });
     }
     
     // 添加缩略图到容器
-    function addThumbnail(imagePath, container, plantName = '') {
-        // 如果没有提供植物名，尝试从URL获取
-        if (!plantName) {
-            plantName = getPlantNameFromURL() || '';
-        }
-        
-        console.log(`为 ${plantName} 添加缩略图: ${imagePath}`);
-        
-        // 检查是否已存在相同图片
-        const existingThumbs = container.querySelectorAll('.thumbnail');
-        for (let i = 0; i < existingThumbs.length; i++) {
-            const existingSrc = existingThumbs[i].getAttribute('data-large-src');
-            if (existingSrc === imagePath) {
-                console.log(`已存在相同图片，跳过添加: ${imagePath}`);
-                return null; // 返回null表示未添加新缩略图
-            }
-        }
-        
-        // 创建新的缩略图元素
-        const thumbnail = document.createElement('div');
-        thumbnail.className = 'thumbnail';
-        thumbnail.setAttribute('data-large-src', imagePath);
-        
-        const thumbnailImage = document.createElement('img');
-        
-        // 从图片路径提取文件名
-        const fileName = imagePath.substring(imagePath.lastIndexOf('/') + 1);
-        const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
-        
-        // 设置alt文本
-        const altText = plantName ? `${plantName} ${baseName} 缩略图` : `${baseName} 缩略图`;
-        thumbnailImage.alt = altText;
-        
-        // 先添加图片到DOM
-        thumbnail.appendChild(thumbnailImage);
-        
-        // 添加到容器
-        container.appendChild(thumbnail);
-        
-        // 创建Promise用于检测图片是否成功加载
-        const loadPromise = new Promise((resolve, reject) => {
-            // 图片加载错误处理
-            thumbnailImage.onerror = function() {
-                console.warn(`图片加载失败，将移除: ${imagePath}`);
-                // 从容器中移除加载失败的缩略图
-                if (container.contains(thumbnail)) {
-                    container.removeChild(thumbnail);
+    function addThumbnail(imagePath, container) {
+        return new Promise((resolve, reject) => {
+            const thumbDiv = document.createElement('div');
+            thumbDiv.className = 'thumbnail';
+            
+            const img = document.createElement('img');
+            img.classList.add('lazy'); // 添加 lazy 类
+            img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='; // 设置占位符 src
+            img.dataset.src = imagePath; // 将真实路径存入 data-src
+            const imageName = imagePath.split('/').pop();
+            img.alt = `缩略图 - ${imageName}`;
+            
+            img.onload = () => {
+                // 检查是否是占位符加载完成 (通常非常快)
+                // 实际图片由 IntersectionObserver 加载
+                if (img.src !== img.dataset.src && !img.classList.contains('lazy-loaded')) {
+                   // console.log(`Thumbnail placeholder loaded for ${imagePath}`);
                 }
-                reject(new Error(`图片加载失败: ${imagePath}`));
+                // 即使是占位符加载，也认为缩略图元素已准备好
+                resolve(thumbDiv);
+            };
+            img.onerror = () => {
+                console.error(`无法加载缩略图占位符或图片: ${imagePath}`);
+                reject(new Error(`无法加载缩略图: ${imagePath}`));
+                thumbDiv.remove(); // 移除失败的缩略图
             };
             
-            // 图片加载成功
-            thumbnailImage.onload = function() {
-                resolve(thumbnail);
-            };
-            
-            // 设置src属性触发加载
-            thumbnailImage.src = imagePath;
-        });
-        
-        return loadPromise.catch(err => {
-            console.error(err.message);
-            return null; // 返回null表示图片加载失败
+            thumbDiv.appendChild(img);
+            container.appendChild(thumbDiv);
         });
     }
     
     // 设置所有缩略图的点击事件
     function setupThumbnailClickEvents() {
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        if (thumbnails.length === 0) {
-            console.log('未找到缩略图，无需设置点击事件。');
-            return;
-        }
+        const thumbnails = thumbnailContainer ? thumbnailContainer.querySelectorAll('.thumbnail') : [];
         
-        console.log(`为 ${thumbnails.length} 个缩略图设置点击事件...`);
-        
-        thumbnails.forEach((thumbnail, idx) => {
-            // 添加标记，防止重复设置事件
-            if (thumbnail.hasAttribute('data-click-setup')) {
-                console.log(`缩略图 #${idx+1} 已设置点击事件，跳过。`);
-                return;
-            }
+        thumbnails.forEach(thumb => {
+            // 移除旧监听器（如果需要）
+            // thumb.removeEventListener('click', thumbnailClickHandler);
+            // thumb.addEventListener('click', thumbnailClickHandler);
             
-            // 为缩略图设置点击事件
-            thumbnail.addEventListener('click', function() {
-                console.log(`点击缩略图 #${idx+1}`);
+            // 使用匿名函数避免重复添加监听器的问题
+            thumb.onclick = function() { // 使用 onclick 替换 addEventListener 以简化
+                if (!mainImage) return;
                 
-                // 获取大图源地址
-                const largeSrc = this.dataset.largeSrc || this.getAttribute('data-large-src');
+                const clickedImg = this.querySelector('img');
+                const newImageSrc = clickedImg ? clickedImg.dataset.src || clickedImg.src : null;
                 
-                if (largeSrc && mainImage) {
-                    console.log(`更新主图为: ${largeSrc}`);
-                    // 更新主图
-                    mainImage.src = largeSrc;
-                    // 更新alt文本
-                    const thumbImg = this.querySelector('img');
-                    if (thumbImg) {
-                        mainImage.alt = thumbImg.alt.replace('缩略图', '主图');
-                    }
+                if (newImageSrc && mainImage.src !== newImageSrc) {
+                    console.log(`切换主图到: ${newImageSrc}`);
+                    
+                    // 立即加载主图
+                    mainImage.src = newImageSrc; 
+                    mainImage.alt = `主图 - ${newImageSrc.split('/').pop()}`;
+                    mainImage.classList.remove('lazy'); // 确保移除 lazy
+                    mainImage.removeAttribute('data-src'); // 移除 data-src
 
-                    // 更新缩略图激活状态
-                    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                    // 更新活动缩略图状态
+                    thumbnails.forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // 获取并设置主图的类别标识
-                    const category = this.getAttribute('data-category');
-                    updateMainImageCategory(category);
-                } else {
-                    console.error('缩略图上未找到图片路径或主图元素不存在:', {
-                        largeSrc,
-                        mainImage: !!mainImage
-                    });
+                    // 更新图片分类标签
+                    setFirstImageCategory(newImageSrc.split('/').pop());
+                    
+                    // 可选：如果主图加载失败，设置回退
+                    mainImage.onerror = () => {
+                        console.error("切换主图失败", newImageSrc);
+                        mainImage.src = 'images/placeholder-large.png'; 
+                        mainImage.alt = '图片加载失败';
+                    };
                 }
-            });
-            
-            // 标记已设置点击事件
-            thumbnail.setAttribute('data-click-setup', 'true');
+            };
         });
-        
-        console.log('缩略图点击事件设置完成');
-        
-        // 初始化主图的类别标识
-        const activeThumb = document.querySelector('.thumbnail.active');
-        if (activeThumb) {
-            const category = activeThumb.getAttribute('data-category');
-            updateMainImageCategory(category);
-        }
+        console.log(`已为 ${thumbnails.length} 个缩略图设置点击事件`);
     }
     
     // 更新主图的类别标识
