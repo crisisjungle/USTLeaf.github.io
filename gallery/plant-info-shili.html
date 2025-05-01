@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石栗 - 一叶知科</title>
+    <link rel="icon" href="../logo.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../plant-info-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 植物信息页面特定样式 */
+        .plant-hero {
+            height: 50vh;
+            background-image: url('plant-database/0341石栗/1182, 1184_1.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        .plant-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        .plant-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        .plant-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .plant-hero h2 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        .plant-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .plant-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .plant-info {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        .plant-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .plant-image-container {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+        }
+        .plant-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .plant-image-container img:hover {
+            transform: scale(1.05);
+        }
+        .plant-details {
+            padding: 30px;
+        }
+        .plant-section {
+            margin-bottom: 25px;
+        }
+        .plant-section h3 {
+            color: #007844;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 8px;
+        }
+        .plant-section p {
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .plant-data {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .plant-data-item {
+            margin-bottom: 15px;
+        }
+        .plant-data-item strong {
+            display: block;
+            color: #007844;
+            margin-bottom: 5px;
+        }
+        .plant-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #007844;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .external-resources {
+            margin-top: 40px;
+        }
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .resource-link {
+            display: inline-block;
+            background: #f5f5f5;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .resource-link:hover {
+            background: #007844;
+            color: white;
+        }
+        @media (max-width: 900px) {
+            .plant-info {
+                grid-template-columns: 1fr;
+            }
+            .plant-hero h1 {
+                font-size: 2.5rem;
+            }
+            .plant-hero h2 {
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .plant-images {
+                grid-template-columns: 1fr;
+            }
+            .plant-data {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="一叶知科" class="logo-image">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../plant-trail.html">植物足迹</a>
+                    <ul>
+                        <li><a href="../plant-trail.html#map-scenic">校园景点</a></li>
+                        <li><a href="../plant-trail.html#map-trail">校园步道</a></li>
+                    </ul>
+                </li>
+                <li><a href="../gallery.html">植物图库</a>
+                    <ul>
+                        <li><a href="../gallery.html#gallery-database">植物数据库</a></li>
+                        <li><a href="../gallery.html#gallery-photos">植物图片库</a></li>
+                    </ul>
+                </li>
+                <li><a href="../about.html">关于我们</a>
+                    <ul>
+                        <li><a href="../about.html#about-us">关于我们</a></li>
+                        <li><a href="../about.html#contact-us">联系我们</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="plant-hero-fullscreen">
+        <img src="../plant-database/0341石栗/t1.jpg" alt="石栗 背景" class="hero-bg-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>石栗</h1>
+            <h2>Aleurites moluccana</h2>
+        </div>
+    </section>
+
+    <div class="main-content-area">
+        <div class="content-card">
+            <div class="card-body">
+                <div class="details-column">
+                    <h3>物种资料</h3>
+                    <dl class="plant-details-list">
+                        <dt>中文名</dt>
+                        <dd class="plant-name">石栗</dd>
+                        <dt>学名</dt>
+                        <dd class="scientific-name"><i>Aleurites moluccana</i></dd>
+                        <dt>科名</dt>
+                        <dd class="family-name">大戟科 (Euphorbiaceae)</dd>
+                        <dt>种类</dt>
+                        <dd class="plant-type">常绿乔木</dd>
+                        <dt>异名</dt>
+                        <dd class="synonyms">油桐、油果树、印度胡桃</dd>
+                        <dt>香港原生</dt>
+                        <dd class="native-status">否</dd>
+                        <dt>形态描述</dt>
+                        <dd class="description">石栗是一种大型常绿乔木，高可达20-25米。树干粗壮，树皮灰褐色，平滑或微裂。枝条具有灰白色的星状毛，尤其是在嫩枝上更为明显。叶互生，阔卵形至心形，长10-20厘米，宽8-18厘米，顶端渐尖，基部心形或圆形，全缘或有不明显的波状齿，上面深绿色，下面灰绿色，两面均被星状毛。叶柄长，约5-15厘米，顶端有两个明显的腺体。花小，单性，雌雄同株，呈大型圆锥花序生于枝顶。花白色或淡黄色，直径约1厘米。雄花多数，花萼2-3裂，花瓣5枚，长椭圆形，雄蕊15-20枚；雌花较少，花萼和花瓣与雄花相似，子房上位，2-3室，每室1枚胚珠。果实为核果状蒴果，近球形，直径4-6厘米，外皮革质，绿色至棕色，不开裂。种子1-2颗，卵圆形，坚硬，富含油脂。</dd>
+                        <dt><a href="https://www.elegislation.gov.hk/hk/cap586" target="_blank">《保护濒危动植物物种条例》(第586章)</a></dt>
+                        <dd><span class="status-cap586 status-tag info">未列入</span></dd>
+                        <dt><a href="https://www.elegislation.gov.hk/hk/cap96" target="_blank">《林区及郊区条例》(第96章)</a></dt>
+                        <dd><span class="status-cap96 status-tag info">未列入</span></dd>
+                        <dt>中国植物红皮书</dt>
+                        <dd><span class="status-redbook status-tag info">未评估</span></dd>
+                        <dt>IUCN红色名录</dt>
+                        <dd class="iucn-status">LC（无危）</dd>
+                        <dt>香港物种数据库</dt>
+                        <dd><a href="https://bih.gov.hk/sc/species-database/species-information/index.html?id=2236" target="_blank" class="external-link">查看香港物种数据库</a> (可查看花期、果期等详细信息)</dd>
+                        <dt>资料集详情</dt>
+                        <dd class="source-info">港科大校园植物调查 | 香港生物多样性网页</dd>
+                    </dl>
+                    <div class="back-button-area-left">
+                        <a href="../javascript:history.back()" class="button back-btn-inline">&larr; 返回</a>
+                    </div>
+                </div>
+
+                <div class="gallery-column">
+                    <h3>植物相册</h3>
+                    <div class="main-image-container">
+                        <img id="main-plant-image" src="../plant-database/0341石栗/t1.jpg" alt="石栗 主图">
+                    </div>
+                    <div class="thumbnail-container">
+                        <div class="thumbnail active" data-large-src="../plant-database/0341石栗/t1.jpg">
+                            <img src="../plant-database/0341石栗/t1.jpg" alt="石栗 缩略图1">
+                        </div>
+                        <div class="thumbnail" data-large-src="../plant-database/0341石栗/b1.jpg">
+                            <img src="../plant-database/0341石栗/b1.jpg" alt="石栗 缩略图2">
+                        </div>
+                        <div class="thumbnail" data-large-src="../plant-database/0341石栗/b2.jpg">
+                            <img src="../plant-database/0341石栗/b2.jpg" alt="石栗 缩略图3">
+                        </div>
+                        <div class="thumbnail" data-large-src="../plant-database/0341石栗/l1.jpg">
+                            <img src="../plant-database/0341石栗/l1.jpg" alt="石栗 缩略图4">
+                        </div>
+                        <div class="thumbnail" data-large-src="../plant-database/0341石栗/l2.jpg">
+                            <img src="../plant-database/0341石栗/l2.jpg" alt="石栗 缩略图5">
+                        </div>
+                        <div class="thumbnail" data-large-src="../plant-database/0341石栗/t2.jpg">
+                            <img src="../plant-database/0341石栗/t2.jpg" alt="石栗 缩略图6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <div class="footer-section">
+                <h3>植物足迹</h3>
+                <div class="section-divider"></div>
+                <ul>
+                    <li><a href="../plant-trail.html#map-scenic">校园景点</a></li>
+                    <li><a href="../plant-trail.html#map-trail">校园步道</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>植物数据库</h3>
+                <div class="section-divider"></div>
+                <ul>
+                    <li><a href="../gallery.html#gallery-database">植物数据库</a></li>
+                    <li><a href="../gallery.html#gallery-photos">植物图片库</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <div class="section-divider"></div>
+                <ul>
+                    <li><a href="../about.html#about-us">关于我们</a></li>
+                    <li><a href="../about.html#contact-us">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divider short"></div>
+        <div class="social-media">
+            <span>Follow us</span>
+            <a href="../#"><img src="../images/facebook-logo.png" alt="Facebook"></a>
+            <a href="../#"><img src="../images/twitter-logo.png" alt="Twitter"></a>
+            <a href="../#"><img src="../images/instagram-logo.png" alt="Instagram"></a>
+        </div>
+        <div class="footer-divider short"></div>
+        <p>&copy; 2025 一叶知科HKUST through a Leaf</p>
+    </footer>
+
+    <script src="../scripts.js"></script>
+    <script src="../plant-info-scripts.js"></script>
+</body>
+</html> 

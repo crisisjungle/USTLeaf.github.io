@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // -- 植物信息页特定逻辑 (合并到下方通用滚动逻辑) --
     /*
     if (isPlantInfoPage) {
-        // ... (旧的 plant-info 滚动逻辑 - 已合并)
+        // ... (旧的 gallery/plant-info 滚动逻辑 - 已合并)
     }
     */
 
@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowering: '4-6月',
                 distribution: '原产古巴和加勒比地区，现广泛种植于全球热带地区',
                 description: '高大优美的棕榈树，高可达25米。树干挺直如柱，灰白色，中部常膨大。叶为大型羽状复叶，长可达4米，小叶片线形，优雅下垂。是热带和亚热带地区最重要的观赏棕榈之一。',
-                infoLink: 'plant-info-0101.html'
+                infoLink: 'gallery/plant-info-0101.html'
             },
             {
                 id: '2', sectionId: 'section-image3',
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowering: '夏季至秋季',
                 distribution: '原产美洲热带地区，现广泛栽培于热带和亚热带地区',
                 description: '常绿灌木或小乔木，高2-6米。花成顶生或腋生总状花序，淡紫色或蓝紫色。果实球形浆果，成熟时金黄色，有毒但极具观赏价值。适应性强，耐修剪，常用于绿篱或独立观赏。',
-                infoLink: 'plant-info-0107.html'
+                infoLink: 'gallery/plant-info-0107.html'
             },
             {
                 id: '3', sectionId: 'section-image3',
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowering: '3-4月',
                 distribution: '中国南方原生种的园艺变种',
                 description: '常绿灌木或小乔木，高1-3米。叶卵形至椭圆形，叶面呈紫红色至暗红褐色。花瓣带状，鲜红色或粉红色，十分艳丽。耐寒性较强，适应性广，是优良的观赏植物。',
-                infoLink: 'plant-info-0108.html'
+                infoLink: 'gallery/plant-info-0108.html'
             },
             {
                 id: '4', sectionId: 'section-image3',
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowering: '5-7月',
                 distribution: '原产诺福克岛，现广泛引种于全球热带和亚热带地区',
                 description: '常绿乔木，树形优美，呈塔状。',
-                infoLink: 'plant-info-0105.html'
+                infoLink: 'gallery/plant-info-0105.html'
             },
             {
                 id: '5', sectionId: 'section-image3',
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowering: '全年',
                 distribution: '亚洲热带和亚热带地区',
                 description: '常绿乔木，叶片革质，适应性强。',
-                infoLink: 'plant-info-0102.html'
+                infoLink: 'gallery/plant-info-0102.html'
             },
             {
                 id: '6', sectionId: 'section-image3',
@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowering: '春夏季',
                 distribution: '原产亚洲热带地区和太平洋岛屿',
                 description: '常绿灌木，高2-3米。茎干直立，叶片披针形或椭圆状披针形，叶色多样，有绿、红、紫等多种色彩和花纹。圆锥花序顶生，花小而芳香，白色或淡紫色。喜温暖湿润环境，是受欢迎的室内外观叶植物。',
-                infoLink: 'plant-info-0106.html'
+                infoLink: 'gallery/plant-info-0106.html'
             },
             {
                 id: '7', sectionId: 'section-image3',
@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowering: '5-7月',
                 distribution: '原产马达加斯加，现广泛种植于热带地区',
                 description: '落叶大乔木，高可达15米，树冠开展呈伞形。叶为二回羽状复叶，小叶细小。花大而艳丽，鲜红色或橙红色，花期长。果荚大型，黑褐色。是著名的热带观赏树种，有"热带火焰树"之称。',
-                infoLink: 'plant-info-0103.html'
+                infoLink: 'gallery/plant-info-0103.html'
             },
             {
                 id: '8', sectionId: 'section-image3',
@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowering: '4-5月',
                 distribution: '中国南方、日本、韩国等东亚地区',
                 description: '大型常绿乔木，高可达30米，树冠广阔。全株具樟脑香气，为重要的药用植物和工业原料来源。叶革质，卵形，有光泽。花小，黄绿色。果实球形，成熟时蓝黑色。寿命长，树形优美，是重要的园林树种。',
-                infoLink: 'plant-info-0104.html'
+                infoLink: 'gallery/plant-info-0104.html'
             },
             // Section 2: 偷情小径 (section-image1)
             {
@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0331麻楝/l1.jpg',
                 family: '楝科', habit: '乔木', flowering: '春末夏初', distribution: '亚洲热带',
                 description: '落叶乔木，高达30米。羽状复叶，小叶卵形或长椭圆形。圆锥花序顶生，花白色或淡黄色。',
-                infoLink: 'plant-info-mahlian.html'
+                infoLink: 'gallery/plant-info-mahlian.html'
             },
             // ... (其他偷情小径植物数据) ...
              {
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0328蒲葵/t1.jpg',
                 family: '棕榈科', habit: '常绿乔木', flowering: '春季', distribution: '中国南部、日本南部',
                 description: '常绿乔木，高可达20米。叶扇形，深裂。肉穗花序多分枝，花小，黄绿色。果实椭圆形，成熟时蓝黑色。',
-                infoLink: 'plant-info-pukui.html'
+                infoLink: 'gallery/plant-info-pukui.html'
             },
             {
                 id: '3', sectionId: 'section-image1',
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0327黄葛树/r1.jpg',
                 family: '桑科', habit: '落叶乔木', flowering: '春夏季', distribution: '亚洲热带至澳大利亚',
                 description: '大型落叶乔木，有气根。叶卵形或椭圆形。隐头花序生于叶腋或老枝上。',
-                infoLink: 'plant-info-huanggeshu.html'
+                infoLink: 'gallery/plant-info-huanggeshu.html'
             },
              {
                 id: '4', sectionId: 'section-image1',
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0307山指甲/f5.JPG',
                 family: '木犀科 Oleaceae', habit: '常绿灌木或小乔木', flowering: '春末夏初', distribution: '东亚',
                 description: '半常绿或常绿灌木/小乔木。叶对生，椭圆形或卵形。圆锥花序顶生，花小，白色，有芳香。',
-                infoLink: 'plant-info-shanzhijia.html'
+                infoLink: 'gallery/plant-info-shanzhijia.html'
             },
              {
                 id: '5', sectionId: 'section-image1',
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0341石栗/t1.jpg',
                 family: '大戟科', habit: '常绿乔木', flowering: '春夏季', distribution: '亚洲热带至太平洋岛屿',
                 description: '常绿乔木，高达20米。叶卵形，幼叶常掌状分裂。圆锥花序顶生，花白色。果实核果状。',
-                infoLink: 'plant-info-shili.html'
+                infoLink: 'gallery/plant-info-shili.html'
             },
             {
                 id: '6', sectionId: 'section-image1',
@@ -490,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0314锦绣杜鹃/f1.jpg', // Updated path and verified filename
                 family: '杜鹃花科', habit: '常绿或半常绿灌木', flowering: '春季', distribution: '园艺栽培种，广泛分布',
                 description: '锦绣杜鹃是常见的园艺品种，常绿或半常绿灌木，高1-2米。叶椭圆形或卵状披针形。花冠漏斗状，色彩艳丽，通常为玫瑰红色或紫色。',
-                infoLink: 'plant-info-jinxidujuan.html' // Updated link
+                infoLink: 'gallery/plant-info-jinxidujuan.html' // Updated link
             },
             {
                 id: '7', sectionId: 'section-image1',
@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0340银珠/t1.jpg',
                 family: '紫金牛科', habit: '常绿小灌木', flowering: '夏季', distribution: '东亚、东南亚',
                 description: '常绿小灌木，高1-2米。叶椭圆形，边缘波状。伞形花序顶生或腋生，花白色或粉红色。果实球形，红色。',
-                infoLink: 'plant-info-yinzhu.html'
+                infoLink: 'gallery/plant-info-yinzhu.html'
             },
              {
                 id: '8', sectionId: 'section-image1',
@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0333圆柏/t1.jpg',
                 family: '柏科', habit: '常绿乔木或灌木', flowering: '春季', distribution: '东亚',
                 description: '常绿乔木或灌木。叶有鳞形和刺形两种。球果近球形，成熟时蓝黑色，被白粉。',
-                infoLink: 'plant-info-yuanbai.html'
+                infoLink: 'gallery/plant-info-yuanbai.html'
             },
             // Section 3: 天一泉 (section-image2)
             // 注意：这里的植物信息需要根据实际情况填写
@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0424细叶榕/b3.JPG',
                 family: '桑科', habit: '常绿乔木', flowering: '全年', distribution: '亚洲热带和亚热带',
                 description: '高达20米，冠幅广阔，常有气根，叶片革质卵形至椭圆形，果实为隐头花序。',
-                infoLink: 'plant-info-xiyerong.html' // 可能需要不同的链接
+                infoLink: 'gallery/plant-info-xiyerong.html' // 可能需要不同的链接
             },
             {
                 id: '2', sectionId: 'section-image2',
@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0421日本葵/l3.JPG',
                 family: '苏铁科', habit: '常绿棕榈状木本植物', flowering: '夏季', distribution: '日本南部、中国东南部',
                 description: '茎干粗壮，圆柱形。羽状复叶簇生于茎顶。雌雄异株，雄花序圆柱状，雌花序扁球形。',
-                infoLink: 'plant-info-ribenkui.html'
+                infoLink: 'gallery/plant-info-ribenkui.html'
             },
              {
                 id: '3', sectionId: 'section-image2',
@@ -532,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0418菲岛福木/t1.JPG',
                 family: '藤黄科', habit: '常绿乔木', flowering: '春夏季', distribution: '菲律宾、台湾、琉球群岛',
                 description: '常绿乔木，高可达20米。叶对生，厚革质，倒卵形或椭圆形。花单性，雌雄异株。果实球形，黄色。',
-                infoLink: 'plant-info-feidaofumu.html'
+                infoLink: 'gallery/plant-info-feidaofumu.html'
             },
             {
                 id: '4', sectionId: 'section-image2',
@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0417桃花心木/b1.JPG',
                 family: '楝科', habit: '半常绿乔木', flowering: '春夏季', distribution: '美洲热带',
                 description: '半常绿乔木，高达20米。羽状复叶，小叶卵形或披针形。圆锥花序腋生，花小，黄绿色。蒴果卵形，木质。',
-                infoLink: 'plant-info-taohuaxinmu.html'
+                infoLink: 'gallery/plant-info-taohuaxinmu.html'
             },
             {
                 id: '5', sectionId: 'section-image2',
@@ -548,7 +548,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0416王棕/l3.JPG',
                 family: '棕榈科', habit: '常绿乔木', flowering: '春夏季', distribution: '美洲热带',
                 description: '高达20–30米，树干灰白色，羽状复叶长可达4米，花小而白色，果实为橙黄色浆果。',
-                infoLink: 'plant-info-wangzong.html' // 可能需要不同的链接
+                infoLink: 'gallery/plant-info-wangzong.html' // 可能需要不同的链接
             },
             {
                 id: '6', sectionId: 'section-image2',
@@ -556,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0415蒲葵/FR0A5825.JPG',
                 family: '棕榈科', habit: '常绿乔木', flowering: '春季', distribution: '中国南部、日本南部',
                 description: '常绿乔木，高可达20米。叶扇形，深裂。肉穗花序多分枝，花小，黄绿色。果实椭圆形，成熟时蓝黑色。',
-                infoLink: 'plant-info-pukui-new.html' // 可能需要不同的链接
+                infoLink: 'gallery/plant-info-pukui-new.html' // 可能需要不同的链接
             },
             // ... (可以添加更多植物数据)
         ];
@@ -1017,32 +1017,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const markers = document.querySelectorAll('.marker');
         const plants = [
             // 红鸟广场区域的植物 (新添加)
-            { id: "1", sectionId: "section-image3", name: "王棕", scientificName: "Roystonea regia", family: "棕榈科 Arecaceae", habit: "常绿乔木", flowering: "4-7月", distribution: "原产古巴和中美洲，现广泛引种于全球热带和亚热带地区", description: "高大优美的棕榈树，树干挺直如柱，灰白色。", image: "plant-database/0101王棕/t2.jpeg", infoLink: "plant-info-0101.html" },
-            { id: "2", sectionId: "section-image3", name: "假连翘", scientificName: "Duranta erecta", family: "马鞭草科 Verbenaceae", habit: "常绿灌木", flowering: "4-10月", distribution: "原产美洲热带和亚热带地区，现广泛引种于全球热带和亚热带地区", description: "常绿灌木，花朵紫色或白色，果实黄色。", image: "plant-database/0107假连翘/l1.jpeg", infoLink: "plant-info-0107.html" },
-            { id: "3", sectionId: "section-image3", name: "红花檵木", scientificName: "Loropetalum chinense var. rubrum", family: "金缕梅科 Hamamelidaceae", habit: "常绿灌木或小乔木", flowering: "3-4月", distribution: "中国南部、日本", description: "常绿灌木或小乔木，叶色紫红，花朵粉红色或红色。", image: "plant-database/0108红花檵木/l1.jpeg", infoLink: "plant-info-0108.html" },
-            { id: "4", sectionId: "section-image3", name: "异叶南洋杉", scientificName: "Araucaria heterophylla", family: "南洋杉科 Araucariaceae", habit: "常绿乔木", flowering: "5-7月", distribution: "原产诺福克岛，现广泛引种于全球热带和亚热带地区", description: "常绿乔木，树形优美，呈塔状。", image: "plant-database/0105异叶南洋杉/t1.jpeg", infoLink: "plant-info-0105.html" },
-            { id: "5", sectionId: "section-image3", name: "细叶榕", scientificName: "Ficus microcarpa", family: "桑科 Moraceae", habit: "常绿乔木", flowering: "全年", distribution: "亚洲热带和亚热带地区", description: "常绿乔木，叶片革质，适应性强。", image: "plant-database/0102细叶榕/b1.jpeg", infoLink: "plant-info-0102.html" },
-            { id: "6", sectionId: "section-image3", name: "朱蕉", scientificName: "Cordyline fruticosa", family: "龙舌兰科 Agavaceae", habit: "常绿灌木", flowering: "不明显", distribution: "原产亚洲东南部和太平洋岛屿，现广泛引种于全球热带和亚热带地区", description: "常绿灌木，叶色多样，常用于园林观赏。", image: "plant-database/0106朱蕉/l2.jpeg", infoLink: "plant-info-0106.html" },
-            { id: "7", sectionId: "section-image3", name: "凤凰木", scientificName: "Delonix regia", family: "豆科 Fabaceae", habit: "落叶乔木", flowering: "5-7月", distribution: "原产马达加斯加，现广泛引种于全球热带地区", description: "落叶乔木，夏季开鲜艳的红色花朵。", image: "plant-database/0103凤凰木/t1.jpeg", infoLink: "plant-info-0103.html" },
-            { id: "8", sectionId: "section-image3", name: "樟树", scientificName: "Cinnamomum camphora", family: "樟科 Lauraceae", habit: "常绿乔木", flowering: "4-5月", distribution: "中国南部、日本、韩国", description: "常绿乔木，全株具樟脑香气。", image: "plant-database/0104樟树/t1.jpeg", infoLink: "plant-info-0104.html" },
+            { id: "1", sectionId: "section-image3", name: "王棕", scientificName: "Roystonea regia", family: "棕榈科 Arecaceae", habit: "常绿乔木", flowering: "4-7月", distribution: "原产古巴和中美洲，现广泛引种于全球热带和亚热带地区", description: "高大优美的棕榈树，树干挺直如柱，灰白色。", image: "plant-database/0101王棕/t2.jpeg", infoLink: "gallery/plant-info-0101.html" },
+            { id: "2", sectionId: "section-image3", name: "假连翘", scientificName: "Duranta erecta", family: "马鞭草科 Verbenaceae", habit: "常绿灌木", flowering: "4-10月", distribution: "原产美洲热带和亚热带地区，现广泛引种于全球热带和亚热带地区", description: "常绿灌木，花朵紫色或白色，果实黄色。", image: "plant-database/0107假连翘/l1.jpeg", infoLink: "gallery/plant-info-0107.html" },
+            { id: "3", sectionId: "section-image3", name: "红花檵木", scientificName: "Loropetalum chinense var. rubrum", family: "金缕梅科 Hamamelidaceae", habit: "常绿灌木或小乔木", flowering: "3-4月", distribution: "中国南部、日本", description: "常绿灌木或小乔木，叶色紫红，花朵粉红色或红色。", image: "plant-database/0108红花檵木/l1.jpeg", infoLink: "gallery/plant-info-0108.html" },
+            { id: "4", sectionId: "section-image3", name: "异叶南洋杉", scientificName: "Araucaria heterophylla", family: "南洋杉科 Araucariaceae", habit: "常绿乔木", flowering: "5-7月", distribution: "原产诺福克岛，现广泛引种于全球热带和亚热带地区", description: "常绿乔木，树形优美，呈塔状。", image: "plant-database/0105异叶南洋杉/t1.jpeg", infoLink: "gallery/plant-info-0105.html" },
+            { id: "5", sectionId: "section-image3", name: "细叶榕", scientificName: "Ficus microcarpa", family: "桑科 Moraceae", habit: "常绿乔木", flowering: "全年", distribution: "亚洲热带和亚热带地区", description: "常绿乔木，叶片革质，适应性强。", image: "plant-database/0102细叶榕/b1.jpeg", infoLink: "gallery/plant-info-0102.html" },
+            { id: "6", sectionId: "section-image3", name: "朱蕉", scientificName: "Cordyline fruticosa", family: "龙舌兰科 Agavaceae", habit: "常绿灌木", flowering: "不明显", distribution: "原产亚洲东南部和太平洋岛屿，现广泛引种于全球热带和亚热带地区", description: "常绿灌木，叶色多样，常用于园林观赏。", image: "plant-database/0106朱蕉/l2.jpeg", infoLink: "gallery/plant-info-0106.html" },
+            { id: "7", sectionId: "section-image3", name: "凤凰木", scientificName: "Delonix regia", family: "豆科 Fabaceae", habit: "落叶乔木", flowering: "5-7月", distribution: "原产马达加斯加，现广泛引种于全球热带地区", description: "落叶乔木，夏季开鲜艳的红色花朵。", image: "plant-database/0103凤凰木/t1.jpeg", infoLink: "gallery/plant-info-0103.html" },
+            { id: "8", sectionId: "section-image3", name: "樟树", scientificName: "Cinnamomum camphora", family: "樟科 Lauraceae", habit: "常绿乔木", flowering: "4-5月", distribution: "中国南部、日本、韩国", description: "常绿乔木，全株具樟脑香气。", image: "plant-database/0104樟树/t1.jpeg", infoLink: "gallery/plant-info-0104.html" },
 
             // 偷情小径区域的植物
-            { id: "1", sectionId: "section-image1", name: "麻楝 (Chukrasia tabularis)", family: "楝科 Meliaceae", habit: "常绿乔木", flowering: "5-6月", distribution: "热带亚洲，包括中国南部、印度和东南亚", description: "麻楝是一种高大的常绿乔木，常高达20-30米。叶子呈羽状复叶，花小而芳香。在多种环境中生长良好，树龄可达百年以上。", image: "plant-database/0331麻楝/l1.jpg", infoLink: "plant-info-mahlian.html" },
-            { id: "2", sectionId: "section-image1", name: "蒲葵 (Livistona chinensis)", family: "棕榈科 Arecaceae", habit: "常绿乔木", flowering: "4-5月", distribution: "中国南部、日本、琉球群岛", description: "蒲葵是一种优雅的扇形棕榈树，树干挺直，树冠呈圆形。叶子大而圆，呈扇形，边缘下垂，形似中国传统的蒲扇，因而得名。在广东、福建、台湾等地常见于庭园种植。", image: "plant-database/0328蒲葵/t1.jpg", infoLink: "plant-info-pukui.html" },
-            { id: "3", sectionId: "section-image1", name: "黄葛树 (Ficus virens)", family: "桑科 Moraceae", habit: "常绿乔木", flowering: "3-5月", distribution: "亚洲热带和亚热带地区", description: "黄葛树是一种高大的常绿乔木，树冠广阔，有气生根。叶片卵形至椭圆形，深绿色有光泽。果实小而多，成熟时呈红色或紫色。在中国南方常作为行道树或庭院树种植。", image: "plant-database/0327黄葛树/r1.jpg", infoLink: "plant-info-huanggeshu.html" },
-            { id: "4", sectionId: "section-image1", name: "山指甲 (Rhododendron simsii)", family: "杜鹃花科 Ericaceae", habit: "常绿或半常绿灌木", flowering: "2-4月", distribution: "中国中南部和华南地区、越南", description: "山指甲是一种灌木，高1-3米。叶片椭圆形或卵形，花朵艳丽，颜色多变，从粉红到深红。是中国原生杜鹃花的一种，常用于园林观赏。", image: "plant-database/0307山指甲/f5.JPG", infoLink: "plant-info-shanzhijia.html" },
-            { id: "5", sectionId: "section-image1", name: "石栗 (Aleurites moluccana)", family: "大戟科 Euphorbiaceae", habit: "常绿乔木", flowering: "5-7月", distribution: "东南亚、印度、太平洋岛屿", description: "石栗是一种中型至大型常绿乔木，高可达20米。叶片宽大，星状或掌状，表面有一层蜡质粉末，呈银白色。果实大而圆，有硬壳，类似于栗子，内含油性种子。在热带地区广泛种植，种子可提取油脂用于照明和食用。", image: "plant-database/0341石栗/t1.jpg", infoLink: "plant-info-shili.html" },
-            { id: "6", sectionId: "section-image1", name: "锦绣杜鹃 (Rhododendron pulchrum)", family: "杜鹃花科 Ericaceae", habit: "常绿或半常绿灌木", flowering: "3-5月", distribution: "中国南部、日本", description: "锦绣杜鹃是常见的园艺品种，常绿或半常绿灌木，高1-2米。叶椭圆形或卵状披针形。花冠漏斗状，色彩艳丽，通常为玫瑰红色或紫色。", image: "plant-database/0314锦绣杜鹃/f1.jpg", infoLink: "plant-info-jinxidujuan.html" },
-            { id: "7", sectionId: "section-image1", name: "银珠 (Ardisia crenata)", family: "紫金牛科 Myrsinaceae", habit: "常绿灌木", flowering: "6-8月", distribution: "中国南部、日本、朝鲜半岛", description: "银珠是一种小型常绿灌木，高度通常不超过1米。叶子深绿色有光泽，边缘有细锯齿。开小白花，结鲜红色浆果，冬季尤为醒目，故又称'十样锦'。耐阴性强，适合作为室内或阴凉处的观赏植物。", image: "plant-database/0340银珠/t1.jpg", infoLink: "plant-info-yinzhu.html" },
-            { id: "8", sectionId: "section-image1", name: "圆柏 (Juniperus chinensis)", family: "柏科 Cupressaceae", habit: "常绿乔木", flowering: "3-4月", distribution: "中国北部和中部、蒙古、日本、韩国", description: "圆柏是一种常绿针叶树，可长成高大乔木或修剪成灌木形态。叶子鳞片状或针状，深绿色。球果小而圆，成熟时呈蓝黑色。适应性强，耐干旱和贫瘠土壤，常用于园林绿化和防风固沙。", image: "plant-database/0333圆柏/t1.jpg", infoLink: "plant-info-yuanbai.html" },
+            { id: "1", sectionId: "section-image1", name: "麻楝 (Chukrasia tabularis)", family: "楝科 Meliaceae", habit: "常绿乔木", flowering: "5-6月", distribution: "热带亚洲，包括中国南部、印度和东南亚", description: "麻楝是一种高大的常绿乔木，常高达20-30米。叶子呈羽状复叶，花小而芳香。在多种环境中生长良好，树龄可达百年以上。", image: "plant-database/0331麻楝/l1.jpg", infoLink: "gallery/plant-info-mahlian.html" },
+            { id: "2", sectionId: "section-image1", name: "蒲葵 (Livistona chinensis)", family: "棕榈科 Arecaceae", habit: "常绿乔木", flowering: "4-5月", distribution: "中国南部、日本、琉球群岛", description: "蒲葵是一种优雅的扇形棕榈树，树干挺直，树冠呈圆形。叶子大而圆，呈扇形，边缘下垂，形似中国传统的蒲扇，因而得名。在广东、福建、台湾等地常见于庭园种植。", image: "plant-database/0328蒲葵/t1.jpg", infoLink: "gallery/plant-info-pukui.html" },
+            { id: "3", sectionId: "section-image1", name: "黄葛树 (Ficus virens)", family: "桑科 Moraceae", habit: "常绿乔木", flowering: "3-5月", distribution: "亚洲热带和亚热带地区", description: "黄葛树是一种高大的常绿乔木，树冠广阔，有气生根。叶片卵形至椭圆形，深绿色有光泽。果实小而多，成熟时呈红色或紫色。在中国南方常作为行道树或庭院树种植。", image: "plant-database/0327黄葛树/r1.jpg", infoLink: "gallery/plant-info-huanggeshu.html" },
+            { id: "4", sectionId: "section-image1", name: "山指甲 (Rhododendron simsii)", family: "杜鹃花科 Ericaceae", habit: "常绿或半常绿灌木", flowering: "2-4月", distribution: "中国中南部和华南地区、越南", description: "山指甲是一种灌木，高1-3米。叶片椭圆形或卵形，花朵艳丽，颜色多变，从粉红到深红。是中国原生杜鹃花的一种，常用于园林观赏。", image: "plant-database/0307山指甲/f5.JPG", infoLink: "gallery/plant-info-shanzhijia.html" },
+            { id: "5", sectionId: "section-image1", name: "石栗 (Aleurites moluccana)", family: "大戟科 Euphorbiaceae", habit: "常绿乔木", flowering: "5-7月", distribution: "东南亚、印度、太平洋岛屿", description: "石栗是一种中型至大型常绿乔木，高可达20米。叶片宽大，星状或掌状，表面有一层蜡质粉末，呈银白色。果实大而圆，有硬壳，类似于栗子，内含油性种子。在热带地区广泛种植，种子可提取油脂用于照明和食用。", image: "plant-database/0341石栗/t1.jpg", infoLink: "gallery/plant-info-shili.html" },
+            { id: "6", sectionId: "section-image1", name: "锦绣杜鹃 (Rhododendron pulchrum)", family: "杜鹃花科 Ericaceae", habit: "常绿或半常绿灌木", flowering: "3-5月", distribution: "中国南部、日本", description: "锦绣杜鹃是常见的园艺品种，常绿或半常绿灌木，高1-2米。叶椭圆形或卵状披针形。花冠漏斗状，色彩艳丽，通常为玫瑰红色或紫色。", image: "plant-database/0314锦绣杜鹃/f1.jpg", infoLink: "gallery/plant-info-jinxidujuan.html" },
+            { id: "7", sectionId: "section-image1", name: "银珠 (Ardisia crenata)", family: "紫金牛科 Myrsinaceae", habit: "常绿灌木", flowering: "6-8月", distribution: "中国南部、日本、朝鲜半岛", description: "银珠是一种小型常绿灌木，高度通常不超过1米。叶子深绿色有光泽，边缘有细锯齿。开小白花，结鲜红色浆果，冬季尤为醒目，故又称'十样锦'。耐阴性强，适合作为室内或阴凉处的观赏植物。", image: "plant-database/0340银珠/t1.jpg", infoLink: "gallery/plant-info-yinzhu.html" },
+            { id: "8", sectionId: "section-image1", name: "圆柏 (Juniperus chinensis)", family: "柏科 Cupressaceae", habit: "常绿乔木", flowering: "3-4月", distribution: "中国北部和中部、蒙古、日本、韩国", description: "圆柏是一种常绿针叶树，可长成高大乔木或修剪成灌木形态。叶子鳞片状或针状，深绿色。球果小而圆，成熟时呈蓝黑色。适应性强，耐干旱和贫瘠土壤，常用于园林绿化和防风固沙。", image: "plant-database/0333圆柏/t1.jpg", infoLink: "gallery/plant-info-yuanbai.html" },
             
             // 天一泉区域的植物
-            { id: "1", sectionId: "section-image2", name: "细叶榕", scientificName: "Ficus microcarpa", description: "常绿乔木，叶片革质，卵形至椭圆形，果实为隐头果。适应性强，常见于公园和街道两旁。", image: "plant-database/0424细叶榕/b3.JPG", infoLink: "plant-info-xiyerong.html" },
-            { id: "2", sectionId: "section-image2", name: "日本葵 (Fatsia japonica)", family: "五加科 Araliaceae", habit: "常绿灌木", flowering: "10-11月", distribution: "日本、韩国、台湾", description: "日本葵是一种常绿灌木，高可达3米。叶子大而漂亮，掌状深裂，革质，深绿有光泽。花小而白，排列成伞形花序。耐阴性强，喜湿润环境，是常见的室内观叶植物，也适合作为庭院或公园的下层绿化植物。", image: "plant-database/0421日本葵/l3.JPG", infoLink: "plant-info-ribenkui.html" },
-            { id: "3", sectionId: "section-image2", name: "菲岛福木 (Garcinia subelliptica)", family: "藤黄科 Clusiaceae", habit: "常绿乔木", flowering: "5-6月", distribution: "中国南部、日本琉球群岛、菲律宾", description: "菲岛福木是一种中型常绿乔木，高可达10米。树冠圆整，枝叶密集。叶片椭圆形，革质，深绿色有光泽。花小而芳香，雌雄异株。果实球形，成熟时呈橙黄色，可食用。木材坚硬，可用于建筑和家具制作。树形优美，常作为园林观赏树或行道树栽培。", image: "plant-database/0418菲岛福木/t1.JPG", infoLink: "plant-info-feidaofumu.html" },
-            { id: "4", sectionId: "section-image2", name: "桃花心木 (Swietenia macrophylla)", family: "楝科 Meliaceae", habit: "常绿乔木", flowering: "4-5月", distribution: "原产中南美洲，现广泛引种于亚洲热带地区", description: "桃花心木是著名的热带珍贵用材树种，高可达45米。树干通直，树冠广展。叶为偶数羽状复叶，小叶片镰刀状长椭圆形。果实为大型木质蒴果，种子扁平有翅。木材红褐色，纹理美观，是制作高级家具的优良材料。在园林中常作为行道树或景观树种植。", image: "plant-database/0417桃花心木/b1.JPG", infoLink: "plant-info-taohuaxinmu.html" },
-            { id: "5", sectionId: "section-image2", name: "王棕 (Roystonea regia)", family: "棕榈科 Arecaceae", habit: "常绿乔木", flowering: "4-7月", distribution: "原产古巴和中美洲，现广泛引种于全球热带和亚热带地区", description: "王棕是一种高大优美的棕榈树，高可达25米。树干挺直如柱，灰白色，中部常膨大。叶为大型羽状复叶，长可达4米，小叶片线形，优雅下垂。花序大型，分枝多。果实椭圆形，红色至紫黑色。是热带和亚热带地区最重要的观赏棕榈之一，常用于道路、广场和公园绿化。", image: "plant-database/0416王棕/l3.JPG", infoLink: "plant-info-wangzong.html" },
-            { id: "6", sectionId: "section-image2", name: "蒲葵 (Livistona chinensis)", family: "棕榈科 Arecaceae", habit: "常绿乔木", flowering: "3-5月", distribution: "中国南部、日本、琉球群岛", description: "蒲葵是一种优雅的扇形棕榈树，树干挺直，树冠呈圆形。叶子大而圆，呈扇形，边缘下垂，形似中国传统的蒲扇，因而得名。在广东、福建、台湾等地常见于庭园种植。叶片可用于编织扇子、帽子等生活用品，树干可用于建筑和家具制作，果实和幼芽可食用，全株均有药用价值。", image: "plant-database/0415蒲葵/b1.JPG", infoLink: "plant-info-pukui-new.html" }
+            { id: "1", sectionId: "section-image2", name: "细叶榕", scientificName: "Ficus microcarpa", description: "常绿乔木，叶片革质，卵形至椭圆形，果实为隐头果。适应性强，常见于公园和街道两旁。", image: "plant-database/0424细叶榕/b3.JPG", infoLink: "gallery/plant-info-xiyerong.html" },
+            { id: "2", sectionId: "section-image2", name: "日本葵 (Fatsia japonica)", family: "五加科 Araliaceae", habit: "常绿灌木", flowering: "10-11月", distribution: "日本、韩国、台湾", description: "日本葵是一种常绿灌木，高可达3米。叶子大而漂亮，掌状深裂，革质，深绿有光泽。花小而白，排列成伞形花序。耐阴性强，喜湿润环境，是常见的室内观叶植物，也适合作为庭院或公园的下层绿化植物。", image: "plant-database/0421日本葵/l3.JPG", infoLink: "gallery/plant-info-ribenkui.html" },
+            { id: "3", sectionId: "section-image2", name: "菲岛福木 (Garcinia subelliptica)", family: "藤黄科 Clusiaceae", habit: "常绿乔木", flowering: "5-6月", distribution: "中国南部、日本琉球群岛、菲律宾", description: "菲岛福木是一种中型常绿乔木，高可达10米。树冠圆整，枝叶密集。叶片椭圆形，革质，深绿色有光泽。花小而芳香，雌雄异株。果实球形，成熟时呈橙黄色，可食用。木材坚硬，可用于建筑和家具制作。树形优美，常作为园林观赏树或行道树栽培。", image: "plant-database/0418菲岛福木/t1.JPG", infoLink: "gallery/plant-info-feidaofumu.html" },
+            { id: "4", sectionId: "section-image2", name: "桃花心木 (Swietenia macrophylla)", family: "楝科 Meliaceae", habit: "常绿乔木", flowering: "4-5月", distribution: "原产中南美洲，现广泛引种于亚洲热带地区", description: "桃花心木是著名的热带珍贵用材树种，高可达45米。树干通直，树冠广展。叶为偶数羽状复叶，小叶片镰刀状长椭圆形。果实为大型木质蒴果，种子扁平有翅。木材红褐色，纹理美观，是制作高级家具的优良材料。在园林中常作为行道树或景观树种植。", image: "plant-database/0417桃花心木/b1.JPG", infoLink: "gallery/plant-info-taohuaxinmu.html" },
+            { id: "5", sectionId: "section-image2", name: "王棕 (Roystonea regia)", family: "棕榈科 Arecaceae", habit: "常绿乔木", flowering: "4-7月", distribution: "原产古巴和中美洲，现广泛引种于全球热带和亚热带地区", description: "王棕是一种高大优美的棕榈树，高可达25米。树干挺直如柱，灰白色，中部常膨大。叶为大型羽状复叶，长可达4米，小叶片线形，优雅下垂。花序大型，分枝多。果实椭圆形，红色至紫黑色。是热带和亚热带地区最重要的观赏棕榈之一，常用于道路、广场和公园绿化。", image: "plant-database/0416王棕/l3.JPG", infoLink: "gallery/plant-info-wangzong.html" },
+            { id: "6", sectionId: "section-image2", name: "蒲葵 (Livistona chinensis)", family: "棕榈科 Arecaceae", habit: "常绿乔木", flowering: "3-5月", distribution: "中国南部、日本、琉球群岛", description: "蒲葵是一种优雅的扇形棕榈树，树干挺直，树冠呈圆形。叶子大而圆，呈扇形，边缘下垂，形似中国传统的蒲扇，因而得名。在广东、福建、台湾等地常见于庭园种植。叶片可用于编织扇子、帽子等生活用品，树干可用于建筑和家具制作，果实和幼芽可食用，全株均有药用价值。", image: "plant-database/0415蒲葵/b1.JPG", infoLink: "gallery/plant-info-pukui-new.html" }
         ];
         
         // --- 新增：标记点击事件处理 ---
@@ -1348,7 +1348,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         closeCardBtn?.addEventListener('click', hidePlantCard);
         cardOverlay?.addEventListener('click', hidePlantCard);
-        document.addEventListener('click', function(e) { if (!e.target.closest('.marker') && !e.target.closest('.plant-info-card') && plantInfoCard.classList.contains('show')) { hidePlantCard(); } });
+        document.addEventListener('click', function(e) { if (!e.target.closest('.marker') && !e.target.closest('.gallery/plant-info-card') && plantInfoCard.classList.contains('show')) { hidePlantCard(); } });
         document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && plantInfoCard.classList.contains('show')) { hidePlantCard(); } });
         console.log("Plant info card listeners added.");
     }
@@ -1634,71 +1634,71 @@ document.addEventListener('DOMContentLoaded', function() {
                 // 根据植物名称对应到相应的信息页
                 switch(plantNameLower) {
                     case '蒲葵':
-                        infoLink = 'plant-info-pukui.html';
+                        infoLink = 'gallery/plant-info-pukui.html';
                         break;
                     case '黄葛树':
-                        infoLink = 'plant-info-huanggeshu.html';
+                        infoLink = 'gallery/plant-info-huanggeshu.html';
                         break;
                     case '杜鹃':
-                        infoLink = 'plant-info-dujuan.html';
+                        infoLink = 'gallery/plant-info-dujuan.html';
                         break;
                     case '麻楝':
-                        infoLink = 'plant-info-mahlian.html';
+                        infoLink = 'gallery/plant-info-mahlian.html';
                         break;
                     case '山指甲':
-                        infoLink = 'plant-info-shanzhijia.html';
+                        infoLink = 'gallery/plant-info-shanzhijia.html';
                         break;
                     case '石栗':
-                        infoLink = 'plant-info-shili.html';
+                        infoLink = 'gallery/plant-info-shili.html';
                         break;
                     case '银珠':
-                        infoLink = 'plant-info-yinzhu.html';
+                        infoLink = 'gallery/plant-info-yinzhu.html';
                         break;
                     case '圆柏':
-                        infoLink = 'plant-info-yuanbai.html';
+                        infoLink = 'gallery/plant-info-yuanbai.html';
                         break;
                     case '台湾相思':
-                        infoLink = 'plant-info-taiwanxiangsi.html';
+                        infoLink = 'gallery/plant-info-taiwanxiangsi.html';
                         break;
                     case '鹅掌藤':
-                        infoLink = 'plant-info-schefflera-heptaphylla.html';
+                        infoLink = 'gallery/plant-info-schefflera-heptaphylla.html';
                         break;
                     case '细叶榕':
-                        infoLink = 'plant-info-xiyerong.html';
+                        infoLink = 'gallery/plant-info-xiyerong.html';
                         break;
                     case '王棕':
-                        infoLink = 'plant-info-wangzong.html';
+                        infoLink = 'gallery/plant-info-wangzong.html';
                         break;
                     case '日本葵':
-                        infoLink = 'plant-info-ribenkui.html';
+                        infoLink = 'gallery/plant-info-ribenkui.html';
                         break;
                     case '菲岛福木':
-                        infoLink = 'plant-info-feidaofumu.html';
+                        infoLink = 'gallery/plant-info-feidaofumu.html';
                         break;
                     case '桃花心木':
-                        infoLink = 'plant-info-taohuaxinmu.html';
+                        infoLink = 'gallery/plant-info-taohuaxinmu.html';
                         break;
                     case '凤凰木':
-                        infoLink = 'plant-info-0103.html';
+                        infoLink = 'gallery/plant-info-0103.html';
                         break;
                     case '樟树':
                         if (photo.src.includes('/0104')) {
-                            infoLink = 'plant-info-0104.html';
+                            infoLink = 'gallery/plant-info-0104.html';
                         } else {
                             infoLink = '#';
                         }
                         break;
                     case '异叶南洋杉':
-                        infoLink = 'plant-info-0105.html';
+                        infoLink = 'gallery/plant-info-0105.html';
                         break;
                     case '朱蕉':
-                        infoLink = 'plant-info-0106.html';
+                        infoLink = 'gallery/plant-info-0106.html';
                         break;
                     case '假连翘':
-                        infoLink = 'plant-info-0107.html';
+                        infoLink = 'gallery/plant-info-0107.html';
                         break;
                     case '红花檵木':
-                        infoLink = 'plant-info-0108.html';
+                        infoLink = 'gallery/plant-info-0108.html';
                         break;
                     default:
                         infoLink = '#'; // 默认为空链接
