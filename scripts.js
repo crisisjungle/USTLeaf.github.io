@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lazyImageObserver.observe(lazyImage);
       });
     } else {
-      // --- 旧浏览器回退 (Fallback) ---
+      // --- 旧浏览器回退 (Fallback) ----
       let active = false;
       const lazyLoadFallback = function() {
         if (active === false) {
