@@ -1,13 +1,15 @@
 /* plant-info-styles.css */
 
 body {
-    background-color: #f4f7f6; /* Slightly different light background */
+    background-color: #f4f7f6;
+    /* Slightly different light background */
     /* Removed illustrative background images from body */
 }
 
 /* --- New Full Screen Hero Section --- */
 .plant-hero-fullscreen {
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
+    /* Full viewport height */
     position: relative;
     display: flex;
     align-items: center;
@@ -34,7 +36,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.45);
+    /* Dark overlay */
     z-index: 2;
 }
 
@@ -45,14 +48,16 @@ body {
 }
 
 .plant-hero-fullscreen h1 {
-    font-size: 4rem; /* Larger main title */
+    font-size: 4rem;
+    /* Larger main title */
     font-weight: 700;
     margin-bottom: 10px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .plant-hero-fullscreen h2 {
-    font-size: 2rem; /* Scientific name size */
+    font-size: 2rem;
+    /* Scientific name size */
     font-weight: 400;
     font-style: italic;
     margin-top: 0;
@@ -62,14 +67,17 @@ body {
 
 /* --- New Main Content Area Styling --- */
 .main-content-area {
-    padding: 60px 20px; /* More padding top/bottom */
+    padding: 60px 20px;
+    /* More padding top/bottom */
     position: relative;
     z-index: 5;
 }
 
 .content-card {
-    max-width: 1200px; /* Slightly wider card */
-    margin: 0 auto; /* Center the card, no negative margin needed */
+    max-width: 1200px;
+    /* Slightly wider card */
+    margin: 0 auto;
+    /* Center the card, no negative margin needed */
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
@@ -79,23 +87,29 @@ body {
 .card-body {
     display: flex;
     flex-wrap: wrap;
-    padding: 35px 40px; /* More padding inside card body */
-    gap: 50px; /* Wider gap */
+    padding: 35px 40px;
+    /* More padding inside card body */
+    gap: 50px;
+    /* Wider gap */
 }
 
 /* Left Details Column */
 .details-column {
-    flex: 1 1 55%; /* Flexible, takes more space initially */
+    flex: 1 1 55%;
+    /* Flexible, takes more space initially */
     min-width: 320px;
 }
 
 .details-column h3 {
-    font-size: 1.6rem; /* Slightly larger section title */
-    color: #007844; /* Theme color */
+    font-size: 1.6rem;
+    /* Slightly larger section title */
+    color: #007844;
+    /* Theme color */
     margin-top: 0;
     margin-bottom: 25px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #88B04B; /* Secondary theme color */
+    border-bottom: 2px solid #88B04B;
+    /* Secondary theme color */
     display: inline-block;
 }
 
@@ -104,20 +118,33 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: minmax(120px, auto) 1fr; /* Adjust label width */
-    gap: 12px 25px; /* Adjust gaps */
+    grid-template-columns: minmax(120px, auto) 1fr;
+    /* Adjust label width */
+    gap: 12px 25px;
+    /* Adjust gaps */
     align-items: baseline;
 }
 
 .plant-details-list dt {
-    font-weight: 600; /* Bolder labels */
-    color: #555; /* Dark grey labels */
+    font-weight: 600;
+    /* Bolder labels */
+    color: #555;
+    /* Dark grey labels */
     text-align: left;
     font-size: 0.9rem;
     padding: 5px 0;
 }
-.plant-details-list dt a { color: inherit; text-decoration: none; font-weight: 600; }
-.plant-details-list dt a:hover { text-decoration: underline; color: #007844; }
+
+.plant-details-list dt a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.plant-details-list dt a:hover {
+    text-decoration: underline;
+    color: #007844;
+}
 
 .plant-details-list dd {
     margin-left: 0;
@@ -128,10 +155,12 @@ body {
     color: #333;
     line-height: 1.6;
 }
+
 /* Specific styling for certain dd elements */
 .plant-details-list dd.scientific-name i {
     color: #444;
 }
+
 .plant-details-list dd.description {
     /* Optional: slightly smaller font for long text */
     /* font-size: 0.95rem; */
@@ -147,24 +176,53 @@ body {
     color: #fff;
     line-height: 1.4;
 }
-.status-tag.yes, .status-cap586.yes, .status-cap96.yes { background-color: #dc3545; } /* Red for Yes/Protected */
-.status-tag.no, .status-cap586.no, .status-cap96.no { background-color: #28a745; } /* Green for No/Not Protected */
-.status-tag.info, .status-redbook.info, .status-cap586.info, .status-cap96.info { background-color: #17a2b8; } /* Blue for Info/Not Listed */
-.status-tag.unknown, .status-redbook.unknown { background-color: #6c757d; } /* Grey for Unknown/Not Assessed */
+
+.status-tag.yes,
+.status-cap586.yes,
+.status-cap96.yes {
+    background-color: #dc3545;
+}
+
+/* Red for Yes/Protected */
+.status-tag.no,
+.status-cap586.no,
+.status-cap96.no {
+    background-color: #28a745;
+}
+
+/* Green for No/Not Protected */
+.status-tag.info,
+.status-redbook.info,
+.status-cap586.info,
+.status-cap96.info {
+    background-color: #17a2b8;
+}
+
+/* Blue for Info/Not Listed */
+.status-tag.unknown,
+.status-redbook.unknown {
+    background-color: #6c757d;
+}
+
+/* Grey for Unknown/Not Assessed */
 .status-redbook.status-tag {
     /* Example: Specific style for redbook if needed */
 }
-.iucn-status { /* Style for IUCN status text */
+
+.iucn-status {
+    /* Style for IUCN status text */
     font-weight: 500;
     color: #333;
 }
 
 .external-link {
-    color: #007844; /* Theme color link */
+    color: #007844;
+    /* Theme color link */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
+
 .external-link:hover {
     text-decoration: underline;
     color: #004f2a;
@@ -187,16 +245,18 @@ body {
     border: 1px solid #ddd;
     transition: all 0.3s ease;
 }
+
 .back-btn-inline:hover {
     background-color: #e0e0e0;
     border-color: #ccc;
     transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Right Gallery Column */
 .gallery-column {
-    flex: 1 1 35%; /* Flexible, takes less space initially */
+    flex: 1 1 35%;
+    /* Flexible, takes less space initially */
     min-width: 280px;
 }
 
@@ -218,19 +278,22 @@ body {
     border-radius: 8px;
     margin-bottom: 20px;
     background-color: #fdfdfd;
-    overflow: hidden; /* Ensure image respects border radius */
+    overflow: hidden;
+    /* Ensure image respects border radius */
     position: relative;
 }
 
 #main-plant-image {
     width: 100%;
     height: auto;
-    max-height: 450px; /* Limit max height */
+    max-height: 450px;
+    /* Limit max height */
     object-fit: cover;
     display: block;
     border-radius: 5px;
     transition: transform 0.3s ease;
 }
+
 #main-plant-image:hover {
     transform: scale(1.03);
 }
@@ -309,13 +372,13 @@ body {
 
 .thumbnail:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-color: #88B04B;
 }
 
 .thumbnail.active {
     border-color: #007844;
-    box-shadow: 0 0 0 2px rgba(0,120,68,0.5);
+    box-shadow: 0 0 0 2px rgba(0, 120, 68, 0.5);
 }
 
 .thumbnail img {
@@ -374,7 +437,7 @@ body {
 /* .plant-info-hero { ... } */
 /* Remove styles for .plant-info-container, .plant-info-card (old huanggeshu) */
 /* .plant-info-container { ... } */
-/* .plant-info-card { ... } */ 
+/* .plant-info-card { ... } */
 /* Note: .plant-info-card is reused for the side panel on trail page, DO NOT REMOVE GLOBALLY */
 /* Make sure styles below are specific enough or removed if replaced */
 
@@ -391,14 +454,25 @@ body {
         gap: 30px;
         padding: 25px 30px;
     }
-    .details-column, .gallery-column {
-        flex-basis: 100%; /* Stack columns */
-    }
+
+    .details-column,
     .gallery-column {
-        margin-top: 30px; /* Add space when stacked */
+        flex-basis: 100%;
+        /* Stack columns */
     }
-    .plant-hero-fullscreen h1 { font-size: 3rem; }
-    .plant-hero-fullscreen h2 { font-size: 1.5rem; }
+
+    .gallery-column {
+        margin-top: 30px;
+        /* Add space when stacked */
+    }
+
+    .plant-hero-fullscreen h1 {
+        font-size: 3rem;
+    }
+
+    .plant-hero-fullscreen h2 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -406,8 +480,15 @@ body {
         grid-template-columns: minmax(100px, auto) 1fr;
         gap: 8px 15px;
     }
-    .plant-hero-fullscreen h1 { font-size: 2.5rem; }
-    .plant-hero-fullscreen h2 { font-size: 1.3rem; }
+
+    .plant-hero-fullscreen h1 {
+        font-size: 2.5rem;
+    }
+
+    .plant-hero-fullscreen h2 {
+        font-size: 1.3rem;
+    }
+
     .card-body {
         padding: 20px 25px;
     }
@@ -417,17 +498,28 @@ body {
     .main-content-area {
         padding: 40px 15px;
     }
+
     .card-body {
         padding: 15px 20px;
     }
-    .plant-hero-fullscreen h1 { font-size: 2rem; }
-    .plant-hero-fullscreen h2 { font-size: 1.1rem; }
-    .details-column h3, .gallery-column h3 {
+
+    .plant-hero-fullscreen h1 {
+        font-size: 2rem;
+    }
+
+    .plant-hero-fullscreen h2 {
+        font-size: 1.1rem;
+    }
+
+    .details-column h3,
+    .gallery-column h3 {
         font-size: 1.4rem;
     }
+
     .plant-details-list dt {
-         font-size: 0.85rem;
+        font-size: 0.85rem;
     }
+
     .plant-details-list dd {
         font-size: 0.95rem;
     }
@@ -435,63 +527,79 @@ body {
 
 /* Bottom Background Graphic Container */
 .bottom-bg-graphic {
-    width: 100vw; 
-    position: relative; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    /* margin-top: -100px; */ /* Remove negative margin */
-    margin-top: 0; /* Reset margin-top */
-    z-index: 6; 
-    line-height: 0; 
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    /* margin-top: -100px; */
+    /* Remove negative margin */
+    margin-top: 0;
+    /* Reset margin-top */
+    z-index: 6;
+    line-height: 0;
 }
 
 /* Style for the actual image inside the container */
 .bottom-bg-graphic img {
-    display: block; /* Remove potential bottom space */
-    width: 100%; /* Image width matches container (100vw) */
-    height: auto; /* Height adjusts to maintain aspect ratio */
+    display: block;
+    /* Remove potential bottom space */
+    width: 100%;
+    /* Image width matches container (100vw) */
+    height: auto;
+    /* Height adjusts to maintain aspect ratio */
 }
 
 /* Footer adjustments */
 footer {
-    position: relative; 
-    z-index: 20; 
-    margin-top: 0; /* Ensure no top margin */
+    position: relative;
+    z-index: 20;
+    margin-top: 0;
+    /* Ensure no top margin */
 }
 
 /* --- Image Item Container and Icon Label --- */
 .image-item {
-    position: relative; 
-    display: block; 
-    margin-bottom: 15px; 
-    line-height: 0; 
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    line-height: 0;
 }
 
 .image-item img {
-    display: block; 
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 4px;
 }
 
 .image-item::after {
-    /* content: attr(data-category); */ /* Remove text content */
-    content: '' ; /* Default empty content */
+    /* content: attr(data-category); */
+    /* Remove text content */
+    content: '';
+    /* Default empty content */
     position: absolute;
-    bottom: 8px; /* Adjust position */
-    right: 8px;  /* Adjust position */
-    background-color: rgba(0, 0, 0, 0.6); 
+    bottom: 8px;
+    /* Adjust position */
+    right: 8px;
+    /* Adjust position */
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    /* padding: 3px 8px; */ /* Remove padding, use size */
-    font-size: 1rem; /* Adjust icon size */
-    border-radius: 50%; /* Make it circular */
-    width: 24px; /* Fixed width */
-    height: 24px; /* Fixed height */
-    display: inline-flex; /* Use flex to center icon */
+    /* padding: 3px 8px; */
+    /* Remove padding, use size */
+    font-size: 1rem;
+    /* Adjust icon size */
+    border-radius: 50%;
+    /* Make it circular */
+    width: 24px;
+    /* Fixed width */
+    height: 24px;
+    /* Fixed height */
+    display: inline-flex;
+    /* Use flex to center icon */
     align-items: center;
     justify-content: center;
     z-index: 1;
-    pointer-events: none; 
+    pointer-events: none;
     opacity: 0.9;
     text-align: center;
 }
@@ -500,41 +608,52 @@ footer {
 .image-item[data-category="花"]::after {
     content: '🌸';
 }
+
 .image-item[data-category="果"]::after {
-    content: '🍊'; /* Using orange */
+    content: '🍊';
+    /* Using orange */
 }
+
 .image-item[data-category="叶"]::after {
     content: '🍃';
 }
+
 .image-item[data-category="树"]::after {
     content: '🌳';
 }
+
 .image-item[data-category="枝"]::after {
     content: '🌿';
 }
 
 /* Styles for the fullscreen grid image items */
 .fullscreen-image-grid .image-item {
-    height: 150px; /* Maintain fixed height for grid consistency */
-    margin-bottom: 0; /* No margin needed in grid */
+    height: 150px;
+    /* Maintain fixed height for grid consistency */
+    margin-bottom: 0;
+    /* No margin needed in grid */
 }
 
 .fullscreen-image-grid .image-item img {
     width: 100%;
-    height: 100%; /* Image fills the container height */
-    object-fit: cover; /* Cover the area */
+    height: 100%;
+    /* Image fills the container height */
+    object-fit: cover;
+    /* Cover the area */
 }
 
 /* Adjust old vertical list img style if needed */
 .vertical-image-list img {
-   /* Now handled by .image-item img */
+    /* Now handled by .image-item img */
 }
+
 .vertical-image-list .image-item:last-child {
-    margin-bottom: 0; /* Remove margin from last item */
+    margin-bottom: 0;
+    /* Remove margin from last item */
 }
 
 
 /* Adjust fullscreen grid img style if needed */
 .fullscreen-image-grid img {
     /* Now handled by .fullscreen-image-grid .image-item img */
-} 
+}

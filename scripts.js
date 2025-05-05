@@ -515,15 +515,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: '细叶榕', scientificName: 'Ficus microcarpa',
                 image: 'plant-database/0424细叶榕/b3.JPG',
                 family: '桑科', habit: '常绿乔木', flowering: '全年', distribution: '亚洲热带和亚热带',
-                description: '高达20米，冠幅广阔，常有气根，叶片革质卵形至椭圆形，果实为隐头花序。',
-                infoLink: 'gallery/plant-info-xiyerong.html' // 可能需要不同的链接
+                description: '常绿乔木，树冠广阔，有气生根。叶互生，椭圆形或倒卵形。隐头花序，果实成熟时黄色或红色。是常见的行道树和庭园树。',
+                infoLink: 'gallery/plant-info-xiyerong.html'
             },
             {
                 id: '2', sectionId: 'section-image2',
                 name: '日本葵', scientificName: 'Cycas revoluta',
                 image: 'plant-database/0421日本葵/l3.JPG',
                 family: '苏铁科', habit: '常绿棕榈状木本植物', flowering: '夏季', distribution: '日本南部、中国东南部',
-                description: '茎干粗壮，圆柱形。羽状复叶簇生于茎顶。雌雄异株，雄花序圆柱状，雌花序扁球形。',
+                description: '常绿棕榈状木本植物。茎干粗壮，圆柱形。羽状复叶簇生于茎顶。雌雄异株，雄球花圆柱形，雌球花扁球形。种子卵圆形，红色。',
                 infoLink: 'gallery/plant-info-ribenkui.html'
             },
              {
@@ -548,7 +548,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 image: 'plant-database/0416王棕/l3.JPG',
                 family: '棕榈科', habit: '常绿乔木', flowering: '春夏季', distribution: '美洲热带',
                 description: '高达20–30米，树干灰白色，羽状复叶长可达4米，花小而白色，果实为橙黄色浆果。',
-                infoLink: 'gallery/plant-info-wangzong.html' // 可能需要不同的链接
+                infoLink: 'gallery/plant-info-wangzong.html'
             },
             {
                 id: '6', sectionId: 'section-image2',
@@ -1037,7 +1037,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "8", sectionId: "section-image1", name: "圆柏 (Juniperus chinensis)", family: "柏科 Cupressaceae", habit: "常绿乔木", flowering: "3-4月", distribution: "中国北部和中部、蒙古、日本、韩国", description: "圆柏是一种常绿针叶树，可长成高大乔木或修剪成灌木形态。叶子鳞片状或针状，深绿色。球果小而圆，成熟时呈蓝黑色。适应性强，耐干旱和贫瘠土壤，常用于园林绿化和防风固沙。", image: "plant-database/0333圆柏/t1.jpg", infoLink: "gallery/plant-info-yuanbai.html" },
             
             // 天一泉区域的植物
-            { id: "1", sectionId: "section-image2", name: "细叶榕", scientificName: "Ficus microcarpa", description: "常绿乔木，叶片革质，卵形至椭圆形，果实为隐头果。适应性强，常见于公园和街道两旁。", image: "plant-database/0424细叶榕/b3.JPG", infoLink: "gallery/plant-info-xiyerong.html" },
+            { id: "1", sectionId: "section-image2", name: "细叶榕 (Ficus microcarpa)", family: "桑科 Moraceae", habit: "常绿乔木", flowering: "全年", distribution: "亚洲热带和亚热带地区", description: "常绿乔木，叶片革质，卵形至椭圆形，果实为隐头果。适应性强，常见于公园和街道两旁。", image: "plant-database/0424细叶榕/b3.JPG", infoLink: "gallery/plant-info-xiyerong.html" },
             { id: "2", sectionId: "section-image2", name: "日本葵 (Fatsia japonica)", family: "五加科 Araliaceae", habit: "常绿灌木", flowering: "10-11月", distribution: "日本、韩国、台湾", description: "日本葵是一种常绿灌木，高可达3米。叶子大而漂亮，掌状深裂，革质，深绿有光泽。花小而白，排列成伞形花序。耐阴性强，喜湿润环境，是常见的室内观叶植物，也适合作为庭院或公园的下层绿化植物。", image: "plant-database/0421日本葵/l3.JPG", infoLink: "gallery/plant-info-ribenkui.html" },
             { id: "3", sectionId: "section-image2", name: "菲岛福木 (Garcinia subelliptica)", family: "藤黄科 Clusiaceae", habit: "常绿乔木", flowering: "5-6月", distribution: "中国南部、日本琉球群岛、菲律宾", description: "菲岛福木是一种中型常绿乔木，高可达10米。树冠圆整，枝叶密集。叶片椭圆形，革质，深绿色有光泽。花小而芳香，雌雄异株。果实球形，成熟时呈橙黄色，可食用。木材坚硬，可用于建筑和家具制作。树形优美，常作为园林观赏树或行道树栽培。", image: "plant-database/0418菲岛福木/t1.JPG", infoLink: "gallery/plant-info-feidaofumu.html" },
             { id: "4", sectionId: "section-image2", name: "桃花心木 (Swietenia macrophylla)", family: "楝科 Meliaceae", habit: "常绿乔木", flowering: "4-5月", distribution: "原产中南美洲，现广泛引种于亚洲热带地区", description: "桃花心木是著名的热带珍贵用材树种，高可达45米。树干通直，树冠广展。叶为偶数羽状复叶，小叶片镰刀状长椭圆形。果实为大型木质蒴果，种子扁平有翅。木材红褐色，纹理美观，是制作高级家具的优良材料。在园林中常作为行道树或景观树种植。", image: "plant-database/0417桃花心木/b1.JPG", infoLink: "gallery/plant-info-taohuaxinmu.html" },
@@ -1490,7 +1490,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { src: 'plant-database/0328蒲葵/l1.jpg', plantName: '蒲葵', scientificName: 'Livistona chinensis', category: 'l', alt: '蒲葵 叶' },
             { src: 'plant-database/0328蒲葵/l2.jpg', plantName: '蒲葵', scientificName: 'Livistona chinensis', category: 'l', alt: '蒲葵 叶' },
             { src: 'plant-database/0328蒲葵/l3.jpg', plantName: '蒲葵', scientificName: 'Livistona chinensis', category: 'l', alt: '蒲葵 叶' },
-            { src: 'plant-database/0328蒲葵/l4.jpg', plantName: '蒲葵', scientificName: 'Livistona chinensis', category: 'l', alt: '蒲葵 叶' },
+            { src: 'plant-database/0328蒲葵/g1.jpg', plantName: '蒲葵', scientificName: 'Livistona chinensis', category: 'g', alt: '蒲葵 果' },
             { src: 'plant-database/0328蒲葵/r1.jpg', plantName: '蒲葵', scientificName: 'Livistona chinensis', category: 'r', alt: '蒲葵 根' },
             { src: 'plant-database/0328蒲葵/t1.jpg', plantName: '蒲葵', scientificName: 'Livistona chinensis', category: 't', alt: '蒲葵 树型' },
             { src: 'plant-database/0328蒲葵/t2.jpg', plantName: '蒲葵', scientificName: 'Livistona chinensis', category: 't', alt: '蒲葵 树型' },

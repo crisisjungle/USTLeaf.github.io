@@ -86,6 +86,16 @@
       "images": [
         "l1.jpeg", "l2.jpeg", "t1.jpeg", "t2.jpeg"
       ]
+    },
+    "蒲葵": {
+      "folderPath": "plant-database/0328蒲葵/",
+      "images": [
+        "t1.jpg", "t2.jpg", 
+        "l1.jpg", "l2.jpg", "l3.jpg", 
+        "g1.jpg",
+        "b1.jpg", "b2.jpg", "b3.jpg", 
+        "r1.jpg"
+      ]
     }
   }
 } 
