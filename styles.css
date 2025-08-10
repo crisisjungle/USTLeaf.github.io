@@ -1351,43 +1351,7 @@ html {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-    /* Base responsive adjustments */
-    .plant-info-card {
-        width: 90%;
-        max-height: 85vh;
-        left: 50%; /* Center horizontally */
-        right: auto; /* Override right */
-        top: 50%;
-        transform: translate(150%, -50%); /* Default hidden far right */
-        border-radius: 8px; /* All corners rounded */
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Centered shadow */
-    }
-    /* Override for left slide */
-    .plant-info-card.slide-from-left {
-        transform: translate(-150%, -50%); /* Hidden far left */
-    }
-    /* Show state for responsive */
-    .plant-info-card.show {
-        transform: translate(-50%, -50%); /* Slide to center */
-    }
-    
-    /* Card internal adjustments */
-    .plant-card-image {
-        height: 200px; 
-    }
-    .plant-card-content {
-        padding: 15px;
-    }
-    .close-btn {
-        top: 8px;
-        right: 8px;
-        width: 28px;
-        height: 28px;
-        font-size: 18px;
-        line-height: 26px;
-    }
-}
+/* removed @media (max-width: 768px) block */
 
 /* 植物信息页面样式 */
 .plant-info-hero {
@@ -1556,46 +1520,9 @@ html {
     transform: translateX(5px);
 }
 
-@media (min-width: 768px) {
-    .plant-info-images {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-    
-    .main-image {
-        width: 60%;
-        margin: 0;
-        padding-right: 20px;
-    }
-    
-    .image-gallery {
-        width: 40%;
-        flex-direction: column;
-    }
-    
-    .image-gallery img {
-        width: 100%;
-        height: 120px;
-    }
-}
+/* removed @media (min-width: 768px) block */
 
-@media (max-width: 767px) {
-    .plant-info-hero h1 {
-        font-size: 2rem;
-    }
-    
-    .main-image {
-        max-width: 100%;
-    }
-    
-    .image-gallery img {
-        width: 48%;
-    }
-    
-    .plant-info-content {
-        padding: 15px;
-    }
-}
+/* removed @media (max-width: 767px) block */
 
 /* 导航栏样式 */
 .site-header {
