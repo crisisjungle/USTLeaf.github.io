@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>校园植物展示网站</title>
     <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="styles.css">
@@ -276,5 +277,20 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <div id="mobile-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; color: white; font-size: 1.5rem; text-align: center; padding: 20px; box-sizing: border-box;">
+        <div>横屏观看效果更佳<br>Tap to continue</div>
+    </div>
+    <script>
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        if (isMobile()) {
+            document.getElementById('mobile-overlay').style.display = 'flex';
+            document.getElementById('mobile-overlay').addEventListener('click', function() {
+                this.style.display = 'none';
+            });
+        }
+    </script>
 </body>
 </html> 
