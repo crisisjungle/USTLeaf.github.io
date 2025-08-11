@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <title>About - USTLeaf</title>
@@ -9,34 +10,48 @@
     <style>
         /* 自定义样式减少空白，但保留适当间距 */
         .about-container {
-            padding-top: 30px; /* 减少顶部内边距，使内容更靠近hero部分 */
-            padding-bottom: 20px; /* 保留一些底部内边距 */
+            padding-top: 30px;
+            /* 减少顶部内边距，使内容更靠近hero部分 */
+            padding-bottom: 20px;
+            /* 保留一些底部内边距 */
         }
+
         .about-section:last-of-type {
-            margin-bottom: 30px; /* 为最后一个区域添加一些底部外边距 */
+            margin-bottom: 30px;
+            /* 为最后一个区域添加一些底部外边距 */
         }
+
         .contact-info {
-            margin-bottom: 20px; /* 保留一些联系信息的底部外边距 */
+            margin-bottom: 20px;
+            /* 保留一些联系信息的底部外边距 */
         }
+
         section {
-            min-height: auto; /* 覆盖全局中设置的 min-height: 100vh */
+            min-height: auto;
+            /* 覆盖全局中设置的 min-height: 100vh */
         }
+
         /* 优化hero部分与内容的过渡 */
         .about-hero {
-            margin-bottom: 20px; /* 添加底部外边距 */
-            height: 40vh; /* 缩小高度，只占据屏幕的上半部分 */
-            min-height: 300px; /* 确保在小屏幕上有足够的高度 */
+            margin-bottom: 20px;
+            /* 添加底部外边距 */
+            height: 40vh;
+            /* 缩小高度，只占据屏幕的上半部分 */
+            min-height: 300px;
+            /* 确保在小屏幕上有足够的高度 */
         }
+
         /* 调整第一个故事区块的上边距 */
         .about-section .story:first-child {
             margin-top: 10px;
         }
     </style>
 </head>
+
 <body>
     <!-- Remove the top background bar -->
     <!-- <div class="top-background-bar"></div> -->
-    
+
     <header>
         <div class="logo">
             <a href="index.html">
@@ -50,6 +65,14 @@
                 <li><a href="gallery.html">Database</a>
                 </li>
                 <li><a href="about.html">About</a>
+                </li>
+                <li><a style="display: inline-block;"><img src="images/language.png" alt="Language"
+                            style="width: 20px; height: 20px; vertical-align: middle;"></a>
+                    <ul>
+                        <li><a href="../en/about.html">English</a></li>
+                        <li><a href="../zh-HK/about.html">繁体中文</a></li>
+                        <li><a href="../zh-CN/about.html">简体中文</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -72,27 +95,42 @@
             <!-- 项目理念 -->
             <div class="story">
                 <div class="story-image">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/project-idea.jpg" alt="项目理念" class="lazy">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        data-src="images/project-idea.jpg" alt="项目理念" class="lazy">
                 </div>
                 <div class="story-content">
                     <h3>Our Mission</h3>
-                    <p>USTLeaf is dedicated to showcasing the rich plant resources on HKUST campus. Through digital means, it records, shares, and protects the campus's biodiversity. We hope that through this platform, more people will learn about the plant world on the HKUST campus and raise awareness of the natural environment and its protection.</p>
-                    <p>We believe that understanding nature is the first step toward protecting it. By showcasing the diversity of plants on campus to faculty, students, and visitors, we hope to cultivate a love and sense of responsibility for the natural environment in more people, and work together to build a greener, more sustainable campus environment.</p>
+                    <p>USTLeaf is dedicated to showcasing the rich plant resources on HKUST campus. Through digital
+                        means, it records, shares, and protects the campus's biodiversity. We hope that through this
+                        platform, more people will learn about the plant world on the HKUST campus and raise awareness
+                        of the natural environment and its protection.</p>
+                    <p>We believe that understanding nature is the first step toward protecting it. By showcasing the
+                        diversity of plants on campus to faculty, students, and visitors, we hope to cultivate a love
+                        and sense of responsibility for the natural environment in more people, and work together to
+                        build a greener, more sustainable campus environment.</p>
                 </div>
             </div>
-            
+
             <!-- 团队介绍 -->
             <div class="story reverse">
                 <div class="story-image">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/team-intro.jpg" alt="团队介绍" class="lazy">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        data-src="images/team-intro.jpg" alt="团队介绍" class="lazy">
                 </div>
                 <div class="story-content">
                     <h3>Our Team</h3>
-                    <p>USTLeaf Team is guided by Division of Environment and Sustainability at HKUST. It is composed of students from a variety of disciplines, including oceanography, environmental science, forestry, geography, computer science, and industrial design. Team members conduct field surveys, literature research, and utilize digital technology to jointly carry out the investigation, documentation, and presentation of campus plant resources.</p>
-                    <p>Our team loves nature and is inclusive and open-minded. We welcome students from both inside and outside the university who are interested in botany and environmental protection to join us in enriching and improving this platform, and contributing to environmental protection in Hong Kong.</p>
+                    <p>USTLeaf Team is guided by Division of Environment and Sustainability at HKUST. It is composed of
+                        students from a variety of disciplines, including oceanography, environmental science, forestry,
+                        geography, computer science, and industrial design. Team members conduct field surveys,
+                        literature research, and utilize digital technology to jointly carry out the investigation,
+                        documentation, and presentation of campus plant resources.</p>
+                    <p>Our team loves nature and is inclusive and open-minded. We welcome students from both inside and
+                        outside the university who are interested in botany and environmental protection to join us in
+                        enriching and improving this platform, and contributing to environmental protection in Hong
+                        Kong.</p>
                 </div>
             </div>
-            
+
             <!-- 成员名单 -->
             <div class="about-card">
                 <h3>Team Members</h3>
@@ -101,27 +139,29 @@
                         <h4>Instructor</h4>
                         <div class="member-list">
                             <div class="member">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/member-Arthur.jpg" alt="Arthur LAU" class="lazy">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                    data-src="images/member-Arthur.jpg" alt="Arthur LAU" class="lazy">
                                 <div class="member-info">
                                     <h5>Arthur LAU</h5>
-                                    <p>Associate Professor of Interdisciplinary Education, Senior Lecturer of Division of Environment and Sustainability</p>
+                                    <p>Associate Professor of Interdisciplinary Education, Senior Lecturer of Division
+                                        of Environment and Sustainability</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="member-group">
                         <h4>Manager</h4>
                         <div class="member-list">
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Robert Wei JIANG</h5>
                                     <p>Founder</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Louis LAW</h5>
                                     <p>Sustainability Officer, HKUST</p>
@@ -129,61 +169,61 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="member-group">
                         <h4>Members</h4>
                         <div class="member-list">
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>April Yanjun ZHU</h5>
                                     <p>Project Management</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Lucia HU</h5>
                                     <p>Research</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Regina Zixin CHEN</h5>
                                     <p>Research</p>
                                 </div>
                             </div>
-                             <div class="member">
-                                
+                            <div class="member">
+
                                 <div class="member-info">
                                     <h5>Hang XU</h5>
                                     <p>Website Development</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Zijian FEI</h5>
                                     <p>Photographer</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Ryan Yunfan XIE</h5>
                                     <p>Photographer</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Daisy Shiyang DAI</h5>
                                     <p>Photographer</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Susan Ruixian SUN</h5>
                                     <p>Research</p>
@@ -198,7 +238,7 @@
         <!-- 联系我们部分 -->
         <section id="contact-us" class="about-section">
             <h2 class="section-title">Contact Us</h2>
-            
+
             <div id="contact-info" class="contact-info">
                 <div class="contact-item">
                     <div class="contact-details">
@@ -224,7 +264,7 @@
     <div class="back-to-top-container">
         <button id="back-to-top" title="回到顶部">↑</button>
     </div>
-    
+
     <footer>
         <div class="social-media">
             <span>Follow us</span>
@@ -237,4 +277,5 @@
 
     <script src="scripts.js"></script>
 </body>
-</html> 
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <title>关于我们 - 校园植物展示网站</title>
@@ -9,34 +10,48 @@
     <style>
         /* 自定义样式减少空白，但保留适当间距 */
         .about-container {
-            padding-top: 30px; /* 减少顶部内边距，使内容更靠近hero部分 */
-            padding-bottom: 20px; /* 保留一些底部内边距 */
+            padding-top: 30px;
+            /* 减少顶部内边距，使内容更靠近hero部分 */
+            padding-bottom: 20px;
+            /* 保留一些底部内边距 */
         }
+
         .about-section:last-of-type {
-            margin-bottom: 30px; /* 为最后一个区域添加一些底部外边距 */
+            margin-bottom: 30px;
+            /* 为最后一个区域添加一些底部外边距 */
         }
+
         .contact-info {
-            margin-bottom: 20px; /* 保留一些联系信息的底部外边距 */
+            margin-bottom: 20px;
+            /* 保留一些联系信息的底部外边距 */
         }
+
         section {
-            min-height: auto; /* 覆盖全局中设置的 min-height: 100vh */
+            min-height: auto;
+            /* 覆盖全局中设置的 min-height: 100vh */
         }
+
         /* 优化hero部分与内容的过渡 */
         .about-hero {
-            margin-bottom: 20px; /* 添加底部外边距 */
-            height: 40vh; /* 缩小高度，只占据屏幕的上半部分 */
-            min-height: 300px; /* 确保在小屏幕上有足够的高度 */
+            margin-bottom: 20px;
+            /* 添加底部外边距 */
+            height: 40vh;
+            /* 缩小高度，只占据屏幕的上半部分 */
+            min-height: 300px;
+            /* 确保在小屏幕上有足够的高度 */
         }
+
         /* 调整第一个故事区块的上边距 */
         .about-section .story:first-child {
             margin-top: 10px;
         }
     </style>
 </head>
+
 <body>
     <!-- Remove the top background bar -->
     <!-- <div class="top-background-bar"></div> -->
-    
+
     <header>
         <div class="logo">
             <a href="index.html">
@@ -63,6 +78,14 @@
                         <li><a href="about.html#contact-us">联系我们</a></li>
                     </ul>
                 </li>
+                <li><a style="display: inline-block;"><img src="images/language.png" alt="Language"
+                            style="width: 20px; height: 20px; vertical-align: middle;"></a>
+                    <ul>
+                        <li><a href="../en/about.html">English</a></li>
+                        <li><a href="../zh-HK/about.html">繁体中文</a></li>
+                        <li><a href="../zh-CN/about.html">简体中文</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -84,27 +107,31 @@
             <!-- 项目理念 -->
             <div class="story">
                 <div class="story-image">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/project-idea.jpg" alt="项目理念" class="lazy">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        data-src="images/project-idea.jpg" alt="项目理念" class="lazy">
                 </div>
                 <div class="story-content">
                     <h3>项目理念</h3>
-                    <p>"一叶知科"校园植物展示网站致力于展示香港科技大学校园内的丰富植物资源，通过数字化手段记录、分享和保护校园生物多样性。我们希望通过这个平台，让更多人了解科大校园内的植物世界，提高对自然环境的关注和保护意识。</p>
+                    <p>"一叶知科"校园植物展示网站致力于展示香港科技大学校园内的丰富植物资源，通过数字化手段记录、分享和保护校园生物多样性。我们希望通过这个平台，让更多人了解科大校园内的植物世界，提高对自然环境的关注和保护意识。
+                    </p>
                     <p>我们相信，认识自然是保护自然的第一步。通过向校内师生和访客展示校园内的植物多样性，我们希望培养更多人对自然环境的热爱和责任感，共同建设一个更加绿色、可持续的校园环境。</p>
                 </div>
             </div>
-            
+
             <!-- 团队介绍 -->
             <div class="story reverse">
                 <div class="story-image">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/team-intro.jpg" alt="团队介绍" class="lazy">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        data-src="images/team-intro.jpg" alt="团队介绍" class="lazy">
                 </div>
                 <div class="story-content">
                     <h3>团队介绍</h3>
-                    <p>"一叶知科"项目团队由香港科技大学环境系与可持续发展办公室指导，由海洋学、环境科学、林学、地理学、计算机科学与工业设计等多学科背景的学生组成。团队成员通过实地考察、文献研究和数字技术，共同开展校园植物资源的调查、记录和展示工作。</p>
+                    <p>"一叶知科"项目团队由香港科技大学环境系与可持续发展办公室指导，由海洋学、环境科学、林学、地理学、计算机科学与工业设计等多学科背景的学生组成。团队成员通过实地考察、文献研究和数字技术，共同开展校园植物资源的调查、记录和展示工作。
+                    </p>
                     <p>我们的团队热爱自然，包容开放，欢迎校内外对植物学和环境保护感兴趣的同学加入，共同丰富和完善这个平台，为香港环境保护贡献力量。</p>
                 </div>
             </div>
-            
+
             <!-- 成员名单 -->
             <div class="about-card">
                 <h3>成员名单</h3>
@@ -113,7 +140,8 @@
                         <h4>指导老师</h4>
                         <div class="member-list">
                             <div class="member">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/member-Arthur.jpg" alt="Arthur LAU" class="lazy">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                    data-src="images/member-Arthur.jpg" alt="Arthur LAU" class="lazy">
                                 <div class="member-info">
                                     <h5>Arthur LAU</h5>
                                     <p>环境与可持续发展学部副教授</p>
@@ -121,19 +149,19 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="member-group">
                         <h4>项目负责人</h4>
                         <div class="member-list">
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>姜为</h5>
                                     <p>项目创始人</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>Louis LAW</h5>
                                     <p>可持续发展办公室校园生物多样性负责人</p>
@@ -141,61 +169,61 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="member-group">
                         <h4>团队成员</h4>
                         <div class="member-list">
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>祝雁俊 April</h5>
                                     <p>项目管理</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>胡嘉佳 Lucia</h5>
                                     <p>植物调研</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>陈子馨 Regina</h5>
                                     <p>植物调研</p>
                                 </div>
                             </div>
-                             <div class="member">
-                                
+                            <div class="member">
+
                                 <div class="member-info">
                                     <h5>许航</h5>
                                     <p>网站开发</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>费子健</h5>
                                     <p>植物摄影</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>谢云帆</h5>
                                     <p>植物摄影</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>戴诗洋</h5>
                                     <p>植物摄影</p>
                                 </div>
                             </div>
                             <div class="member">
-                                
+
                                 <div class="member-info">
                                     <h5>孙瑞贤</h5>
                                     <p>植物调研</p>
@@ -210,7 +238,7 @@
         <!-- 联系我们部分 -->
         <section id="contact-us" class="about-section">
             <h2 class="section-title">联系我们</h2>
-            
+
             <div id="contact-info" class="contact-info">
                 <div class="contact-item">
                     <div class="contact-details">
@@ -236,7 +264,7 @@
     <div class="back-to-top-container">
         <button id="back-to-top" title="回到顶部">↑</button>
     </div>
-    
+
     <footer>
         <div class="footer-nav">
             <div class="footer-section">
@@ -277,4 +305,5 @@
 
     <script src="scripts.js"></script>
 </body>
-</html> 
+
+</html>
