@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>植物图库 - 校园植物展示网站</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery-styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="一叶知科" class="logo-image">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="plant-trail.html">植物足迹</a>
+                    <ul>
+                        <li><a href="plant-trail.html#map-scenic">校园景点</a></li>
+                        <li><a href="plant-trail.html#map-trail">校园步道</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="active">植物图库</a>
+                    <ul>
+                        <li><a href="gallery.html#gallery-database">植物数据库</a></li>
+                        <li><a href="gallery.html#gallery-photos">植物图片库</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">关于我们</a>
+                    <ul>
+                        <li><a href="about.html#about-us">关于我们</a></li>
+                        <li><a href="about.html#contact-us">联系我们</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 第一幕：背景和搜索区域 -->
+    <section class="gallery-hero" id="gallery-database">
+        <div class="hero-image">
+            <img src="images/gallery-hero.jpg" alt="科大植物图库">
+        </div>
+        <div class="hero-content">
+            <h1>欢迎来到科大植物数据库</h1>
+            <p>浏览校园28种植物，151张植物图片</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="输入植物名称、特征或科属...">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M21.7 20.3L17.2 15.8C18.3 14.4 19 12.5 19 10.5C19 5.8 15.2 2 10.5 2C5.8 2 2 5.8 2 10.5C2 15.2 5.8 19 10.5 19C12.5 19 14.3 18.3 15.8 17.2L20.3 21.7C20.5 21.9 20.8 22 21 22C21.2 22 21.5 21.9 21.7 21.7C22.1 21.3 22.1 20.7 21.7 20.3ZM10.5 17C6.9 17 4 14.1 4 10.5C4 6.9 6.9 4 10.5 4C14.1 4 17 6.9 17 10.5C17 14.1 14.1 17 10.5 17Z" fill="#007844"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="category-cards">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/tree.jpg" alt="树" class="lazy">
+                        </div>
+                    </div>
+                    <h3 class="card-title">树型分类 →</h3>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/flower.jpg" alt="花" class="lazy">
+                        </div>
+                    </div>
+                    <h3 class="card-title">花形分类 →</h3>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/leaf.jpg" alt="叶" class="lazy">
+                        </div>
+                    </div>
+                    <h3 class="card-title">叶形分类 →</h3>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/fruit.jpg" alt="果" class="lazy">
+                        </div>
+                    </div>
+                    <h3 class="card-title">果型分类 →</h3>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#gallery-photos" class="arrow-button">
+                    <span>植物画廊</span>
+                    <div class="arrow-down">v</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二幕：植物图片库 -->
+    <section class="photo-gallery" id="gallery-photos">
+        <div class="section-header">
+            <h2>科大植物图片库</h2>
+            <div class="filter-buttons">
+                <button class="filter-button active" data-filter="all">全部</button>
+                <button class="filter-button" data-filter="tree">树</button>
+                <button class="filter-button" data-filter="flower">花</button>
+                <button class="filter-button" data-filter="fruit">果</button>
+                <button class="filter-button" data-filter="leaf">叶</button>
+                <button class="filter-button" data-filter="bark">皮</button>
+                <button class="filter-button" data-filter="root">根</button>
+            </div>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- 图片项将由 JavaScript 动态填充 -->
+            <!-- 移除所有静态的 .gallery-item div -->
+        </div>
+        
+        <div class="load-more-container">
+            <button id="load-more-btn">加载更多</button>
+        </div>
+    </section>
+
+    <!-- 页面指示器 -->
+    <div class="page-indicator">
+        <span class="dot active" data-section="gallery-database"></span>
+        <span class="dot" data-section="gallery-photos"></span>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <div class="back-to-top-container">
+        <button id="back-to-top" title="回到顶部">↑</button>
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <div class="footer-section">
+                <h3>植物足迹</h3>
+                <div class="section-divider"></div>
+                <ul>
+                    <li><a href="plant-trail.html#map-scenic">校园景点</a></li>
+                    <li><a href="plant-trail.html#map-trail">校园步道</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>植物数据库</h3>
+                <div class="section-divider"></div>
+                <ul>
+                    <li><a href="gallery.html#gallery-database">植物数据库</a></li>
+                    <li><a href="gallery.html#gallery-photos">植物图片库</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <div class="section-divider"></div>
+                <ul>
+                    <li><a href="about.html#about-us">关于我们</a></li>
+                    <li><a href="about.html#contact-us">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divider short"></div>
+        <div class="social-media">
+            <span>Follow us</span>
+            <a href="#"><img src="images/facebook-logo.png" alt="Facebook"></a>
+            <a href="#"><img src="images/twitter-logo.png" alt="Twitter"></a>
+            <a href="#"><img src="images/instagram-logo.png" alt="Instagram"></a>
+        </div>
+        <div class="footer-divider short"></div>
+        <p>&copy; 2025 一叶知科HKUST through a Leaf</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="gallery-scripts.js"></script>
+</body>
+</html> 

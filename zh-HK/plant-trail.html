@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>植物足迹 - 校园植物展示网站</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="一叶知科" class="logo-image">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="plant-trail.html">植物足迹</a>
+                    <ul>
+                        <li><a href="plant-trail.html#map-scenic">校园景点</a></li>
+                        <li><a href="plant-trail.html#map-trail">校园步道</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html">植物图库</a>
+                    <ul>
+                        <li><a href="gallery.html#gallery-database">植物数据库</a></li>
+                        <li><a href="gallery.html#gallery-photos">植物图片库</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">关于我们</a>
+                    <ul>
+                        <li><a href="about.html#about-us">关于我们</a></li>
+                        <li><a href="about.html#contact-us">联系我们</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 完整的hero部分，包含卡片 -->
+    <section class="hero" id="section-hero">
+        <div class="hero-image">
+            <img src="images/campus-trail.jpg" alt="校园植物足迹全景">
+        </div>
+        <div class="hero-content">
+            <h1>探索校园植物足迹</h1>
+            <p>漫步科大校园，每一步都是一次与自然的邂逅。</p>
+        </div>
+        
+        <!-- 卡片直接放在hero部分内 -->
+        <div class="hero-cards">
+            <div class="cards-carousel">
+                <div class="card-container">
+                    <a href="#section-image3" class="card-link" style="text-decoration: none; color: inherit;">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/Site1.jpg" alt="红鸟广场" class="lazy">
+                            </div>
+                        </div>
+                        <h3 class="card-title">红鸟广场 →</h3>
+                    </a>
+                </div>
+                <div class="card-container">
+                    <a href="#section-image1" class="card-link" style="text-decoration: none; color: inherit;">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/Site3.jpg" alt="偷情小径" class="lazy">
+                            </div>
+                        </div>
+                        <h3 class="card-title">偷情小径 →</h3>
+                    </a>
+                </div>
+                <div class="card-container">
+                    <a href="#section-image2" class="card-link" style="text-decoration: none; color: inherit;">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/Site4.jpg" alt="天一泉" class="lazy">
+                            </div>
+                        </div>
+                        <h3 class="card-title">天一泉→</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: 红鸟广场 -->
+    <section class="full-page-image" id="section-image3">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/trail1.jpg" alt="校园植物足迹 红鸟广场" class="lazy">
+        <!-- 新增的页面描述模块 -->
+        <div class="page-description delay-1 visible position-left-top">
+            <h2>红鸟广场</h2>
+            <p>从北门进入科大，两侧挺拔的行道树构成了一条绿色长廊，直通红鸟广场。这里有着丰富的植物多样性，是校园最受欢迎的拍照胜地。</p>
+        </div>
+        <!-- 新增的圆形标签 -->
+        <div class="trail-markers">
+            <!-- 新的可交互标记 -->
+            <div class="marker" data-index="1" style="top: 68.39%; left: 7.16%;" data-info-link="gallery/plant-info-0101.html">
+                <span>1</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0101王棕/t2.jpeg" alt="王棕" class="lazy">
+                    <p>王棕 <i>Roystonea regia</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="2" style="top: 47.65%; left: 14.08%;" data-info-link="gallery/plant-info-0107.html">
+                <span>2</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0107假连翘/l1.jpeg" alt="假连翘" class="lazy">
+                    <p>假连翘 <i>Duranta erecta</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="3" style="top: 52.56%; left: 27.73%;" data-info-link="gallery/plant-info-0108.html">
+                <span>3</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0108红花檵木/l1.jpeg" alt="红花檵木" class="lazy">
+                    <p>红花檵木 <i>Loropetalum chinense var. rubrum</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="4" style="top: 24.78%; left: 41.84%;" data-info-link="gallery/plant-info-0105.html">
+                <span>4</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0105异叶南洋杉/t1.jpeg" alt="异叶南洋杉" class="lazy">
+                    <p>异叶南洋杉 <i>Araucaria heterophylla</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="5" style="top: 53.85%; left: 47.26%;" data-info-link="gallery/plant-info-0102.html">
+                <span>5</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0102细叶榕/b1.jpeg" alt="细叶榕" class="lazy">
+                    <p>细叶榕 <i>Ficus microcarpa</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="6" style="top: 72.28%; left: 61.17%;" data-info-link="gallery/plant-info-0106.html">
+                <span>6</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0106朱蕉/l2.jpeg" alt="朱蕉" class="lazy">
+                    <p>朱蕉 <i>Cordyline fruticosa</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="7" style="top: 39.04%; left: 76.79%;" data-info-link="gallery/plant-info-0103.html">
+                <span>7</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0103凤凰木/t1.jpeg" alt="凤凰木" class="lazy">
+                    <p>凤凰木 <i>Delonix regia</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="8" style="top: 73.76%; left: 85.49%;" data-info-link="gallery/plant-info-0104.html">
+                <span>8</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0104樟树/t1.jpeg" alt="樟树" class="lazy">
+                    <p>樟树 <i>Cinnamomum camphora</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: 偷情小径 -->
+    <section class="full-page-image" id="section-image1">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/trail2.jpg" alt="校园植物足迹 偷情小径" class="lazy">
+        <!-- 修改后的页面描述模块，与其他页面保持一致 -->
+        <div class="page-description delay-2 visible position-right-top">
+            <h2>偷情小径</h2>
+            <p>智慧石旁有一条较窄的楼梯通往一条种满了树的小径，该径内经常有情侣停留、欣赏优美的海景。这里隐蔽而且景色怡人、充满气氛。</p>
+        </div>
+        <!-- 新增的圆形标签 -->
+        <div class="trail-markers">
+            <!-- Markers for 偷情小径 -->
+            <div class="marker" data-index="1" style="top: 64.69%; left: 7.36%;" data-info-link="gallery/plant-info-mahlian.html">
+                <span>1</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0331麻楝/l1.jpg" alt="麻楝" class="lazy">
+                    <p>Chukrasia tabularis 麻楝</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="2" style="top: 43.12%; left: 12.51%;" data-info-link="gallery/plant-info-pukui.html">
+                <span>2</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0328蒲葵/t1.jpg" alt="蒲葵" class="lazy">
+                    <p>Livistona chinensis 蒲葵</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="3" style="top: 18.95%; left: 15.95%;" data-info-link="gallery/plant-info-huanggeshu.html">
+                <span>3</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0327黄葛树/r1.jpg" alt="黄葛树" class="lazy">
+                    <p>Ficus virens 黄葛树</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="4" style="top: 28.03%; left: 38.97%;" data-info-link="gallery/plant-info-shanzhijia.html">
+                <span>4</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0307山指甲/f5.JPG" alt="山指甲" class="lazy">
+                    <p>Rhododendron simsii 山指甲</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="5" style="top: 78.49%; left: 40.06%;" data-info-link="gallery/plant-info-shili.html">
+                <span>5</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0341石栗/t1.jpg" alt="石栗" class="lazy">
+                    <p>Aleurites moluccana 石栗</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="6" style="top: 49.60%; left: 51.11%;" data-info-link="gallery/plant-info-jinxidujuan.html">
+                <span>6</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0314锦绣杜鹃/f1.jpg" alt="锦绣杜鹃" class="lazy">
+                    <p>锦绣杜鹃 <i>Rhododendron pulchrum</i></p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="7" style="top: 68.58%; left: 58.45%;" data-info-link="gallery/plant-info-yinzhu.html">
+                <span>7</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0340银珠/t1.jpg" alt="银珠" class="lazy">
+                    <p>Ardisia crenata 银珠</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="8" style="top: 36.17%; left: 59.23%;" data-info-link="gallery/plant-info-yuanbai.html">
+                <span>8</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0333圆柏/t1.jpg" alt="圆柏" class="lazy">
+                    <p>Juniperus chinensis 圆柏</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: 天一泉 -->
+    <section class="full-page-image" id="section-image2">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/trail3.jpg" alt="校园植物足迹 天一泉" class="lazy">
+        <!-- 新增的页面描述模块 - 暂时改为 right-top 再改回 left-top -->
+        <div class="page-description delay-3 visible position-left-top">
+            <h2>天一泉</h2>
+            <p>学术大楼外有一个露天的喷泉，名为"天一泉"。学生之间流传只要在日出的时候走到喷泉里让水冲过身体就能达致"天人合一"。花园融合了现代景观与自然生态理念，栽种了多种香草植物和观赏花卉。</p>
+        </div>
+        <!-- 新增的圆形标签 -->
+        <div class="trail-markers">
+            <!-- Markers for 天一泉 -->
+            <div class="marker" data-index="1" style="top: 72.29%; left: 34.28%;" data-info-link="gallery/plant-info-xiyerong.html">
+                <span>1</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0424细叶榕/b3.JPG" alt="细叶榕" class="lazy">
+                    <p>Ficus microcarpa 细叶榕</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="2" style="top: 48.30%; left: 54.91%;" data-info-link="gallery/plant-info-ribenkui.html">
+                <span>2</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0421日本葵/l3.JPG" alt="日本葵" class="lazy">
+                    <p>Cycas revoluta 日本葵</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="3" style="top: 14.29%; left: 68.87%;" data-info-link="gallery/plant-info-feidaofumu.html">
+                <span>3</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0418菲岛福木/t1.JPG" alt="菲岛福木" class="lazy">
+                    <p>Garcinia subelliptica 菲岛福木</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="4" style="top: 24.48%; left: 87.98%;" data-info-link="gallery/plant-info-taohuaxinmu.html">
+                <span>4</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0417桃花心木/b1.JPG" alt="桃花心木" class="lazy">
+                    <p>Swietenia mahagoni 桃花心木</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="5" style="top: 46.73%; left: 79.54%;" data-info-link="gallery/plant-info-wangzong.html">
+                <span>5</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0416王棕/l3.JPG" alt="王棕" class="lazy">
+                    <p>Roystonea regia 王棕</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+            <div class="marker" data-index="6" style="top: 69.41%; left: 79.54%;" data-info-link="gallery/plant-info-pukui-new.html">
+                <span>6</span>
+                <div class="marker-card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="plant-database/0415蒲葵/b1.JPG" alt="蒲葵" class="lazy">
+                    <p>Livistona chinensis 蒲葵</p>
+                    <div class="marker-card-arrow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页面指示器 -->
+    <div class="page-indicator">
+        <span class="dot active" data-section="section-hero"></span>
+        <span class="dot" data-section="section-trail"></span>
+        <span class="dot" data-section="section-image1"></span>
+        <span class="dot" data-section="section-image2"></span>
+    </div>
+
+    <!-- 侧边植物信息卡片 -->
+    <div class="plant-info-card" id="plantInfoCard">
+        <div class="plant-card-image">
+            <img class="plant-image lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="" alt="植物图片">
+        </div>
+        <div class="plant-card-header">
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="plant-card-content">
+            <h3 class="plant-name">植物名称</h3>
+            <h4 class="plant-scientific-name">学名</h4>
+            <div class="plant-card-details">
+                <div class="plant-detail">
+                    <span class="detail-label">科属：</span>
+                    <span class="plant-family">未知</span>
+                </div>
+                <div class="plant-detail">
+                    <span class="detail-label">生长习性：</span>
+                    <span class="plant-habit">未知</span>
+                </div>
+                <div class="plant-detail">
+                    <span class="detail-label">花期：</span>
+                    <span class="plant-flowering">未知</span>
+                </div>
+                <div class="plant-detail">
+                    <span class="detail-label">分布区域：</span>
+                    <span class="plant-distribution">未知</span>
+                </div>
+            </div>
+            <div class="plant-card-description">
+                <p class="plant-description">植物描述信息将在这里显示。</p>
+                <div class="plant-card-action">
+                    <a href="#" class="learn-more-btn">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 卡片背景遮罩 -->
+    <div class="card-overlay" id="cardOverlay"></div>
+
+    <!-- 快速跳转导航 -->
+    <div class="quick-jump-nav">
+        <button data-target="section-hero" title="回到顶部"></button>
+        <button data-target="section-image3" title="红鸟广场"></button>
+        <button data-target="section-image1" title="偷情小径"></button>
+        <button data-target="section-image2" title="天一泉"></button>
+    </div>
+    
+    <!-- 返回顶部按钮 (可以保留或移除，根据需要) -->
+    <div class="back-to-top-container">
+        <button id="back-to-top" title="回到顶部">↑</button>
+    </div>
+    
+    <script src="scripts.js"></script>
+    <!-- 引入植物信息卡片脚本 -->
+    <script src="plant-info-scripts.js"></script>
+</body>
+</html> 
