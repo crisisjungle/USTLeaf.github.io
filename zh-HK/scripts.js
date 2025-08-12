@@ -1565,14 +1565,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const duration = 1500; // Animation duration in ms
 
             // Store original format for update
-            let textFormat = `浏览校园 {s} 种植物，{p} 张植物图片`; 
+            let textFormat = `瀏覽校園 {s} 種植物，{p} 張植物圖片`; 
             countParagraph.textContent = textFormat.replace('{s}', 0).replace('{p}', 0); // Initialize display
 
             // Animate Species Count
             animateCounter(numSpecies, duration, (currentValue) => {
                 // Need to preserve the other number while animating one
                 const currentText = countParagraph.textContent;
-                const photoCountMatch = currentText.match(/，(\d+) 张/);
+                const photoCountMatch = currentText.match(/，(\d+) 張/);
                 const currentPhotoCount = photoCountMatch ? photoCountMatch[1] : 0;
                 countParagraph.textContent = textFormat.replace('{s}', currentValue).replace('{p}', currentPhotoCount);
             });
@@ -1581,7 +1581,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Running concurrently, but the update function preserves the other value.
             animateCounter(numPhotos, duration, (currentValue) => {
                 const currentText = countParagraph.textContent;
-                const speciesCountMatch = currentText.match(/校园 (\d+) 种/);
+                const speciesCountMatch = currentText.match(/校園 (\d+) 種/);
                 const currentSpeciesCount = speciesCountMatch ? speciesCountMatch[1] : 0;
                 countParagraph.textContent = textFormat.replace('{s}', currentSpeciesCount).replace('{p}', currentValue);
             });
@@ -1613,8 +1613,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // 中文标签映射
             const categoryChineseMap = {
-                'tree': '树',
-                'leaf': '叶',
+                'tree': '樹',
+                'leaf': '葉',
                 'flower': '花',
                 'root': '根',
                 'bark': '皮',
@@ -1827,9 +1827,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Infer filter value from the card's image alt text or title
                 let filterValue = null;
                 const cardTitle = card.querySelector('.card-title')?.textContent || '';
-                if (cardTitle.includes('树')) filterValue = 'tree';
+                if (cardTitle.includes('樹')) filterValue = 'tree';
                 else if (cardTitle.includes('花')) filterValue = 'flower';
-                else if (cardTitle.includes('叶')) filterValue = 'leaf';
+                else if (cardTitle.includes('葉')) filterValue = 'leaf';
                 else if (cardTitle.includes('果')) filterValue = 'fruit';
 
                 if (filterValue) {
