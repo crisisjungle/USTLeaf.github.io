@@ -1,0 +1,553 @@
+/* UST Album Styles */
+
+/* Hero Section */
+.album-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    /* Darken for text readability */
+}
+
+/* Static Hero Overlay (Title/Subtitle) */
+.hero-static-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 20;
+    /* Above carousel */
+    width: 80%;
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+}
+
+.hero-static-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.hero-static-content .hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    opacity: 0.9;
+}
+
+/* Carousel Item Credit Only */
+.carousel-item .overlay {
+    /* Rename or reuse overlay class? reusing for simplicity but overriding styles */
+    position: absolute;
+    bottom: 80px;
+    /* Above scroll arrow */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.hero-credit p {
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    /* Above static overlay */
+    animation: bounce 2s infinite;
+}
+
+.scroll-down a {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+
+/* Gallery Section */
+.album-gallery {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    min-height: 800px;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery-header h2 {
+    font-size: 2rem;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.masonry-grid {
+    display: flex;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.masonry-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card Style */
+.gallery-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.gallery-card .info {
+    padding: 15px;
+}
+
+.gallery-card .photographer {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.gallery-card .major {
+    color: #999;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.gallery-card .desc {
+    color: #666;
+    font-size: 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+/* Loading Spinner */
+.loading-state {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    display: none;
+}
+
+.loading-state.active {
+    display: block;
+}
+
+.spinner {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(46, 125, 50, 0.3);
+    border-radius: 50%;
+    border-top-color: #2e7d32;
+    animation: spin 1s ease-in-out infinite;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    /* Ensure darker bg */
+}
+
+.lightbox-content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.lightbox-image {
+    flex: 3;
+    object-fit: contain;
+    max-height: 100vh;
+    max-width: 75%;
+    margin: auto;
+    padding: 20px;
+}
+
+.lightbox-info {
+    flex: 1;
+    background: #1a1a1a;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    /* Full height */
+    box-sizing: border-box;
+}
+
+/* Top Section (Details) - Don't shrink */
+.lb-details {
+    flex-shrink: 0;
+    margin-bottom: 20px;
+}
+
+.lb-date-top {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+    display: block;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.lightbox-info h3 {
+    color: #4caf50;
+    margin: 0 0 5px 0;
+    font-size: 1.6rem;
+}
+
+.lightbox-info #lb-major {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.lb-desc-container {
+    background: #252525;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    /* Scroll description if too long */
+}
+
+.lightbox-info #lb-desc {
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+    color: #ddd;
+}
+
+.lb-interactions {
+    flex-shrink: 0;
+    /* Don't shrink buttons */
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.lb-like-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #aaa;
+    transition: all 0.3s;
+    font-size: 1rem;
+    user-select: none;
+}
+
+.lb-like-btn:hover {
+    color: #ff4081;
+}
+
+.lb-like-btn.liked {
+    color: #ff4081;
+}
+
+.lb-like-btn svg {
+    transition: transform 0.2s;
+}
+
+.lb-like-btn.liked svg {
+    fill: #ff4081;
+    transform: scale(1.1);
+}
+
+/* Comments Section - Grows and Scrolls */
+.lb-comments {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    /* Crucial for nested flex scrolling */
+}
+
+.lb-comments h4 {
+    margin: 0 0 15px 0;
+    color: #ddd;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.lb-comment-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 5px;
+    /* Space for scrollbar */
+}
+
+/* Scrollbar Style */
+.lb-comment-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lb-comment-list::-webkit-scrollbar-track {
+    background: #222;
+}
+
+.lb-comment-list::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+.comment-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.comment-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #eee;
+    flex-shrink: 0;
+    background-size: cover;
+}
+
+.comment-content {
+    background: #2c2c2c;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border-top-left-radius: 2px;
+    font-size: 0.9rem;
+    color: #eee;
+    word-break: break-word;
+    /* Wrap long words */
+}
+
+.comment-date {
+    display: block;
+    font-size: 0.7rem;
+    color: #777;
+    margin-top: 4px;
+}
+
+.lb-empty-comment {
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.lb-comment-input {
+    flex-shrink: 0;
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.lb-comment-input input {
+    flex: 1;
+    background: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: white;
+    outline: none;
+}
+
+.lb-comment-input input:focus {
+    background: #444;
+}
+
+.lb-comment-input button {
+    background: #2e7d32;
+    border: none;
+    color: white;
+    padding: 0 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.lb-comment-input button:hover {
+    background: #1b5e20;
+}
+
+.lb-comment-input button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3001;
+    transition: transform 0.2s;
+}
+
+.lightbox-close:hover {
+    transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .lightbox-content {
+        flex-direction: column;
+    }
+
+    .lightbox-image {
+        max-width: 100%;
+        height: 60%;
+        flex: none;
+    }
+
+    .lightbox-info {
+        max-width: 100%;
+        height: 40%;
+        padding: 20px;
+    }
+
+    .masonry-grid {
+        flex-direction: column;
+    }
+
+    .hero-static-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-static-content .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .modal-container {
+        width: 90%;
+        /* fallback */
+    }
+}

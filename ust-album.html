@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>科大相册 - 校园植物展示网站</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="css/ust-album.css?v=3">
+    <link rel="stylesheet" href="css/upload.css?v=3">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="一叶知科" class="logo-image">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="plant-trail.html">植物足迹</a>
+                    <ul>
+                        <li><a href="plant-trail.html#map-scenic">校园景点</a></li>
+                        <li><a href="plant-trail.html#map-trail">校园步道</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="active">植物图库</a>
+                    <ul>
+                        <li><a href="gallery.html#gallery-database">植物数据库</a></li>
+                        <li><a href="gallery.html#gallery-photos">植物图片库</a></li>
+                        <li><a href="ust-album.html">共享相册</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">关于我们</a>
+                    <ul>
+                        <li><a href="about.html#about-us">关于我们</a></li>
+                        <li><a href="about.html#contact-us">联系我们</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section (Carousel) -->
+    <section class="album-hero" id="album-hero">
+        <div class="carousel-container" id="hero-carousel">
+            <!-- Default Placeholder to prevent black screen -->
+            <div class="carousel-item active">
+                <img src="campus.jpeg" alt="科大校园">
+                <div class="overlay">
+                    <div class="hero-credit">
+                        <p>By UST Leaf</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Static Title Overlay -->
+        <div class="hero-static-content">
+            <h1>科大校园共享相册</h1>
+            <p class="hero-subtitle">方寸镜头，万千自然</p>
+        </div>
+        <div class="scroll-down">
+            <a href="#album-gallery"><span>﹀</span></a>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Waterfall) -->
+    <section class="album-gallery" id="album-gallery">
+        <div class="gallery-header">
+            <h2>最新上传</h2>
+            <p>来自师生们的精彩瞬间</p>
+        </div>
+
+        <div class="masonry-grid" id="masonry-grid">
+            <!-- Grid items injected by JS -->
+            <div class="masonry-column"></div>
+            <div class="masonry-column"></div>
+            <div class="masonry-column"></div>
+        </div>
+
+        <div class="loading-state" id="gallery-loading">
+            <div class="spinner"></div> 加载中...
+        </div>
+
+        <div class="album-footer-quote" id="album-footer-quote"
+            style="display:none; text-align: center; padding: 40px 20px; color: #888; cursor: pointer; user-select: none;">
+            未完待续，等你执笔。
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightbox-img" src="">
+            <div class="lightbox-info">
+                <!-- Date at top -->
+                <span id="lb-date" class="lb-date-top"></span>
+
+                <h3 id="lb-photographer"></h3>
+                <p id="lb-major"></p>
+                <div class="lb-desc-container">
+                    <p id="lb-desc"></p>
+                </div>
+
+                <!-- Interaction Section -->
+                <div class="lb-interactions">
+                    <div class="lb-like-btn">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            </path>
+                        </svg>
+                        <span>点赞</span>
+                    </div>
+                </div>
+
+                <!-- Comments Placeholder -->
+                <div class="lb-comments">
+                    <h4>评论</h4>
+                    <div class="lb-comment-list">
+                        <!-- Comments would go here -->
+                        <div class="lb-empty-comment">快来发布第一条评论吧~</div>
+                    </div>
+                    <div class="lb-comment-input">
+                        <input type="text" placeholder="写下你的想法...">
+                        <button>发送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Upload FAB (Reused) -->
+    <div class="fab-container">
+        <button id="upload-fab" class="fab-button" title="上传校园植物照片">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Upload Modal (Reused) -->
+    <div id="upload-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>嘿，你拍到了什么好玩的？</h2>
+                <button id="close-modal" class="close-button">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="upload-section" id="section-user-info">
+                    <h3>1. 关于记录者</h3>
+                    <div class="form-group">
+                        <label for="photographer-name">昵称 <span class="required">*</span></label>
+                        <input type="text" id="photographer-name" placeholder="你的名字" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="photographer-major">学院 / 专业</label>
+                        <input type="text" id="photographer-major" placeholder="例如：生命科学学院">
+                    </div>
+                </div>
+
+                <div class="upload-section" id="section-images">
+                    <h3>2. 选择照片 (最多50张)</h3>
+                    <div class="file-drop-area" id="drop-area">
+                        <div class="drop-area-content">
+                            <span class="fake-btn">选择文件</span>
+                            <span class="file-msg">或将文件拖到这里</span>
+                        </div>
+                        <p class="drop-area-sub">不管是路边的小花，还是参天大树，都值得被记录。</p>
+                        <input class="file-input" type="file" id="file-input" multiple accept="image/*">
+                    </div>
+
+                    <div id="preview-grid" class="preview-grid"></div>
+                </div>
+
+                <div id="upload-progress-container" style="display: none;">
+                    <div class="progress-bar-bg">
+                        <div id="upload-progress-bar" class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                    <p id="upload-status-text">准备上传...</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="btn-upload" class="primary-button">确认上传</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dependencies -->
+    <!-- Dependencies with Fallback/Different CDN -->
+    <!-- Dependencies with Fallback/Different CDN -->
+    <!-- Aliyun OSS SDK -->
+    <script src="https://gosspublic.alicdn.com/aliyun-oss-sdk-6.18.0.min.js"></script>
+    <!-- Image Compression (Staticfile CDN for China) -->
+    <script src="https://cdn.staticfile.org/browser-image-compression/2.0.2/browser-image-compression.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="js/oss-config.js?v=4"></script>
+    <script src="js/upload.js?v=2"></script>
+    <script src="js/upload-ui.js?v=2"></script>
+    <script src="js/ust-album.js?v=2"></script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
