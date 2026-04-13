@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>植物详情 - 一叶知科</title>
+    <link rel="icon" href="../logo.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../plant-info-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="plantDetail">
+    <header data-site-header></header>
+
+    <section class="plant-hero-fullscreen">
+        <img id="hero-bg-image" src="" alt="" class="hero-bg-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 id="plant-cn-name"></h1>
+            <h2 id="plant-latin-name"></h2>
+        </div>
+    </section>
+
+    <div class="main-content-area">
+        <div class="content-card">
+            <div class="card-body">
+                <div class="details-column">
+                    <h3 id="plant-details-heading"></h3>
+                    <dl class="plant-details-list" id="plant-details">
+                        <!-- Content will be populated by JavaScript -->
+                    </dl>
+                    <div class="back-button-area-left">
+                        <a href="javascript:history.back()" class="button back-btn-inline" id="plant-back-link"></a>
+                    </div>
+                </div>
+                <div class="gallery-column">
+                    <h3 id="plant-gallery-heading"></h3>
+                    <div class="main-image-container">
+                        <img id="main-plant-image" src="" alt="">
+                    </div>
+                    <div class="thumbnail-container" id="thumbnail-container">
+                        <!-- Thumbnails will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer data-site-footer="minimal"></footer>
+
+    <script src="../js/site-content.js"></script>
+    <script src="../js/site-shell.js"></script>
+    <script src="../scripts.js"></script>
+    <script src="plant-dynamic.js"></script>
+</body>
+</html>

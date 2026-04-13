@@ -10,37 +10,8 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="一叶知科" class="logo-image">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="plant-trail.html">植物足迹</a>
-                    <ul>
-                        <li><a href="plant-trail.html#map-scenic">校园景点</a></li>
-                        <li><a href="plant-trail.html#map-trail">校园步道</a></li>
-                    </ul>
-                </li>
-                <li><a href="gallery.html">植物图库</a>
-                    <ul>
-                        <li><a href="gallery.html#gallery-database">植物数据库</a></li>
-                        <li><a href="gallery.html#gallery-photos">植物图片库</a></li>
-                        <li><a href="ust-album.html">科大相册</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">关于我们</a>
-                    <ul>
-                        <li><a href="about.html#about-us">关于我们</a></li>
-                        <li><a href="about.html#contact-us">联系我们</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<body data-page="trail">
+    <header data-site-header></header>
 
     <!-- 完整的hero部分，包含卡片 -->
     <section class="hero" id="section-hero">
@@ -105,7 +76,7 @@
         <div class="trail-markers">
             <!-- 新的可交互标记 -->
             <div class="marker" data-index="1" style="top: 68.39%; left: 7.16%;"
-                data-info-link="gallery/plant-info-0101.html">
+                data-info-link="gallery/plant.html?id=0101">
                 <span>1</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -115,7 +86,7 @@
                 </div>
             </div>
             <div class="marker" data-index="2" style="top: 47.65%; left: 14.08%;"
-                data-info-link="gallery/plant-info-0107.html">
+                data-info-link="gallery/plant.html?id=0107">
                 <span>2</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -125,7 +96,7 @@
                 </div>
             </div>
             <div class="marker" data-index="3" style="top: 52.56%; left: 27.73%;"
-                data-info-link="gallery/plant-info-0108.html">
+                data-info-link="gallery/plant.html?id=0108">
                 <span>3</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -135,7 +106,7 @@
                 </div>
             </div>
             <div class="marker" data-index="4" style="top: 24.78%; left: 41.84%;"
-                data-info-link="gallery/plant-info-0105.html">
+                data-info-link="gallery/plant.html?id=0105">
                 <span>4</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -145,7 +116,7 @@
                 </div>
             </div>
             <div class="marker" data-index="5" style="top: 53.85%; left: 47.26%;"
-                data-info-link="gallery/plant-info-0102.html">
+                data-info-link="gallery/plant.html?id=0102">
                 <span>5</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -155,7 +126,7 @@
                 </div>
             </div>
             <div class="marker" data-index="6" style="top: 72.28%; left: 61.17%;"
-                data-info-link="gallery/plant-info-0106.html">
+                data-info-link="gallery/plant.html?id=0106">
                 <span>6</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -165,7 +136,7 @@
                 </div>
             </div>
             <div class="marker" data-index="7" style="top: 39.04%; left: 76.79%;"
-                data-info-link="gallery/plant-info-0103.html">
+                data-info-link="gallery/plant.html?id=0103">
                 <span>7</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -175,7 +146,7 @@
                 </div>
             </div>
             <div class="marker" data-index="8" style="top: 73.76%; left: 85.49%;"
-                data-info-link="gallery/plant-info-0104.html">
+                data-info-link="gallery/plant.html?id=0104">
                 <span>8</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -200,7 +171,7 @@
         <div class="trail-markers">
             <!-- Markers for 偷情小径 -->
             <div class="marker" data-index="1" style="top: 64.69%; left: 7.36%;"
-                data-info-link="gallery/plant-info-mahlian.html">
+                data-info-link="gallery/plant.html?id=mahlian">
                 <span>1</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -210,7 +181,7 @@
                 </div>
             </div>
             <div class="marker" data-index="2" style="top: 43.12%; left: 12.51%;"
-                data-info-link="gallery/plant-info-pukui.html">
+                data-info-link="gallery/plant.html?id=pukui">
                 <span>2</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -220,7 +191,7 @@
                 </div>
             </div>
             <div class="marker" data-index="3" style="top: 18.95%; left: 15.95%;"
-                data-info-link="gallery/plant-info-huanggeshu.html">
+                data-info-link="gallery/plant.html?id=huanggeshu">
                 <span>3</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -230,7 +201,7 @@
                 </div>
             </div>
             <div class="marker" data-index="4" style="top: 28.03%; left: 38.97%;"
-                data-info-link="gallery/plant-info-shanzhijia.html">
+                data-info-link="gallery/plant.html?id=shanzhijia">
                 <span>4</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -240,7 +211,7 @@
                 </div>
             </div>
             <div class="marker" data-index="5" style="top: 78.49%; left: 40.06%;"
-                data-info-link="gallery/plant-info-shili.html">
+                data-info-link="gallery/plant.html?id=shili">
                 <span>5</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -250,7 +221,7 @@
                 </div>
             </div>
             <div class="marker" data-index="6" style="top: 49.60%; left: 51.11%;"
-                data-info-link="gallery/plant-info-jinxidujuan.html">
+                data-info-link="gallery/plant.html?id=jinxidujuan">
                 <span>6</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -260,7 +231,7 @@
                 </div>
             </div>
             <div class="marker" data-index="7" style="top: 68.58%; left: 58.45%;"
-                data-info-link="gallery/plant-info-yinzhu.html">
+                data-info-link="gallery/plant.html?id=yinzhu">
                 <span>7</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -270,7 +241,7 @@
                 </div>
             </div>
             <div class="marker" data-index="8" style="top: 36.17%; left: 59.23%;"
-                data-info-link="gallery/plant-info-yuanbai.html">
+                data-info-link="gallery/plant.html?id=yuanbai">
                 <span>8</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -295,7 +266,7 @@
         <div class="trail-markers">
             <!-- Markers for 天一泉 -->
             <div class="marker" data-index="1" style="top: 72.29%; left: 34.28%;"
-                data-info-link="gallery/plant-info-xiyerong.html">
+                data-info-link="gallery/plant.html?id=xiyerong">
                 <span>1</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -305,7 +276,7 @@
                 </div>
             </div>
             <div class="marker" data-index="2" style="top: 48.30%; left: 54.91%;"
-                data-info-link="gallery/plant-info-ribenkui.html">
+                data-info-link="gallery/plant.html?id=ribenkui">
                 <span>2</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -315,7 +286,7 @@
                 </div>
             </div>
             <div class="marker" data-index="3" style="top: 14.29%; left: 68.87%;"
-                data-info-link="gallery/plant-info-feidaofumu.html">
+                data-info-link="gallery/plant.html?id=feidaofumu">
                 <span>3</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -325,7 +296,7 @@
                 </div>
             </div>
             <div class="marker" data-index="4" style="top: 24.48%; left: 87.98%;"
-                data-info-link="gallery/plant-info-taohuaxinmu.html">
+                data-info-link="gallery/plant.html?id=taohuaxinmu">
                 <span>4</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -335,7 +306,7 @@
                 </div>
             </div>
             <div class="marker" data-index="5" style="top: 46.73%; left: 79.54%;"
-                data-info-link="gallery/plant-info-wangzong.html">
+                data-info-link="gallery/plant.html?id=wangzong">
                 <span>5</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -345,7 +316,7 @@
                 </div>
             </div>
             <div class="marker" data-index="6" style="top: 69.41%; left: 79.54%;"
-                data-info-link="gallery/plant-info-pukui-new.html">
+                data-info-link="gallery/plant.html?id=pukui-new">
                 <span>6</span>
                 <div class="marker-card">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -421,9 +392,9 @@
         <button id="back-to-top" title="回到顶部">↑</button>
     </div>
 
+    <script src="js/site-content.js"></script>
+    <script src="js/site-shell.js"></script>
     <script src="scripts.js"></script>
-    <!-- 引入植物信息卡片脚本 -->
-    <script src="plant-info-scripts.js"></script>
 </body>
 
 </html>
