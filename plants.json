@@ -1,0 +1,1220 @@
+{
+  "plants": [
+    {
+      "id": "0101",
+      "cn_name": "王棕",
+      "latin_name": "Roystonea regia (Kunth) O. F. Cook",
+      "family": "棕榈科 Arecaceae",
+      "type": "常绿乔木",
+      "synonyms": [
+        "Carpentaria regia",
+        "Roystonea elata"
+      ],
+      "native_hk": false,
+      "description": "高大优美的棕榈树，高可达25米。树干挺直如柱，灰白色，中部常膨大。叶为大型羽状复叶，长可达4米，小叶片线形，优雅下垂。是热带和亚热带地区最重要的观赏棕榈之一。",
+      "iucn_status": "NE（未评估）",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/en/species-database/species-information/index.html?id=2937"
+      },
+      "image_folder": "0101王棕",
+      "hero_image": "t2.jpeg",
+      "images": [
+        {
+          "filename": "l1.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "r1.jpeg",
+          "category": "root"
+        },
+        {
+          "filename": "b1.jpeg",
+          "category": "bark"
+        },
+        {
+          "filename": "b2.jpeg",
+          "category": "bark"
+        },
+        {
+          "filename": "t1.jpeg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpeg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "wangzong"
+    },
+    {
+      "id": "0102",
+      "cn_name": "细叶榕",
+      "latin_name": "Ficus microcarpa L. f.",
+      "family": "桑科 Moraceae",
+      "type": "常绿乔木",
+      "synonyms": [
+        "榕树",
+        "细叶公仔树"
+      ],
+      "native_hk": true,
+      "description": "高达20米，冠幅广阔，常有气根，叶片革质卵形至椭圆形，果实为隐头花序，成熟时呈红色或紫色。常被作为园林绿化树种和盆景材料。",
+      "iucn_status": "LC (无危)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/en/species-database/species-information/index.html?id=275"
+      },
+      "image_folder": "0102细叶榕",
+      "hero_image": "b1.jpeg",
+      "images": [
+        {
+          "filename": "l1.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "b1.jpeg",
+          "category": "bark"
+        },
+        {
+          "filename": "b2.jpeg",
+          "category": "bark"
+        },
+        {
+          "filename": "t1.jpeg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpeg",
+          "category": "tree"
+        },
+        {
+          "filename": "t3.jpeg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "xiyerong"
+    },
+    {
+      "id": "0103",
+      "cn_name": "凤凰木",
+      "latin_name": "Delonix regia (Bojer ex Hook.) Raf.",
+      "family": "豆科 Fabaceae",
+      "type": "落叶乔木",
+      "synonyms": [],
+      "native_hk": false,
+      "description": "大型落叶乔木，高可达20米。树冠开展如伞，羽状复叶，小叶对生。夏季开花，花大而鲜艳，橙红色，非常醒目。",
+      "iucn_status": "NE（未评估）",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {},
+      "image_folder": "0103凤凰木",
+      "hero_image": "t1.jpeg",
+      "images": [
+        {
+          "filename": "b1.jpeg",
+          "category": "bark"
+        },
+        {
+          "filename": "l1.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l3.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "r1.jpeg",
+          "category": "root"
+        },
+        {
+          "filename": "t1.jpeg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpeg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "0103"
+    },
+    {
+      "id": "0104",
+      "cn_name": "樟树",
+      "latin_name": "Cinnamomum camphora (L.) J. Presl",
+      "family": "樟科 Lauraceae",
+      "type": "常绿乔木",
+      "synonyms": [
+        "香樟",
+        "樟脑树"
+      ],
+      "native_hk": true,
+      "description": "大型常绿乔木，高可达30米，树冠宽大茂密，树干粗壮。叶片卵形至卵状椭圆形，革质，有光泽，揉碎时有浓烈樟脑香气。花小，黄白色，果实球形，成熟时呈黑色。树的各部位可提取樟脑，是珍贵的用材树种。",
+      "iucn_status": "LC (无危)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/en/species-database/species-information/index.html?id=2510"
+      },
+      "image_folder": "0104樟树",
+      "hero_image": "t1.jpeg",
+      "images": [
+        {
+          "filename": "l1.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "b1.jpeg",
+          "category": "bark"
+        },
+        {
+          "filename": "b2.jpeg",
+          "category": "bark"
+        },
+        {
+          "filename": "b3.jpeg",
+          "category": "bark"
+        },
+        {
+          "filename": "t1.jpeg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "0104"
+    },
+    {
+      "id": "0105",
+      "cn_name": "异叶南洋杉",
+      "latin_name": "Araucaria heterophylla (Salisb.) Franco",
+      "family": "球果杉科 Araucariaceae",
+      "type": "常绿乔木",
+      "synonyms": [
+        "真南洋杉",
+        "挪威松"
+      ],
+      "native_hk": false,
+      "description": "常绿乔木，高可达60米，树形呈优美的塔状。树皮灰色或褐色。大枝平展或斜伸，侧生小枝密集下垂。叶有二型：幼树或侧枝的叶为针形或钻形；老树或主枝上的叶为鳞片状或三角状卵形。是世界著名的观赏树种。",
+      "iucn_status": "VU (易危)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/en/species-database/species-information/index.html?id=986"
+      },
+      "image_folder": "0105异叶南洋杉",
+      "hero_image": "t1.jpeg",
+      "images": [
+        {
+          "filename": "l1.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l3.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "t1.jpeg",
+          "category": "tree"
+        },
+        {
+          "filename": "b1.jpeg",
+          "category": "bark"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "0105"
+    },
+    {
+      "id": "0106",
+      "cn_name": "朱蕉",
+      "latin_name": "Cordyline fruticosa (L.) A. Chev.",
+      "family": "龙舌兰科 Agavaceae",
+      "type": "常绿灌木",
+      "synonyms": [
+        "红竹",
+        "万年竹",
+        "紫叶朱蕉"
+      ],
+      "native_hk": false,
+      "description": "常绿灌木，高2-3米。茎直立，粗壮，有树皮状外观。叶片披针形或椭圆状披针形，长20-60厘米，宽5-10厘米，叶色多样，品种不同而异，常见有绿色、红色、紫色或杂色斑纹。叶簇生于茎顶，叶柄长5-10厘米。圆锥花序顶生，花小，白色或淡紫色。果实浆果状，红色。原产于热带亚洲和太平洋岛屿地区，在热带和亚热带地区广泛栽培作为观叶植物。在港科大校园中主要种植多种颜色的朱蕉品种，其中以红叶和紫叶品种较为常见，为校园增添丰富的色彩。",
+      "iucn_status": "NE (未评估)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/en/species-database/species-information/index.html?id=1605"
+      },
+      "image_folder": "0106朱蕉",
+      "hero_image": "l2.jpeg",
+      "images": [
+        {
+          "filename": "l1.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l3.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "t1.jpeg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "0106"
+    },
+    {
+      "id": "0107",
+      "cn_name": "假连翘",
+      "latin_name": "Duranta erecta L.",
+      "family": "马鞭草科 Verbenaceae",
+      "type": "常绿灌木",
+      "synonyms": [
+        "金球花",
+        "金露花",
+        "假连翘"
+      ],
+      "native_hk": false,
+      "description": "常绿灌木或小乔木，高2-6米，枝条常下垂，有刺或无刺。叶对生或轮生，卵形或椭圆形。花成顶生或腋生总状花序，下垂，花冠蓝紫色或白色，具芳香。果实球形浆果，成熟时金黄色，成串下垂，有毒但观赏性强。原产于美洲热带地区，现广泛栽培于热带和亚热带地区作为观赏植物。在港科大校园内常见于路边和花坛中，开花期长，从夏季到秋季均可见到其美丽的花朵，而金黄色的果实更为植物增添观赏价值。",
+      "iucn_status": "NE (未评估)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/en/species-database/species-information/index.html?id=2737"
+      },
+      "image_folder": "0107假连翘",
+      "hero_image": "l1.jpeg",
+      "images": [
+        {
+          "filename": "l1.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "t1.jpeg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "0107"
+    },
+    {
+      "id": "0108",
+      "cn_name": "红花檵木",
+      "latin_name": "Loropetalum chinense var. rubrum",
+      "family": "金缕梅科 Hamamelidaceae",
+      "type": "常绿灌木",
+      "synonyms": [
+        "红檵木",
+        "紫叶檵木"
+      ],
+      "native_hk": false,
+      "description": "常绿灌木，高1-3米。叶互生，椭圆形至卵形，长2-5厘米，宽1-2.5厘米，边缘有细锯齿，叶面呈紫红色至暗红褐色，有光泽，嫩叶颜色更鲜艳。花朵细小，具有4枚带状花瓣，呈鲜红色或粉红色，花瓣长约1.5-2厘米，如细丝带状，集成头状花序。红花檵木是檵木（Loropetalum chinense）的园艺栽培变种，因其红色花朵和紫红色叶片而广受欢迎。与白花檵木相比，红花檵木叶色更加鲜艳，观赏价值更高。在港科大校园中多作为景观植物种植，其紫红色的叶片全年可观赏，在春季开花时尤为壮观。",
+      "iucn_status": "NE (未评估)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/en/species-database/species-information/index.html?id=3252"
+      },
+      "image_folder": "0108红花檵木",
+      "hero_image": "l1.jpeg",
+      "images": [
+        {
+          "filename": "l1.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpeg",
+          "category": "leaf"
+        },
+        {
+          "filename": "t1.jpeg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpeg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "0108"
+    },
+    {
+      "id": "feidaofumu",
+      "cn_name": "菲岛福木",
+      "latin_name": "Garcinia subelliptica Merr.",
+      "family": "藤黄科 (Clusiaceae)",
+      "type": "常绿乔木",
+      "synonyms": [
+        "福木",
+        "黄牛木"
+      ],
+      "native_hk": false,
+      "description": "常绿乔木，高可达15米。树皮灰褐色，纵裂。叶对生，椭圆形或矩圆状披针形，长5-15厘米，先端渐尖，基部楔形，全缘。花小，淡黄白色，组成顶生或腋生的聚伞花序。浆果球形，红色至黑色，直径约1厘米。",
+      "iucn_status": "LC (无危)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=2053"
+      },
+      "image_folder": "0418菲岛福木",
+      "hero_image": "t1.JPG",
+      "images": [
+        {
+          "filename": "t1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l3.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l4.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l5.JPG",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "feidaofumu"
+    },
+    {
+      "id": "huanggeshu",
+      "cn_name": "黄葛树",
+      "latin_name": "Ficus virens",
+      "family": "桑科 (Moraceae)",
+      "type": "常绿乔木",
+      "synonyms": [
+        "大叶榕 (F. infectoria)",
+        "薜荔榕 (F. lacor)"
+      ],
+      "native_hk": false,
+      "description": "落叶大乔木，高可达25米。树皮灰白色或灰绿色。叶椭圆形或卵状椭圆形，长7-15厘米，全缘，两面光滑。榕果成对腋生，球形，直径约1厘米，成熟时黄绿色至红色。",
+      "iucn_status": "LC (无危)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=787"
+      },
+      "image_folder": "0327黄葛树",
+      "hero_image": "r1.jpg",
+      "images": [
+        {
+          "filename": "r1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "t1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b3.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "r2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "r3.jpg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "huanggeshu"
+    },
+    {
+      "id": "jinxidujuan",
+      "cn_name": "锦绣杜鹃",
+      "latin_name": "Rhododendron pulchrum Sweet",
+      "family": "杜鹃花科 (Ericaceae)",
+      "type": "常绿或半常绿灌木",
+      "synonyms": [
+        "毛鹃",
+        "紫鹃"
+      ],
+      "native_hk": false,
+      "description": "常绿或半常绿灌木，高可达1.5-2.5米；分枝多，幼枝密被柔毛及疏刚毛。叶纸质，二型，椭圆形至椭圆状披针形或矩圆状倒披针形，春夏叶较秋冬叶为小，两面均被糙伏毛。花2-6朵簇生枝顶；花冠阔漏斗形，玫瑰红色、鲜红色或紫色，有深色斑点。花期通常在春季3-5月。广泛用于园林观赏。",
+      "iucn_status": "未评估 (NE)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=3172"
+      },
+      "image_folder": "0314锦绣杜鹃",
+      "hero_image": "f1.jpg",
+      "images": [
+        {
+          "filename": "f1.jpg",
+          "category": "flower"
+        },
+        {
+          "filename": "f2.JPG",
+          "category": "flower"
+        },
+        {
+          "filename": "f3.JPG",
+          "category": "flower"
+        },
+        {
+          "filename": "l1.jpg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.jpg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l3.jpg",
+          "category": "leaf"
+        },
+        {
+          "filename": "l4.jpg",
+          "category": "leaf"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "jinxidujuan"
+    },
+    {
+      "id": "mahlian",
+      "cn_name": "麻楝",
+      "latin_name": "Chukrasia tabularis",
+      "family": "楝科 Meliaceae",
+      "type": "常绿乔木",
+      "synonyms": [
+        "黄杞",
+        "麻楝子树"
+      ],
+      "native_hk": false,
+      "description": "高大的常绿乔木，高达20-30米。树干挺直，树皮灰褐色，有纵裂纹。叶为偶数羽状复叶，小叶4-10对，长椭圆形至披针形，长5-12厘米，宽2-4厘米，叶缘有波状齿。花小而芳香，白色，聚伞花序顶生。果实为木质蒴果，卵圆形，成熟时开裂。种子多数，扁平，有翅。",
+      "iucn_status": "LC（无危）",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=3137"
+      },
+      "image_folder": "0331麻楝",
+      "hero_image": "l1.jpg",
+      "images": [
+        {
+          "filename": "l1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b3.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b4.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b5.jpg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "mahlian"
+    },
+    {
+      "id": "pukui",
+      "cn_name": "蒲葵",
+      "latin_name": "Livistona chinensis (Jacq.) R. Br. ex Mart.",
+      "family": "棕榈科 Arecaceae",
+      "type": "常绿乔木",
+      "synonyms": [
+        "蒲扇棕",
+        "棕榈",
+        "蒲扇"
+      ],
+      "native_hk": true,
+      "description": "常绿棕榈植物，高可达20米。树干通常不分枝，有明显的环状叶痕。叶片呈扇形，直径可达1.5米，分裂成线状裂片。花序从叶腋中抽出，花小，黄色。果实为球形核果，成熟时蓝黑色。",
+      "iucn_status": "LC (无危)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "unknown",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=3010"
+      },
+      "image_folder": "0328蒲葵",
+      "hero_image": "t1.jpg",
+      "images": [
+        {
+          "filename": "t1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l3.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "g1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b3.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "r1.jpg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "pukui-new"
+    },
+    {
+      "id": "pukui-new",
+      "cn_name": "蒲葵",
+      "latin_name": "Livistona chinensis (Jacq.) R. Br. ex Mart.",
+      "family": "棕榈科 (Arecaceae)",
+      "type": "常绿乔木",
+      "synonyms": [
+        "蒲葵棕",
+        "蒲扇椰子",
+        "蒲扇"
+      ],
+      "native_hk": true,
+      "description": "常绿乔木，高可达15米。树干直立，通常不分枝，呈圆柱形，外表有环状叶痕。叶片呈扇形，直径可达1-1.5米，分裂成许多线状裂片，叶尖下垂，有明显的纤维状物下垂，叶柄长1-2米，边缘有锯齿状刺。花序从叶腋中抽出，长约1米，分枝多达5次，花小，淡黄色，呈穗状排列。果实为核果，近球形，成熟时呈蓝黑色，直径约2厘米。蒲葵的叶片常用于编织扇子、帽子等生活用品，树干可用于建筑和家具制作，果实和幼芽可食用，全株均有药用价值。",
+      "iucn_status": "LC (无危)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "warning",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=3010"
+      },
+      "image_folder": "0415蒲葵",
+      "hero_image": "b1.JPG",
+      "images": [
+        {
+          "filename": "b1.JPG",
+          "category": "bark"
+        },
+        {
+          "filename": "b2.JPG",
+          "category": "bark"
+        },
+        {
+          "filename": "l1.JPG",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.JPG",
+          "category": "leaf"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "pukui-new"
+    },
+    {
+      "id": "ribenkui",
+      "cn_name": "日本葵",
+      "latin_name": "Phoenix roebelenii O'Brien",
+      "family": "五加科 (Araliaceae)",
+      "type": "常绿灌木",
+      "synonyms": [
+        "八角金盘",
+        "罗汉松"
+      ],
+      "native_hk": false,
+      "description": "常绿灌木或小乔木，高可达5米。枝条密被棕色绒毛。叶革质，互生，阔椭圆形至卵形，长6-15厘米，叶缘有锯齿，叶背密被棕色星状绒毛。花白色，芳香，单生或成簇腋生。果实球形，成熟时黄色至橙红色。",
+      "iucn_status": "未评估",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=2290"
+      },
+      "image_folder": "0421日本葵",
+      "hero_image": "l3.JPG",
+      "images": [
+        {
+          "filename": "l3.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "t1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "b1.JPG",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "ribenkui"
+    },
+    {
+      "id": "schefflera-heptaphylla",
+      "cn_name": "鹅掌藤",
+      "latin_name": "Schefflera arboricola (Hayata) Merr.",
+      "family": "五加科 (Araliaceae)",
+      "type": "常绿灌木或藤状灌木",
+      "synonyms": [],
+      "native_hk": true,
+      "description": "常绿灌木或藤状灌木，高可达数米。掌状复叶，小叶通常7片（有时5-9片），长椭圆形或倒卵状椭圆形。圆锥花序顶生，花小，白色或淡黄色。果实球形，成熟时紫黑色。",
+      "iucn_status": "LC (无危)",
+      "cap586_status": "no",
+      "cap96_status": "no",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=891"
+      },
+      "image_folder": "0401鹅掌藤",
+      "hero_image": "l1.JPG",
+      "images": [
+        {
+          "filename": "l1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l3.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l4.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l5.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l6.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l7.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l8.JPG",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "schefflera-heptaphylla"
+    },
+    {
+      "id": "shanzhijia",
+      "cn_name": "山指甲",
+      "latin_name": "Rhododendron simsii",
+      "family": "杜鹃花科 (Ericaceae)",
+      "type": "落叶灌木",
+      "synonyms": [
+        "映山红",
+        "杜鹃花"
+      ],
+      "native_hk": true,
+      "description": "山指甲是一种落叶或半常绿灌木，高可达2米。枝条细长，呈褐色，密被棕色刚毛。叶互生，椭圆形至倒卵形，长2-5厘米，宽1-2厘米，先端急尖或微凹，基部楔形，边缘有细锯齿，上面深绿色，下面淡绿色，两面均被短柔毛。叶柄短，长约0.5厘米，密被棕色刚毛。花朵艳丽，通常为红色或粉红色，有时也有白色或紫色，单生或2-6朵簇生于枝顶。花冠漏斗状钟形，直径3-5厘米，花瓣5裂，上方花瓣常有深色斑点。雄蕊5-10枚，不等长，花丝纤细，花药小，黄褐色。花柱细长，常略超出雄蕊。果实为蒴果，椭圆形，长约1厘米，成熟时5瓣裂，释放出多数细小种子。",
+      "iucn_status": "LC（无危）",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=1596"
+      },
+      "image_folder": "0307山指甲",
+      "hero_image": "f5.JPG",
+      "images": [
+        {
+          "filename": "f5.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "f1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "f2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "f3.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "f4.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.jpg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "shanzhijia"
+    },
+    {
+      "id": "shili",
+      "cn_name": "石栗",
+      "latin_name": "Aleurites moluccana",
+      "family": "大戟科 (Euphorbiaceae)",
+      "type": "常绿乔木",
+      "synonyms": [
+        "油桐",
+        "油果树",
+        "印度胡桃"
+      ],
+      "native_hk": false,
+      "description": "石栗是一种大型常绿乔木，高可达20-25米。树干粗壮，树皮灰褐色，平滑或微裂。枝条具有灰白色的星状毛，尤其是在嫩枝上更为明显。叶互生，阔卵形至心形，长10-20厘米，宽8-18厘米，顶端渐尖，基部心形或圆形，全缘或有不明显的波状齿，上面深绿色，下面灰绿色，两面均被星状毛。叶柄长，约5-15厘米，顶端有两个明显的腺体。花小，单性，雌雄同株，呈大型圆锥花序生于枝顶。花白色或淡黄色，直径约1厘米。雄花多数，花萼2-3裂，花瓣5枚，长椭圆形，雄蕊15-20枚；雌花较少，花萼和花瓣与雄花相似，子房上位，2-3室，每室1枚胚珠。果实为核果状蒴果，近球形，直径4-6厘米，外皮革质，绿色至棕色，不开裂。种子1-2颗，卵圆形，坚硬，富含油脂。",
+      "iucn_status": "LC（无危）",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=2236"
+      },
+      "image_folder": "0341石栗",
+      "hero_image": "t1.jpg",
+      "images": [
+        {
+          "filename": "t1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "shili"
+    },
+    {
+      "id": "taiwanxiangsi",
+      "cn_name": "台湾相思",
+      "latin_name": "Acacia confusa Merr.",
+      "family": "豆科 (Fabaceae)",
+      "type": "常绿小乔木",
+      "synonyms": [
+        "小叶相思",
+        "坡垒"
+      ],
+      "native_hk": false,
+      "description": "常绿灌木或小乔木，高可达3-8米。树皮暗灰色，平滑。叶互生，卵形或卵状椭圆形，长5-10厘米，叶缘有细锯齿，叶面亮绿色。花小，白色，组成圆锥花序。核果圆形，成熟时红色或黑色。",
+      "iucn_status": "未评估",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=1277"
+      },
+      "image_folder": "0414台湾相思",
+      "hero_image": "l1.JPG",
+      "images": [
+        {
+          "filename": "l1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "t1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.JPG",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "taiwanxiangsi"
+    },
+    {
+      "id": "taohuaxinmu",
+      "cn_name": "桃花心木",
+      "latin_name": "Swietenia mahagoni (L.) Jacq.",
+      "family": "楝科 (Meliaceae)",
+      "type": "落叶大乔木",
+      "synonyms": [
+        "洪都拉斯桃花心木",
+        "大叶桃花心木"
+      ],
+      "native_hk": false,
+      "description": "常绿乔木，高可达6-15米。树皮平滑，灰色至褐色。叶互生，椭圆形至卵形，长5-12厘米，全缘，革质，有光泽。花白色，芳香，聚伞花序腋生。浆果球形，成熟时紫黑色。",
+      "iucn_status": "未评估",
+      "cap586_status": "yes",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=1927"
+      },
+      "image_folder": "0417桃花心木",
+      "hero_image": "b1.JPG",
+      "images": [
+        {
+          "filename": "b1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l3.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l4.JPG",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "taohuaxinmu"
+    },
+    {
+      "id": "wangzong",
+      "cn_name": "王棕",
+      "latin_name": "Roystonea regia (Kunth) O. F. Cook",
+      "family": "棕榈科 (Arecaceae)",
+      "type": "常绿乔木",
+      "synonyms": [
+        "大王椰子",
+        "皇家棕"
+      ],
+      "native_hk": false,
+      "description": "常绿乔木，高可达25-30米。树干粗壮挺直，呈圆柱形，表面光滑，淡灰色，略带青绿，中部略粗，呈酒瓶形。叶为羽状复叶，长3-5米，排列成巨大的伞形树冠，小叶片条形，长50-70厘米，宽2-3厘米，先端渐尖，叶面绿色有光泽。花序从叶鞘下部开裂处伸出，呈大型圆锥状，长达1米，花小，淡黄色。果实椭圆形，长约1厘米，成熟时呈红褐色。王棕树形优美，是热带和亚热带地区常见的园林绿化树种。",
+      "iucn_status": "LC（无危）",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=3088"
+      },
+      "image_folder": "0416王棕",
+      "hero_image": "l3.JPG",
+      "images": [
+        {
+          "filename": "l3.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l6.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "b2.JPG",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查",
+      "detail_page_id": "wangzong"
+    },
+    {
+      "id": "xiyerong",
+      "cn_name": "细叶榕",
+      "latin_name": "Ficus microcarpa",
+      "family": "桑科 (Moraceae)",
+      "type": "常绿乔木",
+      "synonyms": [
+        "榕树",
+        "石榕",
+        "细叶鸡嗉榕"
+      ],
+      "native_hk": true,
+      "description": "常绿乔木，高可达15米。树皮灰褐色。叶对生，倒卵形或椭圆形，长7-15厘米，全缘，革质，有光泽。花白色，芳香，聚伞花序顶生或腋生。核果椭圆形，成熟时深紫色至黑色。",
+      "iucn_status": "未评估",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/en/species-database/species-information/index.html?id=275"
+      },
+      "image_folder": "0424细叶榕",
+      "hero_image": "b3.JPG",
+      "images": [
+        {
+          "filename": "t1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "t3.JPG",
+          "category": "tree"
+        },
+        {
+          "filename": "l3.JPG",
+          "category": "leaf"
+        },
+        {
+          "filename": "l2.JPG",
+          "category": "leaf"
+        },
+        {
+          "filename": "b1.jpg",
+          "category": "bark"
+        },
+        {
+          "filename": "b2.jpg",
+          "category": "bark"
+        },
+        {
+          "filename": "b3.JPG",
+          "category": "bark"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "xiyerong"
+    },
+    {
+      "id": "yinzhu",
+      "cn_name": "银珠",
+      "latin_name": "Ardisia crenata",
+      "family": "紫金牛科 (Myrsinaceae)",
+      "type": "常绿小灌木",
+      "synonyms": [
+        "朱砂根",
+        "紫金牛",
+        "象牙红"
+      ],
+      "native_hk": true,
+      "description": "常绿乔木，高可达15米。树皮灰色至灰褐色。叶对生，长椭圆形至卵状椭圆形，长5-10厘米，全缘，革质，叶面深绿，有光泽。花白色，芳香，聚伞花序腋生。核果椭圆形，成熟时紫黑色。",
+      "iucn_status": "未评估",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=2262"
+      },
+      "image_folder": "0340银珠",
+      "hero_image": "t1.jpg",
+      "images": [
+        {
+          "filename": "t1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "t2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b1.jpg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "yinzhu"
+    },
+    {
+      "id": "yuanbai",
+      "cn_name": "圆柏",
+      "latin_name": "Juniperus chinensis",
+      "family": "柏科 (Cupressaceae)",
+      "type": "常绿乔木或灌木",
+      "synonyms": [
+        "龙柏",
+        "侧柏",
+        "香柏"
+      ],
+      "native_hk": false,
+      "description": "常绿乔木，高可达20米。树皮灰褐色，纵裂。叶互生，阔卵形至近圆形，长8-18厘米，宽7-15厘米，全缘，基部心形。花小，绿白色，圆锥花序顶生。蒴果木质，球形，直径约3厘米，成熟时开裂。种子多数，扁平，周围有膜质翅。",
+      "iucn_status": "LC (无危)",
+      "cap586_status": "info",
+      "cap96_status": "info",
+      "redbook_status": "info",
+      "external_links": {
+        "hk_species_db": "https://bih.gov.hk/sc/species-database/species-information/index.html?id=2770"
+      },
+      "image_folder": "0333圆柏",
+      "hero_image": "t1.jpg",
+      "images": [
+        {
+          "filename": "t1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "l3.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b1.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b2.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b3.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b4.jpg",
+          "category": "tree"
+        },
+        {
+          "filename": "b5.jpg",
+          "category": "tree"
+        }
+      ],
+      "source_info": "港科大校园植物调查 | 香港生物多样性网页",
+      "detail_page_id": "yuanbai"
+    }
+  ]
+}
