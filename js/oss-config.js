@@ -1,26 +1,23 @@
-// Aliyun OSS Configuration
-// Docs: https://help.aliyun.com/document_detail/32068.html
+// Deprecated compatibility wrapper.
+// New pages should load:
+// - js/oss-client.js
+// - js/oss-public-config.js
+// - js/oss-student-config.js
+// or the dedicated admin config files.
 
-// IMPORTANT: Ensure your bucket has CORS configured to allow your domain.
-// Origins: * (or your domain)
-// Methods: GET, POST, PUT, HEAD
-// Headers: *
-// Expose Headers: ETag, x-oss-request-id
+(function () {
+    console.warn('js/oss-config.js 已废弃，请改用按角色拆分的 OSS 配置文件。');
 
-const OSS_CONFIG = {
-    region: 'oss-cn-hongkong', // User agreed to Hong Kong
-    // Split keys to bypass GitHub basic secret scanning (Note: Keys are still exposed in browser)
-    accessKeyId: 'LTAI' + '5tPunQCxk82fLNRcyPdE',
-    accessKeySecret: 'DttHqY' + 'bQod9pJrHRJi3XWq911Dq5C7',
-    bucket: 'ustleaf-new', // Updated to new bucket matching account
-    secure: true // Force HTTPS
-};
+    window.OSS_CONFIG = window.USTLeafOSS && window.USTLeafOSS.getConfig
+        ? window.USTLeafOSS.getConfig('public')
+        : null;
 
-// Initialize Helper
-function createOSSClient() {
-    if (typeof OSS === 'undefined') {
-        console.error("Aliyun OSS SDK not loaded.");
-        return null;
-    }
-    return new OSS(OSS_CONFIG);
-}
+    window.createOSSClient = function createOSSClient() {
+        if (!window.USTLeafOSS || typeof window.USTLeafOSS.createClient !== 'function') {
+            console.error('USTLeafOSS helper not loaded.');
+            return null;
+        }
+
+        return window.USTLeafOSS.createClient('public');
+    };
+})();

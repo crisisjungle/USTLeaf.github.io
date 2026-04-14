@@ -193,7 +193,7 @@
     font-size: 0.9rem;
 }
 
-.gallery-card .major {
+.gallery-card .location {
     color: #999;
     font-size: 0.8rem;
     margin-bottom: 5px;
@@ -306,10 +306,30 @@
     font-size: 1.6rem;
 }
 
-.lightbox-info #lb-major {
-    color: #aaa;
-    font-size: 0.9rem;
+.lb-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-bottom: 15px;
+}
+
+.lb-meta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.lb-meta-row p {
+    margin: 0;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.lb-meta-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: #7dbb81;
+    text-transform: uppercase;
 }
 
 .lb-desc-container {
@@ -317,9 +337,16 @@
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;
-    max-height: 150px;
+    max-height: 220px;
     overflow-y: auto;
-    /* Scroll description if too long */
+}
+
+.lb-section-title {
+    margin: 0 0 10px 0;
+    color: #7dbb81;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .lightbox-info #lb-desc {
@@ -327,177 +354,6 @@
     font-size: 1rem;
     margin: 0;
     color: #ddd;
-}
-
-.lb-interactions {
-    flex-shrink: 0;
-    /* Don't shrink buttons */
-    margin-bottom: 20px;
-    display: flex;
-    gap: 20px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 20px;
-}
-
-.lb-like-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    color: #aaa;
-    transition: all 0.3s;
-    font-size: 1rem;
-    user-select: none;
-}
-
-.lb-like-btn:hover {
-    color: #ff4081;
-}
-
-.lb-like-btn.liked {
-    color: #ff4081;
-}
-
-.lb-like-btn svg {
-    transition: transform 0.2s;
-}
-
-.lb-like-btn.liked svg {
-    fill: #ff4081;
-    transform: scale(1.1);
-}
-
-/* Comments Section - Grows and Scrolls */
-.lb-comments {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-    /* Crucial for nested flex scrolling */
-}
-
-.lb-comments h4 {
-    margin: 0 0 15px 0;
-    color: #ddd;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
-
-.lb-comment-list {
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-bottom: 15px;
-    padding-right: 5px;
-    /* Space for scrollbar */
-}
-
-/* Scrollbar Style */
-.lb-comment-list::-webkit-scrollbar {
-    width: 6px;
-}
-
-.lb-comment-list::-webkit-scrollbar-track {
-    background: #222;
-}
-
-.lb-comment-list::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 3px;
-}
-
-.comment-item {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-    animation: fadeIn 0.3s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.comment-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #eee;
-    flex-shrink: 0;
-    background-size: cover;
-}
-
-.comment-content {
-    background: #2c2c2c;
-    padding: 8px 12px;
-    border-radius: 12px;
-    border-top-left-radius: 2px;
-    font-size: 0.9rem;
-    color: #eee;
-    word-break: break-word;
-    /* Wrap long words */
-}
-
-.comment-date {
-    display: block;
-    font-size: 0.7rem;
-    color: #777;
-    margin-top: 4px;
-}
-
-.lb-empty-comment {
-    font-style: italic;
-    color: #555;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.lb-comment-input {
-    flex-shrink: 0;
-    display: flex;
-    gap: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #333;
-}
-
-.lb-comment-input input {
-    flex: 1;
-    background: #333;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 15px;
-    color: white;
-    outline: none;
-}
-
-.lb-comment-input input:focus {
-    background: #444;
-}
-
-.lb-comment-input button {
-    background: #2e7d32;
-    border: none;
-    color: white;
-    padding: 0 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s;
-}
-
-.lb-comment-input button:hover {
-    background: #1b5e20;
-}
-
-.lb-comment-input button:disabled {
-    background: #555;
-    cursor: not-allowed;
 }
 
 .lightbox-close {

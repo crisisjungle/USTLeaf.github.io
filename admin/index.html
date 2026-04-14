@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UST Leaf 投稿审核后台</title>
+    <link rel="stylesheet" href="css/admin.css?v=1">
+</head>
+
+<body class="admin-page">
+    <main class="admin-shell">
+        <header class="admin-header">
+            <div>
+                <p class="eyebrow">UST Leaf Admin</p>
+                <h1>投稿审核后台</h1>
+                <p class="subtitle">仅管理学生投稿，不接管植物数据库或主站内容。</p>
+            </div>
+            <div class="toolbar-actions">
+                <button id="refresh-button" class="secondary-button">刷新数据</button>
+                <button id="migrate-button" class="primary-button">迁移历史公开数据</button>
+            </div>
+        </header>
+
+        <div id="config-alert" class="admin-alert" hidden></div>
+
+        <section class="admin-banner">
+            <div>
+                <strong>部署提醒：</strong>
+                这个后台仍是静态站点，真正的安全边界依赖部署层密码保护或访问白名单，以及独立的 admin OSS 凭证。
+            </div>
+        </section>
+
+        <section class="tab-bar" aria-label="投稿状态切换">
+            <button class="tab-button active" data-tab="pending">Pending <span id="count-pending">0</span></button>
+            <button class="tab-button" data-tab="approved">Approved <span id="count-approved">0</span></button>
+            <button class="tab-button" data-tab="rejected">Rejected <span id="count-rejected">0</span></button>
+        </section>
+
+        <p id="admin-status" class="admin-status">正在加载投稿数据...</p>
+
+        <section id="groups-container" class="groups-container" aria-live="polite"></section>
+    </main>
+
+    <script src="https://gosspublic.alicdn.com/aliyun-oss-sdk-6.18.0.min.js"></script>
+    <script src="js/oss-client.js?v=1"></script>
+    <script src="js/shared-album-utils.js?v=1"></script>
+    <script src="js/oss-public-config.js?v=1"></script>
+    <script src="js/oss-admin-config.js?v=1"></script>
+    <script src="js/oss-local-config.js?v=1"></script>
+    <script src="js/admin-app.js?v=1"></script>
+</body>
+
+</html>

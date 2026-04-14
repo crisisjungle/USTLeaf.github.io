@@ -182,30 +182,19 @@
             <div class="lightbox-info">
                 <span id="lb-date" class="lb-date-top"></span>
                 <h3 id="lb-photographer"></h3>
-                <p id="lb-major"></p>
+                <div class="lb-meta-list">
+                    <div class="lb-meta-row">
+                        <span class="lb-meta-label">位置</span>
+                        <p id="lb-location"></p>
+                    </div>
+                    <div class="lb-meta-row" id="lb-plant-guess-row">
+                        <span class="lb-meta-label">猜测植物</span>
+                        <p id="lb-plant-guess"></p>
+                    </div>
+                </div>
                 <div class="lb-desc-container">
+                    <p class="lb-section-title">补充说明</p>
                     <p id="lb-desc"></p>
-                </div>
-                <div class="lb-interactions">
-                    <div class="lb-like-btn">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg>
-                        <span>点赞</span>
-                    </div>
-                </div>
-                <!-- Comments Placeholder (Simplified for Index) -->
-                <div class="lb-comments">
-                    <h4>评论</h4>
-                    <div class="lb-comment-list">
-                        <div class="lb-empty-comment">快来发布第一条评论吧~</div>
-                    </div>
-                    <div class="lb-comment-input">
-                        <input type="text" placeholder="写下你的想法...">
-                        <button>发送</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -238,14 +227,24 @@
 
             <div class="modal-body">
                 <div class="upload-section" id="section-user-info">
-                    <h3>1. 关于记录者</h3>
+                    <h3>1. 投稿信息</h3>
                     <div class="form-group">
-                        <label for="photographer-name">昵称 <span class="required">*</span></label>
-                        <input type="text" id="photographer-name" placeholder="你的名字" required>
+                        <label for="contributor-name">昵称</label>
+                        <input type="text" id="contributor-name" placeholder="想署名的话再填写">
+                        <p class="field-hint">可选，不填会以“匿名同学”展示。</p>
                     </div>
                     <div class="form-group">
-                        <label for="photographer-major">学院 / 专业</label>
-                        <input type="text" id="photographer-major" placeholder="例如：生命科学学院">
+                        <label for="location-text">拍摄位置 <span class="required">*</span></label>
+                        <textarea id="location-text" placeholder="例如：红鸟广场北门旁，靠近巴士站一侧的行道树" required></textarea>
+                        <p class="field-hint">请尽量写清楚建筑、路径、地标或方位，方便管理员核对。</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="plant-guess">你觉得它是什么植物？</label>
+                        <input type="text" id="plant-guess" placeholder="例如：凤凰木、细叶榕">
+                    </div>
+                    <div class="form-group">
+                        <label for="submission-note">补充说明</label>
+                        <textarea id="submission-note" placeholder="可以写拍摄时间、你观察到的特征，或任何想补充的话。"></textarea>
                     </div>
                 </div>
 
@@ -256,7 +255,7 @@
                             <span class="fake-btn">选择文件</span>
                             <span class="file-msg">或将文件拖到这里</span>
                         </div>
-                        <p class="drop-area-sub">不管是路边的小花，还是参天大树，都值得被记录。</p>
+                        <p class="drop-area-sub">同一次提交默认视为同一地点；如果是不同地点，请分开提交。</p>
                         <input class="file-input" type="file" id="file-input" multiple accept="image/*">
                     </div>
 
@@ -267,12 +266,12 @@
                     <div class="progress-bar-bg">
                         <div id="upload-progress-bar" class="progress-bar-fill" style="width: 0%"></div>
                     </div>
-                    <p id="upload-status-text">准备上传...</p>
+                    <p id="upload-status-text">准备提交...</p>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button id="btn-upload" class="primary-button">确认上传</button>
+                <button id="btn-upload" class="primary-button">提交审核</button>
             </div>
         </div>
     </div>
@@ -284,10 +283,14 @@
     <script src="https://cdn.staticfile.org/browser-image-compression/2.0.2/browser-image-compression.min.js"></script>
 
     <!-- Custom Scripts -->
-    <script src="js/oss-config.js?v=4"></script>
-    <script src="js/upload.js?v=2"></script>
-    <script src="js/upload-ui.js?v=2"></script>
-    <script src="js/home-shared-album.js?v=1"></script>
+    <script src="js/oss-client.js?v=1"></script>
+    <script src="js/oss-public-config.js?v=1"></script>
+    <script src="js/oss-student-config.js?v=1"></script>
+    <script src="js/oss-local-config.js?v=1"></script>
+    <script src="js/shared-album-utils.js?v=1"></script>
+    <script src="js/upload.js?v=3"></script>
+    <script src="js/upload-ui.js?v=3"></script>
+    <script src="js/home-shared-album.js?v=2"></script>
     <script src="js/site-content.js"></script>
     <script src="js/site-shell.js"></script>
     <script src="scripts.js"></script>

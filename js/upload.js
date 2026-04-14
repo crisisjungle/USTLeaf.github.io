@@ -1,11 +1,15 @@
 
-// Upload Logic specific to USTLeaf (Aliyun OSS Version)
-// Dependencies: 
-// - oss-config.js (must be loaded before this)
-// - browser-image-compression (must be loaded via CDN)
+// Upload Logic for student submissions.
+// Dependencies:
+// - oss-client.js
+// - oss-student-config.js
+// - browser-image-compression (loaded via CDN)
 
-// Constants
-// OSS Client is initialized in oss-config.js as `createOSSClient()`
+function generateId(prefix) {
+    const timestamp = Date.now().toString(36);
+    const randomStr = Math.random().toString(36).slice(2, 8);
+    return `${prefix}_${timestamp}_${randomStr}`;
+}
 
 /**
  * Compresses an image file using browser-image-compression
@@ -27,72 +31,73 @@ async function compressImage(file) {
 }
 
 /**
- * Uploads image and metadata to Aliyun OSS
+ * Uploads a single pending submission to Aliyun OSS
  */
-async function uploadToOSS(file, commonMeta, description) {
-    const client = createOSSClient();
-    if (!client) throw new Error("OSS client initialization failed");
+async function uploadPendingSubmission(client, file, commonMeta, groupId) {
+    const fileExt = (file.name.split('.').pop() || 'jpg').toLowerCase();
+    const photoId = generateId('photo');
+    const imageKey = `submissions/photos/${groupId}/${photoId}.${fileExt}`;
+    const dataKey = `submissions/data/${photoId}.json`;
 
-    // 1. Prepare Filenames (use timestamp to ensure chronological order)
-    const timestamp = Date.now();
-    const randomStr = Math.random().toString(36).substring(2, 8);
-    const fileExt = file.name.split('.').pop();
-    const uuid = `${timestamp}_${randomStr}`;
-
-    const imagePath = `photos/${uuid}.${fileExt}`;
-    const dataPath = `data/${uuid}.json`;
-
-    // 2. Compress Image (if library loaded)
     let compressedFile = file;
     if (typeof imageCompression !== 'undefined') {
         try {
-            console.log("Compressing:", file.name);
+            console.log('Compressing:', file.name);
             compressedFile = await compressImage(file);
         } catch (e) {
-            console.warn("Compression skipped:", e);
+            console.warn('Compression skipped:', e);
         }
     } else {
-        console.warn("browser-image-compression lib not loaded. Uploading original.");
+        console.warn('browser-image-compression lib not loaded. Uploading original.');
     }
 
-    // 3. Upload Image (with timeout)
-    const options = {
-        timeout: 60000 // 60s timeout
-    };
-    const imageResult = await client.put(imagePath, compressedFile, options);
-    // Construct Public URL (Avoid using the one from result to ensure https and custom domain if needed)
-    // The result.url might be http or have parameters. Safer to construct if standard bucket.
-    // simpler: use result.url.replace('http:', 'https:')
-    const imageUrl = imageResult.url.replace(/^http:/, 'https:');
+    await client.put(imageKey, compressedFile, { timeout: 60000 });
 
-    // 4. Create Metadata Object
     const metadata = {
-        id: uuid,
+        id: photoId,
+        submission_group_id: groupId,
+        status: 'pending',
         created_at: new Date().toISOString(),
-        image_url: imageUrl,
-        photographer_name: commonMeta.name,
-        photographer_major: commonMeta.major,
-        description: description || ""
+        reviewed_at: null,
+        image_key: imageKey,
+        image_url: '',
+        contributor_name: commonMeta.contributor_name || '',
+        location_text: commonMeta.location_text,
+        plant_guess: commonMeta.plant_guess || '',
+        note: commonMeta.note || '',
+        source: 'student_upload'
     };
 
-    // 5. Upload Metadata as JSON
-    // Blob is needed for put
     const jsonBlob = new Blob([JSON.stringify(metadata)], { type: 'application/json' });
-    await client.put(dataPath, jsonBlob);
+    await client.put(dataKey, jsonBlob, { timeout: 60000 });
 
-    return imageUrl;
+    return {
+        photoId,
+        dataKey,
+        imageKey
+    };
 }
-
 
 /**
  * Handles the batch upload process
  * @param {File[]} files - Array of files to upload
- * @param {Object} commonMeta - { name, major }
- * @param {Object} fileSpecificMeta - Map of filename -> description
+ * @param {Object} commonMeta - Batch metadata shared by all files
  * @param {Function} onProgress - Callback(percent)
- * @returns {Promise<{success: number, failed: number, errors: string[]}>}
+ * @returns {Promise<{success: number, failed: number, errors: string[], groupId: string}>}
  */
-async function uploadBatch(files, commonMeta, fileSpecificMeta, onProgress) {
+async function uploadBatch(files, commonMeta, onProgress) {
+    const client = window.USTLeafOSS && window.USTLeafOSS.createClient
+        ? window.USTLeafOSS.createClient('student')
+        : null;
+
+    if (!client) {
+        const message = window.USTLeafOSS && window.USTLeafOSS.getConfigErrorMessage
+            ? window.USTLeafOSS.getConfigErrorMessage('student')
+            : '未能初始化学生上传凭证。';
+        throw new Error(message);
+    }
+
+    const groupId = generateId('group');
     let completed = 0;
     const total = files.length;
     let successCount = 0;
@@ -101,8 +106,7 @@ async function uploadBatch(files, commonMeta, fileSpecificMeta, onProgress) {
 
     const chunkHelp = async (file) => {
         try {
-            const description = fileSpecificMeta[file.name] || "";
-            await uploadToOSS(file, commonMeta, description);
+            await uploadPendingSubmission(client, file, commonMeta, groupId);
             successCount++;
         } catch (err) {
             console.error(`Failed to process ${file.name}:`, err);
@@ -130,10 +134,9 @@ async function uploadBatch(files, commonMeta, fileSpecificMeta, onProgress) {
 
     await Promise.all(pool);
 
-    return { success: successCount, failed: failCount, errors };
+    return { success: successCount, failed: failCount, errors, groupId };
 }
 
-// Make functions available globally
 window.USTUpload = {
     uploadBatch
 };
