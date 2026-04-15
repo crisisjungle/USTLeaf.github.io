@@ -11,6 +11,33 @@ function generateId(prefix) {
     return `${prefix}_${timestamp}_${randomStr}`;
 }
 
+function isLocalDevHost() {
+    const hostname = window.location.hostname;
+    return hostname === '127.0.0.1' || hostname === 'localhost';
+}
+
+function guessMimeType(fileExt) {
+    const extension = String(fileExt || '').toLowerCase();
+    if (extension === 'png') return 'image/png';
+    if (extension === 'webp') return 'image/webp';
+    if (extension === 'gif') return 'image/gif';
+    if (extension === 'heic' || extension === 'heif') return 'image/heic';
+    return 'image/jpeg';
+}
+
+function blobToBase64(blob) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            const result = String(reader.result || '');
+            const base64 = result.includes(',') ? result.split(',')[1] : result;
+            resolve(base64);
+        };
+        reader.onerror = () => reject(reader.error || new Error('Failed to read file.'));
+        reader.readAsDataURL(blob);
+    });
+}
+
 /**
  * Compresses an image file using browser-image-compression
  * @param {File} file - The file to compress
@@ -33,7 +60,7 @@ async function compressImage(file) {
 /**
  * Uploads a single pending submission to Aliyun OSS
  */
-async function uploadPendingSubmission(client, file, commonMeta, groupId) {
+async function uploadPendingSubmissionDirect(client, file, commonMeta, groupId) {
     const fileExt = (file.name.split('.').pop() || 'jpg').toLowerCase();
     const photoId = generateId('photo');
     const imageKey = `submissions/photos/${groupId}/${photoId}.${fileExt}`;
@@ -78,6 +105,67 @@ async function uploadPendingSubmission(client, file, commonMeta, groupId) {
     };
 }
 
+async function uploadPendingSubmissionViaApi(file, commonMeta, groupId) {
+    const fileExt = (file.name.split('.').pop() || 'jpg').toLowerCase();
+
+    let compressedFile = file;
+    if (typeof imageCompression !== 'undefined') {
+        try {
+            console.log('Compressing:', file.name);
+            compressedFile = await compressImage(file);
+        } catch (error) {
+            console.warn('Compression skipped:', error);
+        }
+    }
+
+    const base64Data = await blobToBase64(compressedFile);
+    const response = await fetch('/api/upload-submission', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            fileName: file.name,
+            fileExt,
+            mimeType: compressedFile.type || file.type || guessMimeType(fileExt),
+            base64Data,
+            groupId,
+            commonMeta
+        })
+    });
+
+    if (!response.ok) {
+        let message = `上传接口返回 ${response.status}`;
+        try {
+            const payload = await response.json();
+            if (payload && payload.error) {
+                message = payload.error;
+            }
+        } catch (error) {
+            const text = await response.text().catch(() => '');
+            if (text) {
+                message = text;
+            }
+        }
+        throw new Error(message);
+    }
+
+    return response.json();
+}
+
+async function uploadPendingSubmission(client, file, commonMeta, groupId) {
+    try {
+        return await uploadPendingSubmissionViaApi(file, commonMeta, groupId);
+    } catch (error) {
+        const isMissingApi = /404|Cannot POST|not found/i.test(String(error.message || ''));
+        if (isMissingApi && isLocalDevHost() && client) {
+            console.warn('Upload API is unavailable locally, falling back to direct OSS upload.');
+            return uploadPendingSubmissionDirect(client, file, commonMeta, groupId);
+        }
+        throw error;
+    }
+}
+
 /**
  * Handles the batch upload process
  * @param {File[]} files - Array of files to upload
@@ -90,7 +178,7 @@ async function uploadBatch(files, commonMeta, onProgress) {
         ? window.USTLeafOSS.createClient('student')
         : null;
 
-    if (!client) {
+    if (!client && isLocalDevHost()) {
         const message = window.USTLeafOSS && window.USTLeafOSS.getConfigErrorMessage
             ? window.USTLeafOSS.getConfigErrorMessage('student')
             : '未能初始化学生上传凭证。';

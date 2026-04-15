@@ -1,0 +1,10 @@
+{
+  "name": "ustleaf-github-io",
+  "private": true,
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "ali-oss": "^6.23.0"
+  }
+}
