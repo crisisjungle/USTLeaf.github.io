@@ -16,6 +16,15 @@ function isLocalDevHost() {
     return hostname === '127.0.0.1' || hostname === 'localhost';
 }
 
+function isGitHubPagesHost() {
+    const hostname = window.location.hostname || '';
+    return hostname.endsWith('github.io');
+}
+
+function shouldUseApiUpload() {
+    return !isGitHubPagesHost();
+}
+
 function guessMimeType(fileExt) {
     const extension = String(fileExt || '').toLowerCase();
     if (extension === 'png') return 'image/png';
@@ -154,14 +163,29 @@ async function uploadPendingSubmissionViaApi(file, commonMeta, groupId) {
 }
 
 async function uploadPendingSubmission(client, file, commonMeta, groupId) {
+    if (!shouldUseApiUpload()) {
+        if (!client) {
+            throw new Error('无法初始化 OSS 上传客户端。');
+        }
+        return uploadPendingSubmissionDirect(client, file, commonMeta, groupId);
+    }
+
     try {
         return await uploadPendingSubmissionViaApi(file, commonMeta, groupId);
     } catch (error) {
+        const errorText = String(error && error.message ? error.message : error);
         const isMissingApi = /404|Cannot POST|not found/i.test(String(error.message || ''));
-        if (isMissingApi && isLocalDevHost() && client) {
-            console.warn('Upload API is unavailable locally, falling back to direct OSS upload.');
+        if ((isMissingApi || isLocalDevHost()) && client) {
+            console.warn('Upload API is unavailable, falling back to direct OSS upload.', errorText);
             return uploadPendingSubmissionDirect(client, file, commonMeta, groupId);
         }
+
+        if (/Failed to fetch|NetworkError|CORS|blocked/i.test(errorText)) {
+            throw new Error(
+                `上传接口不可用（${window.location.hostname}），请先改用 OSS 直传或完成 API 部署。原始错误: ${errorText}`
+            );
+        }
+
         throw error;
     }
 }
@@ -199,7 +223,11 @@ async function uploadBatch(files, commonMeta, onProgress) {
         } catch (err) {
             console.error(`Failed to process ${file.name}:`, err);
             failCount++;
-            errors.push(`${file.name}: ${err.message}`);
+            let message = err && err.message ? err.message : String(err);
+            if (/XHR error.*PUT .*aliyuncs\.com/i.test(message)) {
+                message = `${message}\n提示：这是浏览器直传 OSS 被拦截。请在 OSS CORS 里放行当前域名 ${window.location.origin}，并允许 PUT/POST/OPTIONS。`;
+            }
+            errors.push(`${file.name}: ${message}`);
         } finally {
             completed++;
             if (onProgress) onProgress((completed / total) * 100);
