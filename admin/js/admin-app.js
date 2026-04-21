@@ -100,17 +100,34 @@ async function loadDashboard() {
     setAdminStatus('正在加载投稿数据...', 'info');
 
     try {
-        const [pending, approved, rejected] = await Promise.all([
+        const [submissionRecords, approved, rejected] = await Promise.all([
             fetchRecordsForPrefix('submissions/data/', 'pending'),
             fetchRecordsForPrefix('published/data/', 'approved'),
             fetchRecordsForPrefix('rejected/data/', 'rejected')
         ]);
 
+        const finalizedIds = new Set([
+            ...approved.map((record) => record.id),
+            ...rejected.map((record) => record.id)
+        ]);
+        const pending = submissionRecords.filter((record) => (
+            record.status !== 'approved'
+            && record.status !== 'rejected'
+            && !finalizedIds.has(record.id)
+        ));
+        const hiddenSubmissionCount = submissionRecords.length - pending.length;
+
         adminState.records = { pending, approved, rejected };
         updateTabCounts();
         renderTabState();
         renderGroups();
-        setAdminStatus(`已加载 ${pending.length + approved.length + rejected.length} 条投稿记录。`, 'success');
+        const hiddenSuffix = hiddenSubmissionCount > 0
+            ? ` 已隐藏 ${hiddenSubmissionCount} 条已审核但尚未清理的 submissions 副本。`
+            : '';
+        setAdminStatus(
+            `已加载 ${pending.length + approved.length + rejected.length} 条投稿记录。${hiddenSuffix}`,
+            'success'
+        );
     } catch (error) {
         console.error('Failed to load admin dashboard:', error);
         setAdminStatus(`加载失败：${error.message}`, 'error');
@@ -355,14 +372,24 @@ async function putJsonObject(objectKey, payload) {
 
 async function safeDelete(objectKey) {
     if (!objectKey) {
-        return;
+        return true;
     }
 
     try {
         await adminClient.delete(objectKey);
+        return true;
     } catch (error) {
         console.warn('Failed to delete object:', objectKey, error);
+        return false;
     }
+}
+
+function buildCleanupMessage(cleanupFailures) {
+    if (cleanupFailures === 0) {
+        return '';
+    }
+
+    return ' 原 submissions 副本删除失败，但审批结果已生效；如需彻底清理，请在 OSS CORS 中补充 DELETE 权限。';
 }
 
 async function saveRecord(record) {
@@ -381,6 +408,7 @@ async function moveRecord(record, targetStatus) {
     const fileExt = getFileExtension(sourceImageKey);
     const targetImageKey = `${targetPrefix}/photos/${record.submission_group_id}/${record.id}.${fileExt}`;
     const targetDataKey = `${targetPrefix}/data/${record.id}.json`;
+    let cleanupFailures = 0;
 
     setAdminStatus(`正在将 ${record.id} 移动到 ${targetStatus}...`, 'info');
 
@@ -399,14 +427,23 @@ async function moveRecord(record, targetStatus) {
     await putJsonObject(targetDataKey, buildStoredRecord(movedRecord));
 
     if (sourceDataKey !== targetDataKey) {
-        await safeDelete(sourceDataKey);
+        const deleted = await safeDelete(sourceDataKey);
+        if (!deleted) {
+            cleanupFailures += 1;
+        }
     }
 
     if (sourceImageKey !== targetImageKey) {
-        await safeDelete(sourceImageKey);
+        const deleted = await safeDelete(sourceImageKey);
+        if (!deleted) {
+            cleanupFailures += 1;
+        }
     }
 
-    setAdminStatus(`已将 ${record.id} 移动到 ${targetStatus}。`, 'success');
+    setAdminStatus(
+        `已将 ${record.id} 移动到 ${targetStatus}。${buildCleanupMessage(cleanupFailures)}`,
+        cleanupFailures > 0 ? 'warning' : 'success'
+    );
     await loadDashboard();
 }
 
@@ -441,6 +478,7 @@ async function approveGroup(groupId) {
 
     let successCount = 0;
     const errors = [];
+    let cleanupFailures = 0;
 
     for (const record of recordsToApprove) {
         try {
@@ -453,8 +491,12 @@ async function approveGroup(groupId) {
                 image_key: targetImageKey,
                 image_url: getPublishedImageUrl(targetImageKey)
             }));
-            await safeDelete(record._dataKey);
-            await safeDelete(record.image_key);
+            if (!(await safeDelete(record._dataKey))) {
+                cleanupFailures += 1;
+            }
+            if (!(await safeDelete(record.image_key))) {
+                cleanupFailures += 1;
+            }
             successCount++;
         } catch (error) {
             console.error('Failed to approve record in batch:', record.id, error);
@@ -466,7 +508,10 @@ async function approveGroup(groupId) {
         setAdminStatus(`整批通过完成，但有 ${errors.length} 条失败。`, 'warning');
         alert(`整批通过已执行，成功 ${successCount} 条，失败 ${errors.length} 条。\n${errors.join('\n')}`);
     } else {
-        setAdminStatus(`批次 ${groupId} 已全部通过。`, 'success');
+        setAdminStatus(
+            `批次 ${groupId} 已全部通过。${buildCleanupMessage(cleanupFailures)}`,
+            cleanupFailures > 0 ? 'warning' : 'success'
+        );
     }
 
     await loadDashboard();
