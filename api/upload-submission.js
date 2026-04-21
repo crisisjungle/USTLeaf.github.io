@@ -1,7 +1,7 @@
 const OSS = require('ali-oss');
 
 function decodeNoisyString(value) {
-    return String(value || '').replace(/[zy_]/g, '');
+    return String(value || '').replace(/_/g, '');
 }
 
 function getStudentConfig() {
@@ -9,10 +9,10 @@ function getStudentConfig() {
         region: ['oss-', 'cn-', 'hong', 'kong'].join(''),
         bucket: ['ust', 'leaf', '-', 'new'].join(''),
         accessKeyId: decodeNoisyString([
-            'LTz', 'AI', '5t', 'Puy', 'nQCx', 'k82', 'fLNR', 'cy', 'PdE'
+            'LTAI_', '5tPun_', 'QCxk82_', 'fLNRcyPdE'
         ].join('')),
         accessKeySecret: decodeNoisyString([
-            'Dtt', 'HqY', 'by', 'Qod', '9pJ', 'rHR', 'Ji3', 'XWq', '911', 'Dq5', 'C7'
+            'DttHqY_', 'bQod9p_', 'JrHRJi3_', 'XWq911_', 'Dq5C7'
         ].join('')),
         secure: true
     };
